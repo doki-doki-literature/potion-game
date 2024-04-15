@@ -22,6 +22,7 @@ export class GameScene extends Phaser.Scene {
   private ingredientsContainer: Phaser.GameObjects.Container;
   private selectedItem1Image: Phaser.GameObjects.Image;
   private selectedItem2Image: Phaser.GameObjects.Image;
+  private ingredientDescriptionText: Phaser.GameObjects.Text;
 
   constructor() {
     super(sceneConfig);
@@ -44,6 +45,18 @@ export class GameScene extends Phaser.Scene {
     // Process loaded data
     this.potionManager.processData();
     let ingredientsData = this.potionManager.ingredients;
+
+    // Create a text object to display ingredient description
+    this.ingredientDescriptionText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' });
+    this.ingredientDescriptionText.setDepth(1); // Ensure the text is above other elements
+    this.ingredientDescriptionText.setWordWrapWidth(400);
+    this.ingredientDescriptionText.setVisible(false); // Initially hide the text
+
+    // Set pointer out event to hide ingredient description text
+    this.input.on('pointerout', () => {
+      // Hide the text when the cursor moves away from the ingredient
+      this.ingredientDescriptionText.setVisible(false);
+    });
 
     // Display UI elements
     this.add.text(20, 20, 'Select two ingredients:', { color: '#ffffff' });
@@ -93,7 +106,7 @@ export class GameScene extends Phaser.Scene {
           if (result.isValid) {
             console.log('Craft successful! Potion ID:', result.potionId);
             resultText.setText("Alchemy Successful!");
-            visualDescriptionText.setText(this.potionManager.potions.find(potion => potion.potionId == result.potionId).visualDescription);
+            visualDescriptionText.setText("You have crafted: " + this.potionManager.potions.find(potion => potion.potionId == result.potionId).visualDescription);
           } else {
             console.log('Craft failed. No valid potion found.');
           }
@@ -109,12 +122,11 @@ export class GameScene extends Phaser.Scene {
   tryCraft(ingredientId1: number, ingredientId2: number): { isValid: boolean, potionId?: number } {
     this.selectedItem1Image.destroy();
     this.selectedItem2Image.destroy();
-    if (this.selectedIngredients.length > 2)
-    {
+    if (this.selectedIngredients.length > 2) {
       this.selectedIngredients = [];
       return { isValid: false };
     }
-    
+
     const matchingPotion = this.potionManager.potions.find(potion => {
       return (
         (potion.ingredientId1 === ingredientId1 && potion.ingredientId2 === ingredientId2) ||
@@ -167,15 +179,28 @@ export class GameScene extends Phaser.Scene {
       ingredientImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
         const ingredientId = ingredientImage.getData('ingredientId');
         if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
-          if (this.selectedIngredients.length == 1)
-            {
-              this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
-            } else {
-              this.selectedItem2Image = this.add.image(this.cauldronDropZone.x - 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
-            }
+          if (this.selectedIngredients.length == 1) {
+            this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
+          } else {
+            this.selectedItem2Image = this.add.image(this.cauldronDropZone.x - 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
+          }
 
           // Add the ingredient to the selected ingredients
           this.selectedIngredients.push(ingredientId);
+        }
+      });
+
+      // Set pointer over event for ingredients
+      ingredientImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
+        const ingredientId = ingredientImage.getData('ingredientId');
+        const ingredient = this.potionManager.ingredients.find(ingredient => ingredient.ingredientId == ingredientId);
+        if (ingredient) {
+          // Set text position to match cursor
+          this.ingredientDescriptionText.setPosition(pointer.x - 150, 80);
+          // Set text content to ingredient description
+          this.ingredientDescriptionText.setText(ingredient.description);
+          // Show the text
+          this.ingredientDescriptionText.setVisible(true);
         }
       });
     }
