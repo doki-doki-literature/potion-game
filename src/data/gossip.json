@@ -1,0 +1,73 @@
+[
+    {
+      "gossipId": 1,
+      "content": "I heard that x ingredient when combined with y ingredient has a certain effect.",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 2,
+      "content": "Interesting fact about x ingredient",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 3,
+      "content": "Phoenix Feather",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 4,
+      "content": "Eye of Newt",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 5,
+      "content": "Wolfsbane",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 6,
+      "content": "Fairy Dust",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 7,
+      "content": "Unicorn Horn",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 8,
+      "content": "Mermaid Scale",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 9,
+      "content": "Goblin Earwax",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 10,
+      "content": "Basilisk Venom",
+      "imageUrl": "",
+      "ingredientId": null,
+      "potionId": null
+    }
+]
+  
