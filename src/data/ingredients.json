@@ -1,0 +1,63 @@
+[
+    {
+      "ingredientId": 1,
+      "name": "Mandrake Root",
+      "imageUrl": "",
+      "description": "A potent root known for its magical properties. Handle with care."
+    },
+    {
+      "ingredientId": 2,
+      "name": "Dragon Scale",
+      "imageUrl": "",
+      "description": "A shimmering scale from the mighty dragon. Adds resilience to potions."
+    },
+    {
+      "ingredientId": 3,
+      "name": "Phoenix Feather",
+      "imageUrl": "",
+      "description": "A feather imbued with the essence of rebirth and renewal."
+    },
+    {
+      "ingredientId": 4,
+      "name": "Eye of Newt",
+      "imageUrl": "",
+      "description": "A mystical eye known for its transformative properties."
+    },
+    {
+      "ingredientId": 5,
+      "name": "Wolfsbane",
+      "imageUrl": "",
+      "description": "A rare herb used to enhance potion potency, but handle with caution."
+    },
+    {
+      "ingredientId": 6,
+      "name": "Fairy Dust",
+      "imageUrl": "",
+      "description": "Glimmering powder that adds a touch of enchantment to potions."
+    },
+    {
+      "ingredientId": 7,
+      "name": "Unicorn Horn",
+      "imageUrl": "",
+      "description": "A majestic horn with purifying properties. Highly sought after."
+    },
+    {
+      "ingredientId": 8,
+      "name": "Mermaid Scale",
+      "imageUrl": "",
+      "description": "A shimmering scale from the mystical mermaid. Adds fluidity to potions."
+    },
+    {
+      "ingredientId": 9,
+      "name": "Goblin Earwax",
+      "imageUrl": "",
+      "description": "Unpleasant but potent. Used in certain dark potions."
+    },
+    {
+      "ingredientId": 10,
+      "name": "Basilisk Venom",
+      "imageUrl": "",
+      "description": "A venom so potent it can be deadly. Use with extreme caution."
+    }
+]
+  

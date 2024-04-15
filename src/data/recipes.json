@@ -1,0 +1,56 @@
+[
+    {
+      "name": "Elixir of Strength",
+      "potionId": 1,
+      "effectDescription": "Grants temporary increase in physical strength.",
+      "description": "Brewed with Dragon Scale and Mandrake Root, this elixir enhances one's physical prowess.",
+      "ingredientId1": 1,
+      "ingredientId2": 2,
+      "effectText": "feels a surge of strength coursing through their veins."
+    },
+    {
+      "name": "Phoenix Rejuvenation Potion",
+      "potionId": 2,
+      "effectDescription": "Restores health and vitality, reviving the drinker from near death.",
+      "description": "Crafted from Phoenix Feather and Wolfsbane, this potion restores life force and vitality.",
+      "ingredientId1": 3,
+      "ingredientId2": 5,
+      "effectText": "experiences a rush of energy as wounds heal and vitality returns."
+    },
+    {
+      "name": "Transmutation Tonic",
+      "potionId": 3,
+      "effectDescription": "Allows the drinker to temporarily transform into another creature or object.",
+      "description": "Concocted from Eye of Newt and Fairy Dust, this tonic grants the ability to shapeshift temporarily.",
+      "ingredientId1": 4,
+      "ingredientId2": 6,
+      "effectText": "watches in amazement as their form shifts and changes before their eyes."
+    },
+    {
+      "name": "Potion of Purification",
+      "potionId": 4,
+      "effectDescription": "Cleanses the body and soul of impurities, granting clarity of mind.",
+      "description": "Blessed with Unicorn Horn and Mermaid Scale, this potion purifies both body and spirit.",
+      "ingredientId1": 7,
+      "ingredientId2": 8,
+      "effectText": "feels a sense of inner peace and clarity washing over them."
+    },
+    {
+      "name": "Nightshade Brew",
+      "potionId": 5,
+      "effectDescription": "Induces a deep slumber or a trance-like state, enhancing dreams and visions.",
+      "description": "Brewed with Wolfsbane and Goblin Earwax, this concoction induces a profound state of dreaming.",
+      "ingredientId1": 5,
+      "ingredientId2": 9,
+      "effectText": "slips into a deep, vivid dream world filled with strange visions."
+    },
+    {
+      "name": "Venomous Vial",
+      "potionId": 6,
+      "effectDescription": "Inflicts a venomous bite or wound upon the drinker's enemies.",
+      "description": "Made from Basilisk Venom and Dragon Scale, this vial contains a potent poison for use in battle.",
+      "ingredientId1": 10,
+      "ingredientId2": 2,
+      "effectText": "feels a searing pain as venom courses through their veins."
+    }
+  ]

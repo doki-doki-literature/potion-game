@@ -4,10 +4,10 @@ export class Ingredient {
     imageUrl: string;
     description: string;
 
-    constructor(ingredientId: number, name: string, imageUrl: string, description: string) {
-        this.ingredientId = ingredientId;
-        this.name = name;
-        this.imageUrl = imageUrl;
-        this.description = description;
+    constructor(data: any) {
+        this.ingredientId = data.ingredientId;
+        this.name = data.name;
+        this.imageUrl = data.imageUrl;
+        this.description = data.description;
     }
 }
