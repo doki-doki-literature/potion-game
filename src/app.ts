@@ -198,7 +198,7 @@ export class GameScene extends Phaser.Scene {
           // Set text position to match cursor
           this.ingredientDescriptionText.setPosition(pointer.x - 150, 80);
           // Set text content to ingredient description
-          this.ingredientDescriptionText.setText(ingredient.description);
+          this.ingredientDescriptionText.setText(ingredient.name + ": " + ingredient.description);
           // Show the text
           this.ingredientDescriptionText.setVisible(true);
         }
