@@ -1,5 +1,6 @@
 import * as Phaser from "phaser";
 import { PotionManager } from "./data/PotionManager";
+import { SaveManager } from "./data/SaveManager";
 import { Ingredient } from "./objects/Ingredient";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
@@ -106,7 +107,15 @@ export class GameScene extends Phaser.Scene {
           if (result.isValid) {
             console.log('Craft successful! Potion ID:', result.potionId);
             resultText.setText("Alchemy Successful!");
-            visualDescriptionText.setText("You have crafted: " + this.potionManager.potions.find(potion => potion.potionId == result.potionId).visualDescription);
+            const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId);
+            let discoveredPotions = SaveManager.loadPotionLog();
+            let name;
+            if (discoveredPotions.find(potionId => potionId == result.potionId)) {
+              name = matchedPotion.name;
+            } else {
+              name = "???";
+            }
+            visualDescriptionText.setText("You have crafted " + name + " " + matchedPotion.visualDescription).setWordWrapWidth(200);
           } else {
             console.log('Craft failed. No valid potion found.');
           }
