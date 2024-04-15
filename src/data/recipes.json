@@ -58,6 +58,46 @@
       "ingredientId2": 2,
       "effectText": "feels a searing pain as venom courses through their veins.",
       "visualDescription": "A dark green liquid swirling ominously, emitting a faint hissing sound."
+    },
+    {
+        "name": "Fizzing Fiasco",
+        "potionId": 7,
+        "effectDescription": "Causes uncontrollable burping and fizzing.",
+        "description": "Combining Goblin Earwax and Fairy Dust creates this chaotic concoction, resulting in unexpected fizzy reactions.",
+        "ingredientId1": 9,
+        "ingredientId2": 6,
+        "effectText": "burps uncontrollably and emits bubbles from their mouth.",
+        "visualDescription": "A bubbling potion with colorful sparks popping out."
+    },
+    {
+        "name": "Giggle Juice",
+        "potionId": 8,
+        "effectDescription": "Induces uncontrollable laughter.",
+        "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir, causing fits of giggles and laughter.",
+        "ingredientId1": 2,
+        "ingredientId2": 8,
+        "effectText": "bursts into uncontrollable laughter, unable to stop.",
+        "visualDescription": "A sparkling potion with vibrant hues, emanating a playful aura."
+    },
+    {
+        "name": "Mystic Mist",
+        "potionId": 9,
+        "effectDescription": "Envelops the drinker in a mystical mist, granting invisibility.",
+        "description": "Crafted from Basilisk Venom and Fairy Dust, this mist shrouds the drinker in invisibility.",
+        "ingredientId1": 10,
+        "ingredientId2": 6,
+        "effectText": "feels a strange sensation as they disappear from sight, becoming invisible.",
+        "visualDescription": "A shimmering mist with faint traces of magical energy."
+    },
+    {
+        "name": "Thunderous Tonic",
+        "potionId": 10,
+        "effectDescription": "Creates a loud thunderclap, startling nearby creatures.",
+        "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+        "ingredientId1": 1,
+        "ingredientId2": 9,
+        "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+        "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
     }
   ]
   
