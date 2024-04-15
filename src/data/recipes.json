@@ -6,7 +6,8 @@
       "description": "Brewed with Dragon Scale and Mandrake Root, this elixir enhances one's physical prowess.",
       "ingredientId1": 1,
       "ingredientId2": 2,
-      "effectText": "feels a surge of strength coursing through their veins."
+      "effectText": "feels a surge of strength coursing through their veins.",
+      "visualDescription": "A shimmering golden liquid swirling with sparks of energy."
     },
     {
       "name": "Phoenix Rejuvenation Potion",
@@ -15,7 +16,8 @@
       "description": "Crafted from Phoenix Feather and Wolfsbane, this potion restores life force and vitality.",
       "ingredientId1": 3,
       "ingredientId2": 5,
-      "effectText": "experiences a rush of energy as wounds heal and vitality returns."
+      "effectText": "experiences a rush of energy as wounds heal and vitality returns.",
+      "visualDescription": "A radiant red liquid with wisps of golden light dancing within."
     },
     {
       "name": "Transmutation Tonic",
@@ -24,7 +26,8 @@
       "description": "Concocted from Eye of Newt and Fairy Dust, this tonic grants the ability to shapeshift temporarily.",
       "ingredientId1": 4,
       "ingredientId2": 6,
-      "effectText": "watches in amazement as their form shifts and changes before their eyes."
+      "effectText": "watches in amazement as their form shifts and changes before their eyes.",
+      "visualDescription": "A swirling potion with iridescent hues, shimmering like a rainbow."
     },
     {
       "name": "Potion of Purification",
@@ -33,7 +36,8 @@
       "description": "Blessed with Unicorn Horn and Mermaid Scale, this potion purifies both body and spirit.",
       "ingredientId1": 7,
       "ingredientId2": 8,
-      "effectText": "feels a sense of inner peace and clarity washing over them."
+      "effectText": "feels a sense of inner peace and clarity washing over them.",
+      "visualDescription": "A crystal-clear potion with sparkling particles, emitting a soothing aura."
     },
     {
       "name": "Nightshade Brew",
@@ -42,7 +46,8 @@
       "description": "Brewed with Wolfsbane and Goblin Earwax, this concoction induces a profound state of dreaming.",
       "ingredientId1": 5,
       "ingredientId2": 9,
-      "effectText": "slips into a deep, vivid dream world filled with strange visions."
+      "effectText": "slips into a deep, vivid dream world filled with strange visions.",
+      "visualDescription": "A deep purple potion with wisps of mist rising from its surface."
     },
     {
       "name": "Venomous Vial",
@@ -51,6 +56,8 @@
       "description": "Made from Basilisk Venom and Dragon Scale, this vial contains a potent poison for use in battle.",
       "ingredientId1": 10,
       "ingredientId2": 2,
-      "effectText": "feels a searing pain as venom courses through their veins."
+      "effectText": "feels a searing pain as venom courses through their veins.",
+      "visualDescription": "A dark green liquid swirling ominously, emitting a faint hissing sound."
     }
   ]
+  

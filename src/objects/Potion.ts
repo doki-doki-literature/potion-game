@@ -6,6 +6,7 @@ export class Potion {
     ingredientId1: number;
     ingredientId2: number;
     effectText: string;
+    visualDescription: string;
 
     constructor(data: any) {
         this.name = data.name;
@@ -15,5 +16,6 @@ export class Potion {
         this.ingredientId1 = data.ingredientId1;
         this.ingredientId2 = data.ingredientId2;
         this.effectText = data.effectText;
+        this.visualDescription = data.visualDescription;
     }
 }
