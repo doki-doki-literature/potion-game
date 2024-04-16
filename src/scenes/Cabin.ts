@@ -12,7 +12,7 @@ export class CabinScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image('cauldron', 'assets/image/cauldron.png');
+        this.load.image('cauldron', 'assets/image/drawings/cauldron.png');
         this.load.image('book', 'assets/image/book.png');
     }
 

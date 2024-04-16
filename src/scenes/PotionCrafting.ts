@@ -35,6 +35,9 @@ export class CraftScene extends Phaser.Scene {
 
         for (let i = 1; i < 11; i++) {
             this.load.image(`ingredient${i}`, `assets/image/ingredient${i}.png`);
+        }
+
+        for (let i = 1; i < 31; i++) {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');
@@ -68,7 +71,7 @@ export class CraftScene extends Phaser.Scene {
         const cauldronImage = this.add.image(700, 450, 'cauldron').setScale(.5, .5);
 
         // Create a drop zone for the cauldron
-        this.cauldronDropZone = this.add.zone(700, 450, 100, 100);
+        this.cauldronDropZone = this.add.zone(700, 400, 100, 100);
         this.cauldronDropZone.setDropZone();
 
         // Calculate total pages
