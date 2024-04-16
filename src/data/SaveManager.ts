@@ -1,19 +1,19 @@
-import { Potion } from "../objects/Potion";
+import { PotionQuantity } from "../objects/PotionQuantity";
 
 export class SaveManager {
-    static saveInventory(inventory: Potion[]): void {
+    static saveInventory(inventory: PotionQuantity): void {
         const serializedInventory = JSON.stringify(inventory);
 
         localStorage.setItem('inventory', serializedInventory);
     }
 
-    static loadInventory(): Potion[] {
+    static loadInventory(): PotionQuantity {
         const serializedInventory = localStorage.getItem('inventory');
         
         if (serializedInventory) {
             return JSON.parse(serializedInventory);
         } else {
-            return [];
+            return {};
         }
     }
 
