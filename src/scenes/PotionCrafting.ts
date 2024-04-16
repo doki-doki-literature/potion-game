@@ -107,7 +107,7 @@ export class CraftScene extends Phaser.Scene {
                     // Attempt to craft potion
                     const result = this.tryCraft(ingredientIds[0], ingredientIds[1]);
                     if (result.isValid) {
-                        console.log('Craft successful! Potion ID:', result.potionId);
+                        console.log('Craft successful! Potion ID:', result.potionId, 'Potion Name', result.name);
 
                         resultText.setText("Alchemy Successful!");
                         const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId)!;
@@ -127,13 +127,20 @@ export class CraftScene extends Phaser.Scene {
                         }
 
                         // Add white text on top of the overlay
-                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+
+                        //Temporarily removed potion discovery to check potion names
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
+                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+
                         text1.setOrigin(0.5);
                         text1.setInteractive();
                         text1.setDepth(4);
                         text1.setWordWrapWidth(300);
 
-                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
+                        //Used effect description for text2
+                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.effectDescription, { color: '#ffffff' });
+
+                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
                         text2.setOrigin(0.5);
                         text2.setInteractive();
                         text2.setDepth(4);
@@ -169,7 +176,7 @@ export class CraftScene extends Phaser.Scene {
             });
     }
 
-    tryCraft(ingredientId1: number, ingredientId2: number): { isValid: boolean, potionId?: number } {
+    tryCraft(ingredientId1: number, ingredientId2: number): { isValid: boolean, potionId?: number, name?: string } {
         this.selectedItem1Image.destroy();
         this.selectedItem2Image.destroy();
         if (this.selectedIngredients.length > 2) {
@@ -186,7 +193,7 @@ export class CraftScene extends Phaser.Scene {
 
         if (matchingPotion) {
             this.selectedIngredients = [];
-            return { isValid: true, potionId: matchingPotion.potionId };
+            return { isValid: true, potionId: matchingPotion.potionId, name: matchingPotion.name };
         } else {
             this.selectedIngredients = [];
             return { isValid: false };
