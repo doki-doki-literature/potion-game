@@ -134,8 +134,8 @@
     "potionId": 14,
     "effectDescription": "Grants super stink!",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 2,
-    "ingredientId2": 5,
+    "ingredientId1": 3,
+    "ingredientId2": 9,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -144,7 +144,7 @@
     "potionId": 15,
     "effectDescription": "Turns consumer into a worm! So they can test their boyfriend's love for them!",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
+    "ingredientId1": 8,
     "ingredientId2": 9,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
@@ -155,7 +155,7 @@
     "effectDescription": "Grants super farts.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
     "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId2": 3,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -165,7 +165,7 @@
     "effectDescription": "Grants the power to leave stains wherever you sit.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
     "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId2": 6,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -174,8 +174,8 @@
     "potionId": 18,
     "effectDescription": "Grants the power of having fingers glow like glowsticks by cracking knuckles.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 3,
+    "ingredientId2": 7,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -184,8 +184,8 @@
     "potionId": 19,
     "effectDescription": "Cure for all",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 4,
+    "ingredientId2": 8,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -195,7 +195,7 @@
     "effectDescription": "Grants powers to summon earthquakes.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
     "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId2": 10,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -204,8 +204,8 @@
     "potionId": 21,
     "effectDescription": "Grants powers to summon insects…but not to control them.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 5,
+    "ingredientId2": 7,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -214,8 +214,8 @@
     "potionId": 22,
     "effectDescription": "Grants power to summon Plug!",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 8,
+    "ingredientId2": 10,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -224,8 +224,8 @@
     "potionId": 23,
     "effectDescription": "Grants power to summon a sandstorm.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 6,
+    "ingredientId2": 7,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -234,8 +234,8 @@
     "potionId": 24,
     "effectDescription": "Grants Naruto powers.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 4,
+    "ingredientId2": 5,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -244,8 +244,8 @@
     "potionId": 25,
     "effectDescription": "Expands the vocal range of the singer including whistle tones, but does not grant amazing singing ability. Vocal lessons sold separately.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 7,
+    "ingredientId2": 10,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -254,8 +254,8 @@
     "potionId": 26,
     "effectDescription": "Grants super focus powers.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 2,
+    "ingredientId2": 6,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -264,8 +264,8 @@
     "potionId": 27,
     "effectDescription": "Turns the consumer into a super buff and handsome person.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 5,
+    "ingredientId2": 10,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -274,7 +274,7 @@
     "potionId": 28,
     "effectDescription": "Grants power to remove a song stuck in the consumer's head with another song that will be stuck in their head.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
+    "ingredientId1": 7,
     "ingredientId2": 9,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
@@ -285,7 +285,7 @@
     "effectDescription": "Grants powers to control the elements.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
     "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId2": 7,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
@@ -294,8 +294,8 @@
     "potionId": 30,
     "effectDescription": "Grants power to summon a ball of light…The potion to control the said ball of light is sold separately.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
-    "ingredientId1": 1,
-    "ingredientId2": 9,
+    "ingredientId1": 2,
+    "ingredientId2": 3,
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   }
