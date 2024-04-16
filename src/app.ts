@@ -10,14 +10,14 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     antialias: false,
   },
   type: Phaser.AUTO,
-  scene: [scenes.MainTitleScene, scenes.CabinScene, scenes.CraftScene, scenes.ArchiveScene],
+  scene: [scenes.MainTitleScene, scenes.CabinScene, scenes.CraftScene, scenes.ArchiveScene, scenes.QuestBillboardScene],
   scale: {
     width: CANVAS_WIDTH,
     height: CANVAS_HEIGHT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
   },
   parent: "game",
-  backgroundColor: "#873e23",
+  backgroundColor: "#000000",
 };
 
 export const game = new Phaser.Game(gameConfig);

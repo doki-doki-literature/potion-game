@@ -41,9 +41,22 @@ export class CraftScene extends Phaser.Scene {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');
+        // Load the background image asset
+        this.load.image('background', 'assets/image/drawings/cabin-draft.png');
     }
 
     create() {
+        // Add the background image to the scene
+        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0);
+
+        // Set the background image to cover the entire game canvas
+        backgroundImage.setDepth(-3);
+        backgroundImage.setAlpha(.2);
+        backgroundImage.displayWidth = this.game.canvas.width;
+        backgroundImage.displayHeight = this.game.canvas.height;
+
+        const ingredientsContainer = this.add.rectangle(25, 75, 750, 500, 0xe39d2d, 1).setDepth(-1).setOrigin(0, 0);
+
         // Process loaded data
         this.potionManager.processData();
         let ingredientsData = this.potionManager.ingredients;
@@ -56,7 +69,10 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a back button
         const backButton = this.add.text(20, 50, "Back to Cabin").setInteractive();
-        backButton.on("pointerdown", () => this.scene.start("Cabin"));
+        backButton.on("pointerdown", () => {
+            this.selectedIngredients = [];
+            return this.scene.start("Cabin");
+        });
 
         // Set pointer out event to hide ingredient description text
         this.input.on('pointerout', () => {
@@ -78,15 +94,15 @@ export class CraftScene extends Phaser.Scene {
         this.totalPages = Math.ceil(ingredientsData.length / this.ingredientsPerPage);
 
         // Create pagination buttons
-        const prevButton = this.add.text(50, 240, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
-            this.currentPage = Phaser.Math.Clamp(this.currentPage - 1, 0, this.totalPages - 1);
-            this.updatePage(ingredientsData);
-        });
+        // const prevButton = this.add.text(50, 240, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+        //     this.currentPage = Phaser.Math.Clamp(this.currentPage - 1, 0, this.totalPages - 1);
+        //     this.updatePage(ingredientsData);
+        // });
 
-        const nextButton = this.add.text(50, 270, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
-            this.currentPage = Phaser.Math.Clamp(this.currentPage + 1, 0, this.totalPages - 1);
-            this.updatePage(ingredientsData);
-        });
+        // const nextButton = this.add.text(50, 270, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+        //     this.currentPage = Phaser.Math.Clamp(this.currentPage + 1, 0, this.totalPages - 1);
+        //     this.updatePage(ingredientsData);
+        // });
 
         // Initialize current page
         this.updatePage(ingredientsData);
@@ -97,7 +113,7 @@ export class CraftScene extends Phaser.Scene {
         });
 
         // Create craft button
-        const craftButton = this.add.text(630, 200, 'Craft Potion', { color: '#ffffff', backgroundColor: '#0000ff', padding: { x: 10, y: 5 } })
+        const craftButton = this.add.text(630, 200, 'Craft Potion', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 if (this.selectedIngredients.length === 2) {
@@ -108,8 +124,6 @@ export class CraftScene extends Phaser.Scene {
                     const result = this.tryCraft(ingredientIds[0], ingredientIds[1]);
                     if (result.isValid) {
                         console.log('Craft successful! Potion ID:', result.potionId, 'Potion Name', result.name);
-
-                        resultText.setText("Alchemy Successful!");
                         const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId)!;
                         let discoveredPotions = SaveManager.loadPotionLog();
                         let inventory = SaveManager.loadInventory();
@@ -152,7 +166,7 @@ export class CraftScene extends Phaser.Scene {
                         potionImage.setInteractive();
                         potionImage.setScale(10, 10);
                         // Create a grey transparent rectangle covering the entire screen
-                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.5);
+                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
                         overlay.setOrigin(0);
                         overlay.setInteractive();
                         overlay.setDepth(3);
@@ -163,7 +177,42 @@ export class CraftScene extends Phaser.Scene {
                             potionImage.destroy();
                         });
                     } else {
-                        resultText.setText("Alchemy failed");
+                        // Add white text on top of the overlay
+
+                        //Temporarily removed potion discovery to check potion names
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "Alchemy failed! :(", { color: '#ffffff' });
+                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+
+                        text1.setOrigin(0.5);
+                        text1.setInteractive();
+                        text1.setDepth(4);
+                        text1.setWordWrapWidth(300);
+
+                        //Used effect description for text2
+                        const text2 = this.add.text(this.cameras.main.width / 2, 350, "You have crafted a mistake! It happens!", { color: '#ffffff' });
+
+                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
+                        text2.setOrigin(0.5);
+                        text2.setInteractive();
+                        text2.setDepth(4);
+                        text2.setWordWrapWidth(300);
+
+                        const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion1");
+                        potionImage.setOrigin(0.5);
+                        potionImage.setDepth(4);
+                        potionImage.setInteractive();
+                        potionImage.setScale(10, 10);
+                        // Create a grey transparent rectangle covering the entire screen
+                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
+                        overlay.setOrigin(0);
+                        overlay.setInteractive();
+                        overlay.setDepth(3);
+                        overlay.on("pointerdown", () => { 
+                            overlay.destroy();
+                            text1.destroy();
+                            text2.destroy();
+                            potionImage.destroy();
+                        });
                         visualDescriptionText.setText("");
                         console.log('Craft failed. No valid potion found.');
                     }
@@ -206,7 +255,7 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a new container for ingredients on the current page
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
-        const startX = 160;
+        const startX = 120;
         const spacingX = 90;
 
         // Calculate start and end index for current page
@@ -224,10 +273,11 @@ export class CraftScene extends Phaser.Scene {
             }
 
             let originalX = startX + column * spacingX;
-            let originalY = 200 + row * 40;
+            let originalY = 250 + row * 80;
+            const ingredientContainer = this.add.rectangle(originalX, originalY, 64, 64, 0x964B00, 1).setDepth(-1);
 
             const ingredient = ingredientsData[i];
-            let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`);
+            let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
 
             ingredientImage.setData('ingredientId', ingredient.ingredientId);
             ingredientImage.setInteractive();
@@ -249,9 +299,9 @@ export class CraftScene extends Phaser.Scene {
                 const ingredientId = ingredientImage.getData('ingredientId');
                 if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
                     if (this.selectedIngredients.length == 1) {
-                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
+                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
                     } else {
-                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x - 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`);
+                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x - 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
                     }
 
                     // Add the ingredient to the selected ingredients
