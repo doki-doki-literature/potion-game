@@ -12,15 +12,17 @@ export class CabinScene extends Phaser.Scene {
     }
 
     preload() {
+        this.load.image('cabin', 'assets/image/drawings/cabin-draft.png');
         this.load.image('cauldron', 'assets/image/drawings/cauldron.png');
         this.load.image('book', 'assets/image/drawings/book.png');
     }
 
     create() {
-        const cauldronImage = this.add.image(400, 500, 'cauldron').setScale(.5, .5).setInteractive();
+        const cabinImage = this.add.image(400, 300, 'cabin').setScale(0.7, .84);
+        const cauldronImage = this.add.image(700, 425, 'cauldron').setScale(.65, .65).setInteractive();
         cauldronImage.on("pointerdown", () => this.scene.start("Craft"));
 
-        const bookImage = this.add.image(300, 300, "book").setInteractive();
+        const bookImage = this.add.image(325, 275, "book").setScale(.8, .8).setInteractive();
         bookImage.on("pointerdown", () => this.scene.start("Archive"));
     }
 }
