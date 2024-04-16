@@ -1,8 +1,8 @@
 [
     {
-      "name": "Elixir of Strength",
+      "name": "Elixir of Hypertrichosis",
       "potionId": 1,
-      "effectDescription": "Grants temporary increase in physical strength.",
+      "effectDescription": "Grants the consumer a full beard.",
       "description": "Brewed with Dragon Scale and Mandrake Root, this elixir enhances one's physical prowess.",
       "ingredientId1": 1,
       "ingredientId2": 2,
@@ -10,9 +10,9 @@
       "visualDescription": "A shimmering golden liquid swirling with sparks of energy."
     },
     {
-      "name": "Phoenix Rejuvenation Potion",
+      "name": "Isekai",
       "potionId": 2,
-      "effectDescription": "Restores health and vitality, reviving the drinker from near death.",
+      "effectDescription": "Teleports into a fictional world, albeit randomly. Return Potion is sold separately.",
       "description": "Crafted from Phoenix Feather and Wolfsbane, this potion restores life force and vitality.",
       "ingredientId1": 3,
       "ingredientId2": 5,
@@ -20,9 +20,9 @@
       "visualDescription": "A radiant red liquid with wisps of golden light dancing within."
     },
     {
-      "name": "Transmutation Tonic",
+      "name": "Mimicry",
       "potionId": 3,
-      "effectDescription": "Allows the drinker to temporarily transform into another creature or object.",
+      "effectDescription": "Allows consumer to mimic sounds of other creatures, humans, animals.",
       "description": "Concocted from Eye of Newt and Fairy Dust, this tonic grants the ability to shapeshift temporarily.",
       "ingredientId1": 4,
       "ingredientId2": 6,
@@ -30,9 +30,9 @@
       "visualDescription": "A swirling potion with iridescent hues, shimmering like a rainbow."
     },
     {
-      "name": "Potion of Purification",
+      "name": "Begone Babel",
       "potionId": 4,
-      "effectDescription": "Cleanses the body and soul of impurities, granting clarity of mind.",
+      "effectDescription": "Allows consumer to speak with animals.",
       "description": "Blessed with Unicorn Horn and Mermaid Scale, this potion purifies both body and spirit.",
       "ingredientId1": 7,
       "ingredientId2": 8,
@@ -40,9 +40,9 @@
       "visualDescription": "A crystal-clear potion with sparkling particles, emitting a soothing aura."
     },
     {
-      "name": "Nightshade Brew",
+      "name": "Tom's Potion",
       "potionId": 5,
-      "effectDescription": "Induces a deep slumber or a trance-like state, enhancing dreams and visions.",
+      "effectDescription": "Grants ability to become invisible for a certain amount of time.",
       "description": "Brewed with Wolfsbane and Goblin Earwax, this concoction induces a profound state of dreaming.",
       "ingredientId1": 5,
       "ingredientId2": 9,
@@ -50,9 +50,9 @@
       "visualDescription": "A deep purple potion with wisps of mist rising from its surface."
     },
     {
-      "name": "Venomous Vial",
+      "name": "Potion of Time Travel",
       "potionId": 6,
-      "effectDescription": "Inflicts a venomous bite or wound upon the drinker's enemies.",
+      "effectDescription": "Grants ability to time travel.",
       "description": "Made from Basilisk Venom and Dragon Scale, this vial contains a potent poison for use in battle.",
       "ingredientId1": 10,
       "ingredientId2": 2,
@@ -60,9 +60,9 @@
       "visualDescription": "A dark green liquid swirling ominously, emitting a faint hissing sound."
     },
     {
-        "name": "Fizzing Fiasco",
+        "name": "Potion of Flight",
         "potionId": 7,
-        "effectDescription": "Causes uncontrollable burping and fizzing.",
+        "effectDescription": "Grants ability to fly.",
         "description": "Combining Goblin Earwax and Fairy Dust creates this chaotic concoction, resulting in unexpected fizzy reactions.",
         "ingredientId1": 9,
         "ingredientId2": 6,
@@ -70,9 +70,9 @@
         "visualDescription": "A bubbling potion with colorful sparks popping out."
     },
     {
-        "name": "Giggle Juice",
+        "name": "Matter",
         "potionId": 8,
-        "effectDescription": "Induces uncontrollable laughter.",
+        "effectDescription": "Grants power to create or destroy matter.",
         "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir, causing fits of giggles and laughter.",
         "ingredientId1": 2,
         "ingredientId2": 8,
@@ -80,9 +80,9 @@
         "visualDescription": "A sparkling potion with vibrant hues, emanating a playful aura."
     },
     {
-        "name": "Mystic Mist",
+        "name": "Boinkie Toinkie",
         "potionId": 9,
-        "effectDescription": "Envelops the drinker in a mystical mist, granting invisibility.",
+        "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
         "description": "Crafted from Basilisk Venom and Fairy Dust, this mist shrouds the drinker in invisibility.",
         "ingredientId1": 10,
         "ingredientId2": 6,
@@ -90,14 +90,214 @@
         "visualDescription": "A shimmering mist with faint traces of magical energy."
     },
     {
-        "name": "Thunderous Tonic",
+        "name": "Patella Potion",
         "potionId": 10,
-        "effectDescription": "Creates a loud thunderclap, startling nearby creatures.",
+        "effectDescription": "Restores health of a wounded or injured knee, only if there is a wounded or injured knee. Otherwise, this is just a regular tea.",
         "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
         "ingredientId1": 1,
         "ingredientId2": 9,
         "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
         "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
-    }
+    },
+    {
+      "name": "Alopecic Panacea",
+      "potionId": 11,
+      "effectDescription": "Grants instant hair loss. (The potion to cure baldness is currently out of stock.)",
+      "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+      "ingredientId1": 1,
+      "ingredientId2": 9,
+      "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+      "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Best Friend's Tonic",
+    "potionId": 12,
+    "effectDescription": "Grants powers to see the world in dog vision. The potion to revert back vision is sold separately.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 4,
+    "ingredientId2": 10,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Plant Whisperer",
+    "potionId": 13,
+    "effectDescription": "Allows consumer to speak with plants.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 2,
+    "ingredientId2": 5,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Rafflesia Pheromones",
+    "potionId": 14,
+    "effectDescription": "Grants super stink!",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 2,
+    "ingredientId2": 5,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Vermes' Vial",
+    "potionId": 15,
+    "effectDescription": "Turns consumer into a worm! So they can test their boyfriend's love for them!",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Elixir of Strong Flatulence",
+    "potionId": 16,
+    "effectDescription": "Grants super farts.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Snail's Trail",
+    "potionId": 17,
+    "effectDescription": "Grants the power to leave stains wherever you sit.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Solar Hands",
+    "potionId": 18,
+    "effectDescription": "Grants the power of having fingers glow like glowsticks by cracking knuckles.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Panacea",
+    "potionId": 19,
+    "effectDescription": "Cure for all",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Yo Mama",
+    "potionId": 20,
+    "effectDescription": "Grants powers to summon earthquakes.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Mezuru's Tea",
+    "potionId": 21,
+    "effectDescription": "Grants powers to summon insects…but not to control them.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Jim Smiley's Brew",
+    "potionId": 22,
+    "effectDescription": "Grants power to summon Plug!",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "The Rude",
+    "potionId": 23,
+    "effectDescription": "Grants power to summon a sandstorm.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Ninja Matcha",
+    "potionId": 24,
+    "effectDescription": "Grants Naruto powers.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Ginger Tea",
+    "potionId": 25,
+    "effectDescription": "Expands the vocal range of the singer including whistle tones, but does not grant amazing singing ability. Vocal lessons sold separately.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Addy",
+    "potionId": 26,
+    "effectDescription": "Grants super focus powers.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Jojo Juice",
+    "potionId": 27,
+    "effectDescription": "Turns the consumer into a super buff and handsome person.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Earworm's Cure",
+    "potionId": 28,
+    "effectDescription": "Grants power to remove a song stuck in the consumer's head with another song that will be stuck in their head.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "Elemental Vial",
+    "potionId": 29,
+    "effectDescription": "Grants powers to control the elements.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  },
+  {
+    "name": "St. Elmo's Tonic",
+    "potionId": 30,
+    "effectDescription": "Grants power to summon a ball of light…The potion to control the said ball of light is sold separately.",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic, generating a deafening thunderclap.",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+  }
   ]
   
