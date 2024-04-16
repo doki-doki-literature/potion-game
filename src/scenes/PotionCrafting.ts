@@ -32,8 +32,10 @@ export class CraftScene extends Phaser.Scene {
         // Load potion and ingredient JSON data
         this.potionManager.loadPotions('src/data/recipes.json');
         this.potionManager.loadIngredients('src/data/ingredients.json');
+
         for (let i = 1; i < 11; i++) {
             this.load.image(`ingredient${i}`, `assets/image/ingredient${i}.png`);
+            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');
     }
@@ -120,10 +122,36 @@ export class CraftScene extends Phaser.Scene {
                         } else {
                             name = "???";
                         }
-                        const overlayScene = this.scene.get("OverlayScene");
-                        overlayScene.data.set("text1", "You have crafted " + name + " " + matchedPotion.visualDescription);
-                        overlayScene.scene.setVisible(true);
 
+                        // Add white text on top of the overlay
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+                        text1.setOrigin(0.5);
+                        text1.setInteractive();
+                        text1.setDepth(4);
+                        text1.setWordWrapWidth(300);
+
+                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
+                        text2.setOrigin(0.5);
+                        text2.setInteractive();
+                        text2.setDepth(4);
+                        text2.setWordWrapWidth(300);
+
+                        const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion" + matchedPotion.potionId.toString());
+                        potionImage.setOrigin(0.5);
+                        potionImage.setDepth(4);
+                        potionImage.setInteractive();
+                        potionImage.setScale(10, 10);
+                        // Create a grey transparent rectangle covering the entire screen
+                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.5);
+                        overlay.setOrigin(0);
+                        overlay.setInteractive();
+                        overlay.setDepth(3);
+                        overlay.on("pointerdown", () => { 
+                            overlay.destroy();
+                            text1.destroy();
+                            text2.destroy();
+                            potionImage.destroy();
+                        });
                     } else {
                         resultText.setText("Alchemy failed");
                         visualDescriptionText.setText("");
@@ -194,7 +222,7 @@ export class CraftScene extends Phaser.Scene {
             ingredientImage.setData('ingredientId', ingredient.ingredientId);
             ingredientImage.setInteractive();
             this.input.setDraggable(ingredientImage);
-            
+
             // Set drag event for cauldron
             ingredientImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
                 ingredientImage.setX(pointer.x);
