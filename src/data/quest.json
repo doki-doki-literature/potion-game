@@ -4,92 +4,64 @@
       "questGiver" :"Knight",
       "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
       "imageUrl": "",
-      "success": [
-        {
-            "potionId": 1,
-            "story": "Knight was able to breathe fire and complete his quest"
-        },
-        {
-            "potionId": 5,
-            "story": "Knight was able to breathe fire and complete his quest"
-        },
-        {
-            "potionId": 9,
-            "story": "Knight was able to breathe fire and complete his quest"
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
         }
       ],
-      "failure": [
-        {
-            "potionId": 2,
-            "story": "Knight was able to breathe fire and did not complete his quest"
-        },
-        {
-            "potionId": 7,
-            "story": "Knight was able to breathe fire and did not complete his quest"
-        },
-        {
-            "potionId": 9,
-            "story": "Knight was able to breathe fire and did not complete his quest"
-        }
-      ],
-      "defaultFailure": "Default failure message",
+      "defaultMessage": "Default failure message",
       "rewardItems": "trophy",
-      "rewardText": "you received a trophy",
-      "failureText": "You've failed this quest"
+      "rewardText": "you received a trophy"
     },
     {
       "questId": 2,
-      "content": "Dragon Scale",
+      "questGiver" :"Lucy",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
       "imageUrl": "",
-      "success": "A shimmering scale from the mighty dragon. Adds resilience to potions."
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
     },
     {
       "questId": 3,
-      "content": "Phoenix Feather",
+      "questGiver" :"Gianna",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
       "imageUrl": "",
-      "success": "A feather imbued with the essence of rebirth and renewal."
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
     },
     {
       "questId": 4,
-      "content": "Eye of Newt",
+      "questGiver" :"Spencer",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
       "imageUrl": "",
-      "success": "A mystical eye known for its transformative properties."
-    },
-    {
-      "questId": 5,
-      "content": "Wolfsbane",
-      "imageUrl": "",
-      "success": "A rare herb used to enhance potion potency, but handle with caution."
-    },
-    {
-      "questId": 6,
-      "content": "Fairy Dust",
-      "imageUrl": "",
-      "success": "Glimmering powder that adds a touch of enchantment to potions."
-    },
-    {
-      "questId": 7,
-      "content": "Unicorn Horn",
-      "imageUrl": "",
-      "success": "A majestic horn with purifying properties. Highly sought after."
-    },
-    {
-      "questId": 8,
-      "content": "Mermaid Scale",
-      "imageUrl": "",
-      "success": "A shimmering scale from the mystical mermaid. Adds fluidity to potions."
-    },
-    {
-      "questId": 9,
-      "content": "Goblin Earwax",
-      "imageUrl": "",
-      "success": "Unpleasant but potent. Used in certain dark potions."
-    },
-    {
-      "questId": 10,
-      "content": "Basilisk Venom",
-      "imageUrl": "",
-      "success": "A venom so potent it can be deadly. Use with extreme caution."
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
     }
 ]
   
