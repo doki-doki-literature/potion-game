@@ -29,5 +29,8 @@ export class CabinScene extends Phaser.Scene {
 
         const bookImage = this.add.image(325, 275, "book").setScale(.8, .8).setInteractive();
         bookImage.on("pointerdown", () => this.scene.start("Archive"));
+
+        const questImage = this.add.image(325, 150, "book").setScale(.8, .8).setInteractive();
+        questImage.on("pointerdown", () => this.scene.start("Quest"));
     }
 }

@@ -14,6 +14,54 @@
       "defaultMessage": "Default failure message",
       "rewardItems": "trophy",
       "rewardText": "you received a trophy"
+    },
+    {
+      "questId": 2,
+      "questGiver" :"Lucy",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "imageUrl": "",
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
+    },
+    {
+      "questId": 3,
+      "questGiver" :"Gianna",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "imageUrl": "",
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
+    },
+    {
+      "questId": 4,
+      "questGiver" :"Spencer",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "imageUrl": "",
+      "stories": [
+        { 
+          "potionId": 1,
+          "story": "test",
+          "rating": 3
+        }
+      ],
+      "defaultMessage": "Default failure message",
+      "rewardItems": "trophy",
+      "rewardText": "you received a trophy"
     }
 ]
   

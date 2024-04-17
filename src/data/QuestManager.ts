@@ -1,6 +1,5 @@
 import { DataManager } from "./DataManager";
 import { Quest } from "../objects/Quest";
-import { PotionQuest } from "../objects/PotionQuest";
 import * as Phaser from "phaser";
 
 export class QuestManager extends DataManager {
@@ -9,13 +8,11 @@ export class QuestManager extends DataManager {
 
     constructor(scene: Phaser.Scene) {
         super(scene);
-        this.activeQuestIds = [];
         this.quests = [];
     }
 
     loadQuests() {
         const data = super.loadJSON("quests", "src/data/quest.json");
-
     }
 
     processData() {

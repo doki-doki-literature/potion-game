@@ -1,4 +1,5 @@
 import { PotionQuantity } from "../objects/PotionQuantity";
+import { QuestRating } from "../objects/QuestRating";
 
 export class SaveManager {
     static saveInventory(inventory: PotionQuantity): void {
@@ -28,6 +29,38 @@ export class SaveManager {
         
         if (serializedPotionLog) {
             return JSON.parse(serializedPotionLog);
+        } else {
+            return [];
+        }
+    }
+
+    static loadQuestProgress(): Array<QuestRating> {
+        const serializedQuests = localStorage.getItem('questProgress');
+        
+        if (serializedQuests) {
+            return JSON.parse(serializedQuests);
+        } else {
+            return [];
+        }
+    }
+
+    static saveProgress(questProgress: Array<QuestRating>) {
+        const serializedQuests = JSON.stringify(questProgress);
+
+        localStorage.setItem('questProgress', serializedQuests);
+    }
+
+    static saveActiveQuests(activeQuests: Array<number>) {
+        const serializedActiveQuests = JSON.stringify(activeQuests);
+
+        localStorage.setItem('activeQuests', serializedActiveQuests);
+    }
+
+    static loadActiveQuests(): Array<number> {
+        const serializedActiveQuests = localStorage.getItem('activeQuests');
+        
+        if (serializedActiveQuests) {
+            return JSON.parse(serializedActiveQuests);
         } else {
             return [];
         }
