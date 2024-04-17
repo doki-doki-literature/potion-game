@@ -30,8 +30,8 @@ export class CraftScene extends Phaser.Scene {
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
 
         // Load potion and ingredient JSON data
-        this.potionManager.loadPotions('src/data/recipes.json');
-        this.potionManager.loadIngredients('src/data/ingredients.json');
+        this.potionManager.loadPotions();
+        this.potionManager.loadIngredients();
 
         for (let i = 1; i < 11; i++) {
             this.load.image(`ingredient${i}`, `assets/image/ingredient${i}.png`);

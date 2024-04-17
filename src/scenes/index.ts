@@ -3,6 +3,7 @@ import { MainTitleScene } from "./MainTitle";
 import { CraftScene } from "./PotionCrafting";
 import { ArchiveScene } from "./ArchiveBook";
 import { QuestBillboardScene } from "./QuestBillboard";
+import { QuestGiver } from "./QuestGiver";
 
 
 export default {
@@ -10,5 +11,6 @@ export default {
     MainTitleScene,
     CraftScene,
     ArchiveScene,
-    QuestBillboardScene
+    QuestBillboardScene,
+    QuestGiver
 }

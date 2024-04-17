@@ -12,12 +12,12 @@ export class PotionManager extends DataManager {
         this.ingredients = [];
     }
 
-    loadPotions(filePath: string) {
-        super.loadJSON('potions', filePath);
+    loadPotions() {
+        super.loadJSON('potions', 'src/data/recipes.json');
     }
 
-    loadIngredients(filePath: string) {
-        super.loadJSON('ingredients', filePath);
+    loadIngredients() {
+        super.loadJSON('ingredients', 'src/data/ingredients.json');
     }
 
     processData() {

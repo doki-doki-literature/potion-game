@@ -1,5 +1,6 @@
 import { DataManager } from "./DataManager";
 import { Quest } from "../objects/Quest";
+import { SaveManager } from "./SaveManager";
 import * as Phaser from "phaser";
 
 export class QuestManager extends DataManager {
@@ -9,6 +10,7 @@ export class QuestManager extends DataManager {
     constructor(scene: Phaser.Scene) {
         super(scene);
         this.quests = [];
+        this.activeQuestIds = [];
     }
 
     loadQuests() {
@@ -22,6 +24,22 @@ export class QuestManager extends DataManager {
             this.quests = questData.map((data: any) => new Quest(data));
         } else {
             console.error('Failed to load quest data.');
+        }
+    }
+
+    addActiveQuest(questId: number) {
+        let activeQuests = SaveManager.loadActiveQuests();
+        activeQuests.push(questId);
+        SaveManager.saveActiveQuests(activeQuests);
+        this.activeQuestIds = activeQuests;
+    }
+
+    processActiveQuests() {
+        let activeQuestLength = SaveManager.loadActiveQuests().length;
+        let inactiveQuests = this.quests.filter((quest) => !this.activeQuestIds.includes(quest.questId));
+        for (let i = 1; i <= 3 - activeQuestLength; i++) {
+            let randomQuest = inactiveQuests.splice(Math.floor((Math.random() * inactiveQuests.length)), 1)[0];
+            this.addActiveQuest(randomQuest.questId);
         }
     }
 }

@@ -26,15 +26,12 @@ export class CabinScene extends Phaser.Scene {
         // crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
 
         const questBoardImage = this.add.image(350, 100, 'questBoard').setScale(0.7, 0.7).setInteractive();
-        // questBoardImage.on("pointerdown", () => this.scene.start("QuestBillboard"));
+        questBoardImage.on("pointerdown", () => this.scene.start("Quest"));
 
         const cauldronImage = this.add.image(700, 425, 'cauldron').setScale(.65, .65).setInteractive();
         cauldronImage.on("pointerdown", () => this.scene.start("Craft"));
 
         const bookImage = this.add.image(325, 275, "book").setScale(.8, .8).setInteractive();
         bookImage.on("pointerdown", () => this.scene.start("Archive"));
-
-        const questImage = this.add.image(325, 150, "book").setScale(.8, .8).setInteractive();
-        questImage.on("pointerdown", () => this.scene.start("Quest"));
     }
 }
