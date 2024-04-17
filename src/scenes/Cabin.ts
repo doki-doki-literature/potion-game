@@ -16,6 +16,7 @@ export class CabinScene extends Phaser.Scene {
         this.load.image('cauldron', 'assets/image/drawings/cauldron.png');
         this.load.image('book', 'assets/image/drawings/book.png');
         this.load.image('crystalBall', 'assets/image/drawings/crystal-ball.png');
+        this.load.image('questBoard', 'assets/image/drawings/questboard.png');
     }
 
     create() {
@@ -23,6 +24,9 @@ export class CabinScene extends Phaser.Scene {
 
         const crystalBallImage = this.add.image(700, 150, 'crystalBall').setScale(0.7,0.7).setInteractive();
         // crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
+
+        const questBoardImage = this.add.image(350, 100, 'questBoard').setScale(0.7, 0.7).setInteractive();
+        // questBoardImage.on("pointerdown", () => this.scene.start("QuestBillboard"));
 
         const cauldronImage = this.add.image(700, 425, 'cauldron').setScale(.65, .65).setInteractive();
         cauldronImage.on("pointerdown", () => this.scene.start("Craft"));
