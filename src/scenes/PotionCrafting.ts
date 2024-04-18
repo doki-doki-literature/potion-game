@@ -58,7 +58,10 @@ export class CraftScene extends Phaser.Scene {
         backgroundImage.displayWidth = this.game.canvas.width;
         backgroundImage.displayHeight = this.game.canvas.height;
 
-        const ingredientsContainer = this.add.image(0, 170, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .8);
+        const ingredientsContainer = this.add.image(5, 180, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .6);
+
+        this.add.text(190, 150, "Drag Ingredients");
+        this.add.text(560, 150, "Selected Ingredients");
 
         // Process loaded data
         this.potionManager.processData();
@@ -82,11 +85,14 @@ export class CraftScene extends Phaser.Scene {
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
         // Create a container for the cauldron
-        const cauldronImage = this.add.image(700, 475, 'cauldron').setScale(.5, .5);
+        const cauldronImage = this.add.image(650, 550, 'cauldron').setScale(.5, .5);
 
         // Create a drop zone for the cauldron
-        const dropZoneImage = this.add.image(655, 255, 'selectedIngredients').setScale(.55, .7);
-        this.cauldronDropZone = this.add.zone(700, 400, 100, 100);
+        const dropZoneImage = this.add.image(655, 250, 'selectedIngredients').setScale(.55, .55);
+        this.add.image(600, 250, 'inventoryTile').setScale(.6, .6);
+        this.add.image(710, 250, 'inventoryTile').setScale(.6, .6);
+
+        this.cauldronDropZone = this.add.zone(600, 250, 400, 500);
         this.cauldronDropZone.setDropZone();
 
         // Calculate total pages
@@ -111,8 +117,17 @@ export class CraftScene extends Phaser.Scene {
             this.children.bringToTop(gameObject); // Bring the dragged object to the top
         });
 
+        const clearButton = this.add.image(710, 350, 'clearButton').setScale(.45, .5).setInteractive()
+            .on('pointerdown', () => {
+                this.selectedIngredients = [];
+                this.selectedItem1Image?.destroy();
+                this.selectedItem2Image?.destroy();
+            })
+
+        const clearButtonText = this.add.text(685, 340, "Clear");
+
         // Create craft button
-        const craftButton = this.add.text(630, 200, 'Craft Potion', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
+        const craftButton = this.add.image(600, 350, 'confirmButton').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 if (this.selectedIngredients.length === 2) {
@@ -223,6 +238,7 @@ export class CraftScene extends Phaser.Scene {
                     console.log('Please select two ingredients before crafting a potion.');
                 }
             });
+        const craftButtonText = this.add.text(570, 340, "Create");
     }
 
     tryCraft(ingredientId1: number, ingredientId2: number): { isValid: boolean, potionId?: number, name?: string } {
@@ -255,7 +271,7 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a new container for ingredients on the current page
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
-        const startX = 75;
+        const startX = 80;
         const spacingX = 90;
         const spacingY = 90;
         const startY = 160;
@@ -266,7 +282,7 @@ export class CraftScene extends Phaser.Scene {
         let row = 0;
         let column = 0;
         // Display ingredients for the current page
-        for (let i = startIndex; i < endIndex; i++) {
+        for (let i = startIndex; i < 15; i++) {
             column += 1;
 
             if (i % 5 == 0) {
@@ -276,10 +292,11 @@ export class CraftScene extends Phaser.Scene {
 
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
-            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.625, .625);
+            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.6, .6);
 
             const ingredient = ingredientsData[i];
-            let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2.5, 2.5);
+            if (!!ingredient) {
+                let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2.5, 2.5);
 
             ingredientImage.setData('ingredientId', ingredient.ingredientId);
             ingredientImage.setInteractive();
@@ -301,9 +318,9 @@ export class CraftScene extends Phaser.Scene {
                 const ingredientId = ingredientImage.getData('ingredientId');
                 if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
                     if (this.selectedIngredients.length == 1) {
-                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
+                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
                     } else {
-                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x - 10, this.cauldronDropZone.y - 20, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
+                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
                     }
 
                     // Add the ingredient to the selected ingredients
@@ -326,6 +343,7 @@ export class CraftScene extends Phaser.Scene {
             });
 
             this.ingredientsContainer.add(ingredientImage);
+            }
         }
     }
 }
