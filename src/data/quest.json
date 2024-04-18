@@ -7,7 +7,7 @@
       "stories": [
         {
           "potionId": 1,
-          "story": "The knight proudly consumed the Elixir of Hypertrichosis, growing a magnificent beard. Unfortunately, they charged recklessly into battle, the beard getting tangled in their armor and hindering their attacks.",
+          "story": "The knight proudly consumed the potion, growing a magnificent beard. Unfortunately, they charged recklessly into battle, the beard getting tangled in their armor and hindering their attacks. Word spread of the knight who tripped over his own beard, and soon every barber shop was filled with people asking for a beard trim",
           "rating": 1,
           "reveal": true
         },
@@ -19,15 +19,15 @@
         },
         {
           "potionId": 3,
-          "story": "Begone Babel granted the knight the ability to understand the enemy's battle plans. However, they misinterpreted the information and made crucial tactical mistakes, leading to a swift defeat.",
+          "story": "The knight drank the potion and suddenly he could understand the birds chirping in the forest. They were gossiping about the enemy's battle plans. However, the knight, not being very smart, misinterpreted the information and made crucial tactical mistakes, leading to a swift defeat.",
           "rating": 1,
-          "reveal": false
+          "reveal": true
         },
         {
           "potionId": 4,
           "story": "Potion seller. I went face my demons armed with your strongest potion and instead of facing them, I disappeared. My demons looked past me and trampled on my head.",
           "rating": 1,
-          "reveal": false
+          "reveal": true
         },
         {
           "potionId": 5,
@@ -393,14 +393,130 @@
     },
     {
       "questId": 4,
-      "questGiver" :"Spencer",
-      "content": "My significant other gave me a crocheted pig the other day, but I can't find it! I've looked everywhere, and I think I need a miracle in order to find it now. Can you please give me a super power that will help me find it. My significant other will be so mad to know that I lost it.",
+      "questGiver" :"The worried villager",
+      "content": "My prized possession, a golden locket that's been in my family for generations, has gone missing! I believe a mischievous sprite has taken it and hidden it somewhere in the forest. Please help me find it!",
       "imageUrl": "",
       "stories": [  
-        { 
+        {
           "potionId": 1,
-          "story": "test",
-          "rating": 3
+          "story": "The villager eagerly consumed the strange concoction. They felt a surge of strength coursing through their veins and set off into the forest, determined to find the locket. Their newfound strength allowed them to break through tangled undergrowth and climb trees with ease. Exhausted but determined, they eventually stumbled upon a hidden grove deep within the forest. There, perched on a glowing mushroom, sat the mischievous sprite, fiddling with the golden locket! The villager, empowered by the potion, surprised the sprite and retrieved the locket. Relief washed over them as they clutched their family heirloom.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 2,
+          
+          "story": "The villager, desperate at this point, gulped down the dubious potion.  They attempted to mimic the chirping of a bird, hoping to attract the sprite's attention. Instead, a flock of crows squawked mockingly from a nearby branch. The locket remained hidden.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 3,
+          "story": "The villager clutched at straws and drank the potion. The potion empowered them to understand the whispers of the forest. They heard the rustling of leaves and the chattering of squirrels. One particularly talkative squirrel mentioned a hidden clearing guarded by a riddle. The villager, following the squirrel's cryptic clue, ventured deeper into the forest and eventually found the clearing. There, nestled amongst the ferns, was the golden locket! The villager, grateful to the talkative squirrel, retrieved the locket and emerged from the forest victorious.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 4,
+          "story": "The villager downed the potion, unsure what invisibility would do for their missing locket. They ventured deeper into the forest, hoping to catch the sprite by surprise. They emerged on the other side, invisible but empty-handed. The locket was nowhere to be found.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 5,
+          "story": "The villager drank the potion, the potion granting them the ability to soar high above the trees. From their aerial vantage point, they spotted a glint of gold amongst the trees. The villager swooped down and retrieved the hidden locket from a hollowed-out log. Soaring through the sky, the villager whooped with joy, relieved to have found their missing treasure.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 6,
+          "story": "The villager consumed the potion, the potion granting them the ability to craft materials. They figured, why not? Perhaps a bridge across the stream would help them reach an unexplored area. They ended up with a small, wobbly bridge that led nowhere new. The locket remained missing.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 7,
+          "story": "The villager drank the potion, the potion granting them super jumps. They bounced uncontrollably around the trees, knocking over a few birds' nests in the process. The locket hunt, however, remained unsuccessful.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 8,
+          "story": "The villager took a swig of the potion, expecting a mighty thunderclap to scare the sprite out of hiding. Instead, a tiny puff of smoke emerged from the potion bottle. The forest remained silent, and the locket remained missing.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 9,
+          "story": "The villager drank the potion, hoping to commune with the forest flowers. They learned a fascinating fact about the history of photosynthesis, but the locket was nowhere to be found.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 10,
+          "story": "The villager downed the potion, hoping a strong gust might blow the locket out of its hiding place. They let out a mighty sneeze, only to succeed in blowing their hair into a frenzy. The locket remained stubbornly hidden. Discouraged, the villager slumped against a tree, the useless potion bottle clattering to the ground. As they sat there, a glint of gold caught their eye. Nestled amongst the roots of the tree was the very locket they'd been searching for! Relief washed over them as they realized sometimes the answer is right under your nose, with no magical potions required.",
+          "rating": 2,
+          "reveal": true
+        },
+        {
+          "potionId": 11,
+          "story": "The villager downed the potion. A mischievous glint entered their eye as they realized the potential of this peculiar concoction. They began weaving a path through the forest, leaving behind a vibrant trail of shimmering blue. Since they were leaving behind a trail, they were no longer getting lost. Finally, they spotted it: a single, perfect blue circle amidst a cluster of ordinary green stains.  Digging beneath the circle, the villager unearthed the golden locket, gleaming in the dappled sunlight. The potion, while unexpected, had proven its worth",
+          "rating": 2,
+          "reveal": true
+        },
+        {
+          "potionId": 12,
+          "story": "The villager, ever hopeful, downed the next potion. They cracked their knuckles and their fingers illuminated the path ahead.  However, their knuckles emitted a faint, sickly green glow that did little to dispel the forest's shadows.  The startled forest creatures, however, seemed to find the glowing knuckles highly offensive.  A barrage of pinecones rained down upon the villager, forcing them to flee back to the village with nothing but bruised shins and a throbbing headache.",
+          "rating": 2,
+          "reveal": true
+        },
+        {
+          "potionId": 13,
+          "story": "With a deep breath, the villager drank the dubious concoction. The ground trembled slightly, but the locket remained frustratingly hidden. Discouraged, the villager slumped against a tree, wondering if any of these potions would actually be useful.",
+          "rating": 2,
+          "reveal": true
+        },
+        {
+          "potionId": 14,
+          "story": "The villager, desperate at this point, downed the potion.  A sandstorm to magically appeared and scoured the forest floor. Staring at the sand dunes that had now formed, the villager was even more hopeless.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 15,
+          "story": "The villager zipped around from place to place, but could not find anything.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 16,
+          "story": "The villager, with a hint of skepticism, drank the potion.  They cleared their throat and belted out a high-pitched note, hoping to impress any nearby sprites with their newfound vocal range.  A flock of startled birds scattered from the trees, but other than that, there was no reaction. The villager's singing voice remained as average as ever.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 17,
+          "story": "The villager grasped the vial.  They uncorked it and downed the shimmering liquid with a determined gulp.  Instantly, their mind sharpened.  Details of the forest floor, once blurred, became clear.  They noticed faint animal tracks leading deeper into the woods and subtle changes in the air current, hinting at a hidden entrance.  Following these clues with laser focus, the villager discovered a concealed passage beneath a gnarled tree root.  Crawling through the passage, they emerged into a hidden cavern where the mischievous sprite frolicked, the golden locket dangling from its tiny claw.  Empowered by the potion, the villager devised a clever plan to retrieve the locket, outsmarted the sprite, and emerged victorious.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 18,
+          "story": "With a hint of trepidation, the villager uncorked the potion. They took a swig, bracing themselves for the change.  A surge of energy coursed through their veins, and their muscles bulged beneath their clothes.  They felt stronger, faster, and more confident than ever before.  Venturing deeper into the forest, the villager effortlessly scaled trees, leaped over streams, and navigated dense undergrowth with newfound ease.  They eventually tracked down the sprite, who was no match for the villager's newfound strength.  With a gentle nudge, the sprite surrendered the locket, impressed by the villager's manliness.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 19,
+          "story": "The villager felt in-tune with the element of air.  With a whispered command, a gentle breeze swept through the forest, carrying with it the faint sound of tinkling laughter.  Following the sound, the villager located the sprite perched on a high branch, the locket clutched in its tiny hand.  Focusing on the element of wind once more, the villager summoned a gentle gust that lifted them effortlessly into the air.  They retrieved the locket from the surprised sprite and safely descended back to the forest floor.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 20,
+          "story": "They uncorked the vial and downed the potion.  Raising their hand towards the sky, they concentrated, picturing a warm, glowing orb.  A ball of light materialized above their palm, illuminating the forest path with an ethereal glow.  The light revealed a series of cryptic symbols carved into the bark of a nearby tree.  Remembering a childhood fascination with ancient languages, the villager deciphered the symbols, leading them to a hidden hollow within the tree trunk.  Inside, nestled amongst soft moss, lay the missing locket.",
+          "rating": 3,
+          "reveal": true
         }
       ],
       "defaultMessage": "Default failure message",
