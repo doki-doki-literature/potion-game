@@ -1,4 +1,5 @@
 import * as Phaser from "phaser";
+import { SceneUtils } from "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -6,12 +7,18 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     key: "Inventory",
 };
 
-export class MainTitleScene extends Phaser.Scene {
+export class InventoryScene extends Phaser.Scene {
     constructor() {
         super(sceneConfig);
     }
 
+    preload() {
+        SceneUtils.loadUi(this);
+    }
+
     create() {
-        this.add.text(450, 300, "Inventory");
+        SceneUtils.addNavigation(this);
+
+        this.add.text(400, 300, "Inventory").setScale(.08, .08).setDepth(-1);
     }
 }

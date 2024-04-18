@@ -23,7 +23,7 @@ export class CabinScene extends Phaser.Scene {
         const cabinImage = this.add.image(400, 300, 'cabin').setScale(0.7, .84);
 
         const crystalBallImage = this.add.image(700, 150, 'crystalBall').setScale(0.7,0.7).setInteractive();
-        // crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
+        crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
 
         const questBoardImage = this.add.image(350, 100, 'questBoard').setScale(0.7, 0.7).setInteractive();
         questBoardImage.on("pointerdown", () => this.scene.start("Quest"));

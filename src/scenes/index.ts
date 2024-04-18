@@ -4,7 +4,8 @@ import { CraftScene } from "./PotionCrafting";
 import { ArchiveScene } from "./ArchiveBook";
 import { QuestBillboardScene } from "./QuestBillboard";
 import { QuestGiver } from "./QuestGiver";
-
+import { GossipScene } from "./Gossip";
+import { InventoryScene } from "./Inventory";
 
 export default {
     CabinScene,
@@ -12,5 +13,7 @@ export default {
     CraftScene,
     ArchiveScene,
     QuestBillboardScene,
-    QuestGiver
+    QuestGiver,
+    GossipScene,
+    InventoryScene
 }

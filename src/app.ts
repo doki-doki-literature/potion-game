@@ -10,7 +10,16 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     antialias: false,
   },
   type: Phaser.AUTO,
-  scene: [scenes.MainTitleScene, scenes.CabinScene, scenes.CraftScene, scenes.ArchiveScene, scenes.QuestBillboardScene, scenes.QuestGiver],
+  scene: [
+    scenes.MainTitleScene,
+    scenes.CabinScene,
+    scenes.CraftScene,
+    scenes.ArchiveScene,
+    scenes.QuestBillboardScene,
+    scenes.QuestGiver,
+    scenes.GossipScene,
+    scenes.InventoryScene
+  ],
   scale: {
     width: CANVAS_WIDTH,
     height: CANVAS_HEIGHT,
