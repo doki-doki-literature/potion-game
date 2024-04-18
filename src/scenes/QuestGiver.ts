@@ -49,7 +49,7 @@ export class QuestGiver extends Phaser.Scene {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
 
-        this.load.image('questGiver', 'assets/image/questgiver1.png');
+        this.load.image('questGiver', 'assets/image/drawings/townspeople1.png');
 
         this.potionManager = new PotionManager(this);
         this.potionManager.loadPotions();
@@ -71,7 +71,7 @@ export class QuestGiver extends Phaser.Scene {
         this.add.rectangle(300, 230, 450, 300, 0x964B00).setDepth(-1);
         console.log(this.quest)
 
-        this.add.image(300, 200, 'questGiver').setScale(.7, .7);
+        this.add.image(300, 250, 'questGiver').setScale(.3, .3).setDepth(-1);
 
         // Add the background image to the scene
         const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0);
