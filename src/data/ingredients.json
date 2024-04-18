@@ -1,62 +1,52 @@
 [
     {
       "ingredientId": 1,
-      "name": "Amphetamine",
-      "imageUrl": "",
-      "description": ""
+      "name": "White Powder",
+      "description": "A sparkly dust that is commonly used to treat confusion. Overconsumption can have side effects such as anxiety."
     },
     {
       "ingredientId": 2,
       "name": "Ginger",
-      "imageUrl": "",
-      "description": ""
+      "description": "Spicy root used as a spice, medicine, and flavoring."
     },
     {
       "ingredientId": 3,
       "name": "Snail Mucus",
-      "imageUrl": "",
-      "description": ""
+      "description": "A mucous substance that snails secrete. It is commonly used as a skin care ingredient and is thought to be a remedy for hernia."
     },
     {
       "ingredientId": 4,
-      "name": "",
-      "imageUrl": "",
-      "description": ""
+      "name": "Plasma",
+      "description": "The fourth state of matter kept in a thin, spherical container."
     },
     {
       "ingredientId": 5,
       "name": "Bain Marie",
-      "imageUrl": "",
       "description": "A mysterious liquid kept in a jar that can only be bought from mystical maidens of the highest mountains for a hefty price."
     },
     {
       "ingredientId": 6,
       "name": "Cheese",
-      "imageUrl": "",
       "description": "White cheese of an unknown origin that gives of a strong, foul odor, but has effective antibacterial properties."
     },
     {
       "ingredientId": 7,
       "name": "Bigfoot's Footskin",
-      "imageUrl": "",
       "description": "Footskin shaved from the legend that has a weirdly calming scent. It has a distinct flavor and can be brewed as tea for male vigor."
     },
     {
       "ingredientId": 8,
       "name": "Sandman's Crust",
-      "imageUrl": "",
       "description": "Eye gunk collected from the man himself. This dust is used to help insomniacs sleep."
     },
     {
       "ingredientId": 9,
       "name": "Goblin's Booger",
-      "imageUrl": "",
       "description": "Dried mucus with dust particles and hair that emanates a mysterious green light in the dark."
     },
     {
       "ingredientId": 10,
       "name": "Ectoplasm",
-      "imageUrl": "",
       "description": "A green, gooey, magical gel that is disgusting and sticky."
     }
 ]
