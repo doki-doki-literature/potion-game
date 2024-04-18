@@ -37,27 +37,27 @@
     },
     {
       "ingredientId": 7,
-      "name": "Unicorn Horn",
+      "name": "Bigfoot's Footskin",
       "imageUrl": "",
-      "description": "A majestic horn with purifying properties. Highly sought after."
+      "description": "Footskin shaved from the legend that has a weirdly calming scent. It has a distinct flavor and can be brewed as tea for male vigor."
     },
     {
       "ingredientId": 8,
-      "name": "Mermaid Scale",
+      "name": "Sandman's Crust",
       "imageUrl": "",
-      "description": "A shimmering scale from the mystical mermaid. Adds fluidity to potions."
+      "description": "Eye gunk collected from the man himself. This dust is used to help insomniacs sleep."
     },
     {
       "ingredientId": 9,
-      "name": "Goblin Earwax",
+      "name": "Goblin's Booger",
       "imageUrl": "",
-      "description": "Unpleasant but potent. Used in certain dark potions."
+      "description": "Dried mucus with dust particles and hair that emanates a mysterious green light in the dark."
     },
     {
       "ingredientId": 10,
-      "name": "Basilisk Venom",
+      "name": "Ectoplasm",
       "imageUrl": "",
-      "description": "A venom so potent it can be deadly. Use with extreme caution."
+      "description": "A green, gooey, magical gel that is disgusting and sticky."
     }
 ]
   
