@@ -3,7 +3,7 @@
     "name": "Elixir of Hypertrichosis",
     "potionId": 1,
     "effectDescription": "Grants the consumer a full beard.",
-    "description": "Brewed with Dragon Scale and Mandrake Root",
+    "description": "Brewed with ginger and a mysterious powder, this concoction has a yellow-brown tint and has a spicy, tingling aftertaste. This elixir is also used as a stimulant with the full beard as a side effect.",
     "ingredientId1": 1,
     "ingredientId2": 2
   },
@@ -11,7 +11,7 @@
     "name": "Mimicry",
     "potionId": 2,
     "effectDescription": "Allows consumer to mimic sounds of other creatures, humans, animals.",
-    "description": "Concocted from Eye of Newt and Fairy Dust",
+    "description": "Concocted from plasma and cheese, this light purple potion temporarily stretches and stimulates the vocal cords. Do not consume food right after consumption!",
     "ingredientId1": 4,
     "ingredientId2": 6
   },
@@ -19,7 +19,7 @@
     "name": "Begone Babel",
     "potionId": 3,
     "effectDescription": "Allows consumer to speak with animals.",
-    "description": "Blessed with Unicorn Horn and Mermaid Scale",
+    "description": "Made of grated bigfoot's footskin and sandman's crust, this brown potion takes down language barriers through the effects of its ingredients.",
     "ingredientId1": 7,
     "ingredientId2": 8
   },
@@ -27,7 +27,7 @@
     "name": "Tom's Potion",
     "potionId": 4,
     "effectDescription": "Grants ability to become invisible for a certain amount of time.",
-    "description": "Brewed with Wolfsbane and Goblin Earwax",
+    "description": "Made of a murky, mysterious liquid with a sweet scent, this green iridescent potion removes pigmentation from the whole body temporarily.",
     "ingredientId1": 5,
     "ingredientId2": 9
   },
@@ -35,7 +35,7 @@
     "name": "Potion of Flight",
     "potionId": 5,
     "effectDescription": "Grants ability to fly.",
-    "description": "Combining Goblin Earwax and Fairy Dust",
+    "description": "This gooey, yellow-green potion with a salty taste makes you jump off your seat and fly away!",
     "ingredientId1": 9,
     "ingredientId2": 6
   },
@@ -43,7 +43,7 @@
     "name": "Matter",
     "potionId": 6,
     "effectDescription": "Grants power to create or destroy matter.",
-    "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir,",
+    "description": "Concocted from plasma and a murky, mysterious liquid with a sweet scent, this purple and pink potion enables creation and destruction of matter.",
     "ingredientId1": 4,
     "ingredientId2": 5
   },
@@ -51,7 +51,7 @@
     "name": "Boinkie Toinkie",
     "potionId": 7,
     "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
-    "description": "Crafted from Basilisk Venom and Fairy Dust",
+    "description": "Made of ectoplasm and the weird cheese, this potion with a purple tint stimulates the muscles and joints of your lower body enabling springiness and really high jumps.",
     "ingredientId1": 10,
     "ingredientId2": 6
   },
@@ -59,7 +59,7 @@
     "name": "Alopecic Panacea",
     "potionId": 8,
     "effectDescription": "Grants instant hair loss. (The potion to cure baldness is currently out of stock.)",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This stinky potion of green and purple color squeezes and seals shut all the hair follicles in the body. Great alternative to waxing or laser treatments.",
     "ingredientId1": 9,
     "ingredientId2": 10
   },
@@ -67,7 +67,7 @@
     "name": "Plant Whisperer",
     "potionId": 9,
     "effectDescription": "Allows consumer to speak with plants.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This potion with a yellow and pink tint removes language barriers from plants by allowing human ears to hear certain frequencies that plants give off when they sing.",
     "ingredientId1": 2,
     "ingredientId2": 5
   },
@@ -75,7 +75,7 @@
     "name": "Elixir of Strong Flatulence",
     "potionId": 10,
     "effectDescription": "Grants super farts.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic.",
+    "description": "This stinky, white potion stimulates and cleanses the digestive system. Really popular item for detox!",
     "ingredientId1": 1,
     "ingredientId2": 6
   },
@@ -83,7 +83,7 @@
     "name": "Snail's Trail",
     "potionId": 11,
     "effectDescription": "Grants the power to leave stains wherever you sit.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "A gray slime that targets the sweat glands to produce and secrete toxins from the body, leaving the wearer a nasty stain. This is great for skincare detox!",
     "ingredientId1": 1,
     "ingredientId2": 3
   },
@@ -91,7 +91,7 @@
     "name": "Solar Hands",
     "potionId": 12,
     "effectDescription": "Grants the power of having fingers glow like glowsticks by cracking knuckles.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This pearly, iridescent, concoction target the joint knuckles and emanates lights when released by popping.",
     "ingredientId1": 3,
     "ingredientId2": 4
   },
@@ -99,7 +99,7 @@
     "name": "Yo Mama",
     "potionId": 13,
     "effectDescription": "Grants powers to summon earthquakes.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This dark brown elixir is made of grated bigfoot's footskin as main ingredient. This gives the user a bloated feeling and powers to summon earthquakes at will within a few radius of the user.",
     "ingredientId1": 7,
     "ingredientId2": 7
   },
@@ -107,7 +107,7 @@
     "name": "The Rude",
     "potionId": 14,
     "effectDescription": "Grants power to summon a sandstorm.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This orange potion unlocks powermoves such as flares. This also enables powers to summon sandstorms at will within a few radius of the user.",
     "ingredientId1": 6,
     "ingredientId2": 7
   },
@@ -115,7 +115,7 @@
     "name": "Ninja Matcha",
     "potionId": 15,
     "effectDescription": "Grants Naruto powers.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "Mixing ginger root and sandman's crust makes a blue potion that grants super speed and superpowers of a certain ninja from the town of Konoha.",
     "ingredientId1": 2,
     "ingredientId2": 8
   },
@@ -123,7 +123,7 @@
     "name": "Ginger Tea",
     "potionId": 16,
     "effectDescription": "Expands the vocal range of the singer including whistle tones, but does not grant amazing singing ability. Vocal lessons sold separately.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This red-orange tonic is said to be the preferred drink of singing mermaids.",
     "ingredientId1": 2,
     "ingredientId2": 3
   },
@@ -131,7 +131,7 @@
     "name": "Addy",
     "potionId": 17,
     "effectDescription": "Grants super focus powers.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "This white juice stimulates the brain and enables the user to focus. It's a popular prescription to ease confusion.",
     "ingredientId1": 1,
     "ingredientId2": 1
   },
@@ -139,7 +139,7 @@
     "name": "Jojo Juice",
     "potionId": 18,
     "effectDescription": "Turns the consumer into a super buff and handsome person.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "A dark purple potion that is used by olympians and gym enthusiasts for peak performance.",
     "ingredientId1": 5,
     "ingredientId2": 6
   },
@@ -147,7 +147,7 @@
     "name": "Elemental Vial",
     "potionId": 19,
     "effectDescription": "Grants powers to control the elements.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "A clear potion that grants powers to control water, earth, fire, and air. Be careful, as with great power comes great responsibility!",
     "ingredientId1": 4,
     "ingredientId2": 10
   },
@@ -155,7 +155,7 @@
     "name": "St. Elmo's Tonic",
     "potionId": 20,
     "effectDescription": "Grants power to summon a ball of light…The potion to control the said ball of light is sold separately.",
-    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "description": "A red potion that grants powers to summon fire.",
     "ingredientId1": 4,
     "ingredientId2": 4
   }
