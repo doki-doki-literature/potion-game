@@ -2,6 +2,7 @@ import * as Phaser from "phaser";
 import { QuestManager } from "../data/QuestManager";
 import { SaveManager } from "../data/SaveManager";
 import { QuestRating } from "../objects/QuestRating";
+import { SceneUtils } from "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -27,12 +28,7 @@ export class QuestBillboardScene extends Phaser.Scene {
         this.questManager.processData();
         this.questManager.processActiveQuests();
 
-        // Create a back button
-        const backButton = this.add.text(20, 50, "Back to Cabin").setInteractive();
-        backButton.on("pointerdown", () => {
-            return this.scene.start("Cabin");
-        });
-
+        SceneUtils.addNavigation(this);
         this.add.text(200, 100, "Active Quests: ");
         const activeQuestIds = SaveManager.loadActiveQuests();
         activeQuestIds.forEach((questId, index) => {

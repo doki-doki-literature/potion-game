@@ -2,6 +2,7 @@ import * as Phaser from "phaser";
 import { PotionManager } from "../data/PotionManager";
 import { SaveManager } from "../data/SaveManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
+import { SceneUtils } from  "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -44,6 +45,7 @@ export class CraftScene extends Phaser.Scene {
         this.load.image('cauldron', 'assets/image/cauldron.png');
         // Load the background image asset
         this.load.image('background', 'assets/image/drawings/cabin-draft.png');
+        this.load.image('navSign', 'assets/image/ui-assets/nav_sign_button.png');
     }
 
     create() {
@@ -68,12 +70,7 @@ export class CraftScene extends Phaser.Scene {
         this.ingredientDescriptionText.setWordWrapWidth(400);
         this.ingredientDescriptionText.setVisible(false); // Initially hide the text
 
-        // Create a back button
-        const backButton = this.add.text(20, 50, "Back to Cabin").setInteractive();
-        backButton.on("pointerdown", () => {
-            this.selectedIngredients = [];
-            return this.scene.start("Cabin");
-        });
+        SceneUtils.addNavigation(this);
 
         // Set pointer out event to hide ingredient description text
         this.input.on('pointerout', () => {

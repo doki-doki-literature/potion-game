@@ -236,7 +236,7 @@ export class QuestGiver extends Phaser.Scene {
                 return;
             }
 
-            if (index == endIndex) {
+            if (index >= endIndex) {
                 return;
             }
 

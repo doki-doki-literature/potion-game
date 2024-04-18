@@ -1,83 +1,83 @@
 [
-    {
-      "name": "Elixir of Hypertrichosis",
-      "potionId": 1,
-      "effectDescription": "Grants the consumer a full beard.",
-      "description": "Brewed with Dragon Scale and Mandrake Root",
-      "ingredientId1": 1,
-      "ingredientId2": 2,
-      "effectText": "feels a surge of strength coursing through their veins.",
-      "visualDescription": "A shimmering golden liquid swirling with sparks of energy."
-    },
-    {
-      "name": "Mimicry",
-      "potionId": 2,
-      "effectDescription": "Allows consumer to mimic sounds of other creatures, humans, animals.",
-      "description": "Concocted from Eye of Newt and Fairy Dust",
-      "ingredientId1": 4,
+  {
+    "name": "Elixir of Hypertrichosis",
+    "potionId": 1,
+    "effectDescription": "Grants the consumer a full beard.",
+    "description": "Brewed with Dragon Scale and Mandrake Root",
+    "ingredientId1": 1,
+    "ingredientId2": 2,
+    "effectText": "feels a surge of strength coursing through their veins.",
+    "visualDescription": "A shimmering golden liquid swirling with sparks of energy."
+  },
+  {
+    "name": "Mimicry",
+    "potionId": 2,
+    "effectDescription": "Allows consumer to mimic sounds of other creatures, humans, animals.",
+    "description": "Concocted from Eye of Newt and Fairy Dust",
+    "ingredientId1": 4,
+    "ingredientId2": 6,
+    "effectText": "watches in amazement as their form shifts and changes before their eyes.",
+    "visualDescription": "A swirling potion with iridescent hues, shimmering like a rainbow."
+  },
+  {
+    "name": "Begone Babel",
+    "potionId": 3,
+    "effectDescription": "Allows consumer to speak with animals.",
+    "description": "Blessed with Unicorn Horn and Mermaid Scale",
+    "ingredientId1": 7,
+    "ingredientId2": 8,
+    "effectText": "feels a sense of inner peace and clarity washing over them.",
+    "visualDescription": "A crystal-clear potion with sparkling particles, emitting a soothing aura."
+  },
+  {
+    "name": "Tom's Potion",
+    "potionId": 4,
+    "effectDescription": "Grants ability to become invisible for a certain amount of time.",
+    "description": "Brewed with Wolfsbane and Goblin Earwax",
+    "ingredientId1": 5,
+    "ingredientId2": 9,
+    "effectText": "slips into a deep, vivid dream world filled with strange visions.",
+    "visualDescription": "A deep purple potion with wisps of mist rising from its surface."
+  },
+  {
+      "name": "Potion of Flight",
+      "potionId": 5,
+      "effectDescription": "Grants ability to fly.",
+      "description": "Combining Goblin Earwax and Fairy Dust",
+      "ingredientId1": 9,
       "ingredientId2": 6,
-      "effectText": "watches in amazement as their form shifts and changes before their eyes.",
-      "visualDescription": "A swirling potion with iridescent hues, shimmering like a rainbow."
-    },
-    {
-      "name": "Begone Babel",
-      "potionId": 3,
-      "effectDescription": "Allows consumer to speak with animals.",
-      "description": "Blessed with Unicorn Horn and Mermaid Scale",
-      "ingredientId1": 7,
+      "effectText": "burps uncontrollably and emits bubbles from their mouth.",
+      "visualDescription": "A bubbling potion with colorful sparks popping out."
+  },
+  {
+      "name": "Matter",
+      "potionId": 6,
+      "effectDescription": "Grants power to create or destroy matter.",
+      "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir,",
+      "ingredientId1": 2,
       "ingredientId2": 8,
-      "effectText": "feels a sense of inner peace and clarity washing over them.",
-      "visualDescription": "A crystal-clear potion with sparkling particles, emitting a soothing aura."
-    },
-    {
-      "name": "Tom's Potion",
-      "potionId": 4,
-      "effectDescription": "Grants ability to become invisible for a certain amount of time.",
-      "description": "Brewed with Wolfsbane and Goblin Earwax",
-      "ingredientId1": 5,
-      "ingredientId2": 9,
-      "effectText": "slips into a deep, vivid dream world filled with strange visions.",
-      "visualDescription": "A deep purple potion with wisps of mist rising from its surface."
-    },
-    {
-        "name": "Potion of Flight",
-        "potionId": 5,
-        "effectDescription": "Grants ability to fly.",
-        "description": "Combining Goblin Earwax and Fairy Dust",
-        "ingredientId1": 9,
-        "ingredientId2": 6,
-        "effectText": "burps uncontrollably and emits bubbles from their mouth.",
-        "visualDescription": "A bubbling potion with colorful sparks popping out."
-    },
-    {
-        "name": "Matter",
-        "potionId": 6,
-        "effectDescription": "Grants power to create or destroy matter.",
-        "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir,",
-        "ingredientId1": 2,
-        "ingredientId2": 8,
-        "effectText": "bursts into uncontrollable laughter, unable to stop.",
-        "visualDescription": "A sparkling potion with vibrant hues, emanating a playful aura."
-    },
-    {
-        "name": "Boinkie Toinkie",
-        "potionId": 7,
-        "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
-        "description": "Crafted from Basilisk Venom and Fairy Dust",
-        "ingredientId1": 10,
-        "ingredientId2": 6,
-        "effectText": "feels a strange sensation as they disappear from sight",
-        "visualDescription": "A shimmering mist with faint traces of magical energy."
-    },
-    {
-      "name": "Alopecic Panacea",
-      "potionId": 8,
-      "effectDescription": "Grants instant hair loss. (The potion to cure baldness is currently out of stock.)",
-      "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-      "ingredientId1": 1,
-      "ingredientId2": 9,
-      "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
-      "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
+      "effectText": "bursts into uncontrollable laughter, unable to stop.",
+      "visualDescription": "A sparkling potion with vibrant hues, emanating a playful aura."
+  },
+  {
+      "name": "Boinkie Toinkie",
+      "potionId": 7,
+      "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
+      "description": "Crafted from Basilisk Venom and Fairy Dust",
+      "ingredientId1": 10,
+      "ingredientId2": 6,
+      "effectText": "feels a strange sensation as they disappear from sight",
+      "visualDescription": "A shimmering mist with faint traces of magical energy."
+  },
+  {
+    "name": "Alopecic Panacea",
+    "potionId": 8,
+    "effectDescription": "Grants instant hair loss. (The potion to cure baldness is currently out of stock.)",
+    "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
+    "ingredientId1": 1,
+    "ingredientId2": 9,
+    "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
+    "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   },
   {
     "name": "Plant Whisperer",
@@ -199,5 +199,5 @@
     "effectText": "is startled by a sudden thunderclap that echoes through the surroundings.",
     "visualDescription": "A crackling potion with sparks of electricity, emitting a loud noise."
   }
-  ]
+]
   
