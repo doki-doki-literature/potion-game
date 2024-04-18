@@ -138,6 +138,7 @@ export class QuestGiver extends Phaser.Scene {
             .on('pointerdown', () => {
                 this.completeQuest();
                 this.handleSubmit();
+                this.updatePage(potionsData);
             });
     }
 
@@ -191,7 +192,7 @@ export class QuestGiver extends Phaser.Scene {
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
 
-            if(story.reveal) {
+            if (story.reveal) {
                 let currentPotionLog = SaveManager.loadPotionLog();
                 currentPotionLog.push(story.potionId);
                 SaveManager.savePotionLog(currentPotionLog);
@@ -220,36 +221,23 @@ export class QuestGiver extends Phaser.Scene {
 
         // Create a new container for potions on the current page
         this.potionsContainer = this.add.container(0, 0).setName('potions');
-        const startX = 120;
+        const startX = 40;
         const spacingX = 90;
 
         // Calculate start and end index for current page
         const startIndex = this.currentPage * this.potionsPerPage;
         const endIndex = Math.min(startIndex + this.potionsPerPage, potionsData.length);
-        let row = 0;
-        let column = 0;
+        let row = 1;
+        let column = 1;
         // Display potions for the current page
 
         this.inventory.forEach((pq: PotionQuantity, index: number) => {
-            if (pq.quantity == 0) {
-                return;
-            }
-
             if (index < startIndex) {
                 return;
             }
 
             if (index == endIndex) {
-                row = 0;
-                column = 0;
                 return;
-            }
-
-            column += 1;
-
-            if (index % 5 == 0) {
-                row += 1;
-                column = 0;
             }
 
             let originalX = startX + column * spacingX;
@@ -260,7 +248,9 @@ export class QuestGiver extends Phaser.Scene {
             this.potionsContainer.add(quantityText);
             potionImage.setData('potionId', pq.potionId);
             potionImage.setInteractive();
-            this.input.setDraggable(potionImage);
+            if (pq.quantity > 0) {
+                this.input.setDraggable(potionImage);
+            }
 
             // Set drag event
             potionImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
@@ -305,6 +295,12 @@ export class QuestGiver extends Phaser.Scene {
             });
 
             this.potionsContainer.add(potionImage);
+            if (column % 5 == 0) {
+                row += 1;
+                column = 1;
+            } else {
+                column += 1;
+            }
         });
     }
 }
