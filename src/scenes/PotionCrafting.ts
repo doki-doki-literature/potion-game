@@ -255,10 +255,10 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a new container for ingredients on the current page
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
-        const startX = 80;
-        const spacingX = 80;
-        const spacingY = 85;
-        const startY = 180;
+        const startX = 75;
+        const spacingX = 90;
+        const spacingY = 90;
+        const startY = 160;
 
         // Calculate start and end index for current page
         const startIndex = this.currentPage * this.ingredientsPerPage;
@@ -276,7 +276,7 @@ export class CraftScene extends Phaser.Scene {
 
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
-            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.55, .55);
+            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.625, .625);
 
             const ingredient = ingredientsData[i];
             let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2.5, 2.5);
