@@ -1,63 +1,63 @@
 [
     {
       "ingredientId": 1,
-      "name": "Mandrake Root",
+      "name": "",
       "imageUrl": "",
-      "description": "A potent root known for its magical properties. Handle with care."
+      "description": ""
     },
     {
       "ingredientId": 2,
-      "name": "Dragon Scale",
+      "name": "",
       "imageUrl": "",
-      "description": "A shimmering scale from the mighty dragon. Adds resilience to potions."
+      "description": ""
     },
     {
       "ingredientId": 3,
-      "name": "Phoenix Feather",
+      "name": "",
       "imageUrl": "",
-      "description": "A feather imbued with the essence of rebirth and renewal."
+      "description": ""
     },
     {
       "ingredientId": 4,
-      "name": "Eye of Newt",
+      "name": "",
       "imageUrl": "",
-      "description": "A mystical eye known for its transformative properties."
+      "description": ""
     },
     {
       "ingredientId": 5,
-      "name": "Wolfsbane",
+      "name": "Bain Marie",
       "imageUrl": "",
-      "description": "A rare herb used to enhance potion potency, but handle with caution."
+      "description": "A mysterious liquid kept in a jar that can only be bought from mystical maidens of the highest mountains for a hefty price."
     },
     {
       "ingredientId": 6,
-      "name": "Fairy Dust",
+      "name": "Cheese",
       "imageUrl": "",
-      "description": "Glimmering powder that adds a touch of enchantment to potions."
+      "description": "White cheese of an unknown origin that gives of a strong, foul odor, but has effective antibacterial properties."
     },
     {
       "ingredientId": 7,
-      "name": "Unicorn Horn",
+      "name": "Bigfoot's Footskin",
       "imageUrl": "",
-      "description": "A majestic horn with purifying properties. Highly sought after."
+      "description": "Footskin shaved from the legend that has a weirdly calming scent. It has a distinct flavor and can be brewed as tea for male vigor."
     },
     {
       "ingredientId": 8,
-      "name": "Mermaid Scale",
+      "name": "Sandman's Crust",
       "imageUrl": "",
-      "description": "A shimmering scale from the mystical mermaid. Adds fluidity to potions."
+      "description": "Eye gunk collected from the man himself. This dust is used to help insomniacs sleep."
     },
     {
       "ingredientId": 9,
-      "name": "Goblin Earwax",
+      "name": "Goblin's Booger",
       "imageUrl": "",
-      "description": "Unpleasant but potent. Used in certain dark potions."
+      "description": "Dried mucus with dust particles and hair that emanates a mysterious green light in the dark."
     },
     {
       "ingredientId": 10,
-      "name": "Basilisk Venom",
+      "name": "Ectoplasm",
       "imageUrl": "",
-      "description": "A venom so potent it can be deadly. Use with extreme caution."
+      "description": "A green, gooey, magical gel that is disgusting and sticky."
     }
 ]
   
