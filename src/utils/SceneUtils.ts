@@ -31,7 +31,8 @@ export class SceneUtils {
     }
 
     private static addCauldronButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(300, 10, 'navSign').setInteractive().setScale(.75, .75);
+        const backButton = scene.add.image(300, scene.scene.key == "Craft" ? 50 : 10, 'navSign').setInteractive().setScale(.75, .75);
+
         backButton.on("pointerdown", () => {
             return scene.scene.start("Craft");
         });

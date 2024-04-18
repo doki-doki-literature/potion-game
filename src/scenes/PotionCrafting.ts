@@ -58,7 +58,7 @@ export class CraftScene extends Phaser.Scene {
         backgroundImage.displayWidth = this.game.canvas.width;
         backgroundImage.displayHeight = this.game.canvas.height;
 
-        const ingredientsContainer = this.add.image(10, 240, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.65, .65);
+        const ingredientsContainer = this.add.image(0, 170, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .8);
 
         // Process loaded data
         this.potionManager.processData();
@@ -82,10 +82,10 @@ export class CraftScene extends Phaser.Scene {
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
         // Create a container for the cauldron
-        const cauldronImage = this.add.image(700, 450, 'cauldron').setScale(.5, .5);
+        const cauldronImage = this.add.image(700, 475, 'cauldron').setScale(.5, .5);
 
         // Create a drop zone for the cauldron
-        const dropZoneImage = this.add.image(700, 100, 'selectedIngredients').setScale(.65, .65);
+        const dropZoneImage = this.add.image(655, 255, 'selectedIngredients').setScale(.55, .7);
         this.cauldronDropZone = this.add.zone(700, 400, 100, 100);
         this.cauldronDropZone.setDropZone();
 
@@ -255,10 +255,10 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a new container for ingredients on the current page
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
-        const startX = 95;
-        const spacingX = 100;
-        const spacingY = 100;
-        const startY = 230;
+        const startX = 80;
+        const spacingX = 80;
+        const spacingY = 85;
+        const startY = 180;
 
         // Calculate start and end index for current page
         const startIndex = this.currentPage * this.ingredientsPerPage;
@@ -276,10 +276,10 @@ export class CraftScene extends Phaser.Scene {
 
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
-            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.7, .7);
+            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.55, .55);
 
             const ingredient = ingredientsData[i];
-            let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
+            let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2.5, 2.5);
 
             ingredientImage.setData('ingredientId', ingredient.ingredientId);
             ingredientImage.setInteractive();
