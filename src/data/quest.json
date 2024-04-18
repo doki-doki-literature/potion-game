@@ -1,68 +1,202 @@
 [
-    {
-      "questId": 1,
-      "questGiver" :"Knight",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
-      "imageUrl": "",
-      "stories": [
-        { 
-          "potionId": 1,
-          "story": "test",
-          "rating": 3,
-          "reveal": true
-        }
-      ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
-    },
-    {
-      "questId": 2,
-      "questGiver" :"Lucy",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
-      "imageUrl": "",
-      "stories": [
-        { 
-          "potionId": 1,
-          "story": "test",
-          "rating": 3
-        }
-      ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
-    },
-    {
-      "questId": 3,
-      "questGiver" :"Gianna",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
-      "imageUrl": "",
-      "stories": [
-        { 
-          "potionId": 1,
-          "story": "test",
-          "rating": 3
-        }
-      ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
-    },
-    {
-      "questId": 4,
-      "questGiver" :"Spencer",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
-      "imageUrl": "",
-      "stories": [
-        { 
-          "potionId": 1,
-          "story": "test",
-          "rating": 3
-        }
-      ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
-    }
+  {
+    "questId": 1,
+    "questGiver": "The Wise Wizard",
+    "content": "Oh great potion seller, I seek your aid in retrieving the Magic Crystal from the Cave of Wonders. Can you provide me with a potion that will aid me in this perilous journey?",
+    "stories": [
+      {
+        "potionId": 1,
+        "story": "The brave adventurer consumed Elixir of Hypertrichosis and delved into the cave. With a majestic beard, they triumphantly retrieved the Crystal.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 2,
+        "story": "Unfortunately, the Isekai potion led the adventurer to a different dimension, where the Crystal was out of reach. They barely escaped unscathed.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "As the adventurer ventured into the Cave of Wonders, they faced insurmountable obstacles, and despite their best efforts, they returned empty-handed. The quest remains unfulfilled."
+  },
+  {
+    "questId": 2,
+    "questGiver": "The Enchanted Princess",
+    "content": "Dear potion seller, I implore you to aid me in finding the Lost Amulet in the Forbidden Forest. Please provide me with a potion that will aid me in this noble quest.",
+    "stories": [
+      {
+        "potionId": 3,
+        "story": "With the power of Mimicry, the hero cunningly tricked the forest guardian and retrieved the Amulet.",
+        "rating": 2,
+        "reveal": false
+      },
+      {
+        "potionId": 7,
+        "story": "The Potion of Flight sent the hero soaring high above the forest, but alas, the Amulet was nowhere to be found. They returned empty-handed.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "Despite valiant efforts, the Lost Amulet eludes the hero's grasp. The shadows of the Forbidden Forest conceal its whereabouts, and the quest remains unfulfilled."
+  },
+  {
+    "questId": 3,
+    "questGiver": "The Mysterious Merchant",
+    "content": "Esteemed potion seller, I seek your aid in retrieving the Rare Herb from the Haunted Swamp. Do you possess a potion that will aid me in this treacherous endeavor?",
+    "stories": [
+      {
+        "potionId": 4,
+        "story": "With the Begone Babel potion, the adventurer communicated with the swamp creatures and found the Rare Herb.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 10,
+        "story": "Despite the Patella Potion's thunderclap distraction, the adventurer stumbled upon the Rare Herb and hastily fled the swamp.",
+        "rating": 2,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "In the murky depths of the Haunted Swamp, the Rare Herb remained elusive despite the hero's best efforts. The quest concludes in failure, shrouded in mystery."
+  },
+  {
+    "questId": 4,
+    "questGiver": "The Ancient Druid",
+    "content": "Oh wise potion seller, I beseech thee to aid me in recovering the Lost Tome from the Ruined Temple. Can you furnish me with a potion that will aid me in this sacred quest?",
+    "stories": [
+      {
+        "potionId": 6,
+        "story": "Using the Potion of Time Travel, the hero journeyed to the past and retrieved the Lost Tome before it was lost to history.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 12,
+        "story": "The Best Friend's Tonic granted the hero insight into the temple's secrets, but alas, the Lost Tome remained elusive.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "The ruins of the temple held no trace of the Lost Tome, leaving the hero empty-handed. The quest ends in failure, with the ancient knowledge remaining lost to time."
+  },
+  {
+    "questId": 5,
+    "questGiver": "The Noble Knight",
+    "content": "Valiant potion seller, I call upon your expertise to aid me in rescuing the Captive Princess from the Dark Castle. Will you provide me with a potion to aid me in this perilous quest?",
+    "stories": [
+      {
+        "potionId": 8,
+        "story": "With fits of laughter from Matter potion, the hero charmed the castle guards and rescued the Captive Princess.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 11,
+        "story": "Despite the Alopecic Panacea's thunderclap distraction, the hero charged into the castle, only to find it abandoned.",
+        "rating": 2,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "The Dark Castle stood silent and empty, devoid of any signs of the Captive Princess. Despite the hero's valiant efforts, the quest concludes in failure, leaving the princess in captivity."
+  },
+  {
+    "questId": 6,
+    "questGiver": "The Lost Alchemist",
+    "content": "Wise potion seller, I seek your assistance in locating the Philosopher's Stone in the Forbidden Caverns. Do you possess a potion that will aid me in this perilous journey?",
+    "stories": [
+      {
+        "potionId": 9,
+        "story": "The hero vanished from sight with the Boinkie Toinkie potion and stealthily bypassed the cavern's guardians to find the Philosopher's Stone.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 15,
+        "story": "The hero's transformation into a worm with Vermes' Vial proved to be more of a hindrance than a help, and they quickly abandoned the quest.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "Despite the hero's bravery, the Philosopher's Stone remained elusive in the depths of the Forbidden Caverns. The quest concludes in failure, shrouded in mystery."
+  },
+  {
+    "questId": 7,
+    "questGiver": "The Seafaring Captain",
+    "content": "Esteemed potion seller, I require your aid in locating the Lost Treasure of the Deep Sea. Can you provide me with a potion that will aid me in this nautical adventure?",
+    "stories": [
+      {
+        "potionId": 13,
+        "story": "With the Plant Whisperer potion, the hero communicated with the sea creatures and uncovered the Lost Treasure.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 16,
+        "story": "The Elixir of Strong Flatulence caused a commotion underwater, attracting unwanted attention and forcing the hero to abandon the search.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "The depths of the sea held no trace of the Lost Treasure, leaving the hero empty-handed. The quest ends in failure, with the riches of the deep remaining undiscovered."
+  },
+  {
+    "questId": 8,
+    "questGiver": "The Lonesome Bard",
+    "content": "Oh potion seller, I beseech thee to aid me in composing the Ballad of the Fallen Star. Can you provide me with a potion that will grant me inspiration for this epic tale?",
+    "stories": [
+      {
+        "potionId": 14,
+        "story": "With Rafflesia Pheromones, the hero crafted a ballad that enraptured audiences far and wide, immortalizing the Fallen Star in song.",
+        "rating": 3,
+        "reveal": true
+      },
+      {
+        "potionId": 17,
+        "story": "The Snail's Trail potion left the hero in a sticky situation, unable to compose a single verse worthy of the Fallen Star.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "Alas, the Ballad of the Fallen Star remained unwritten, lost in the depths of the hero's mind. The quest concludes in failure, leaving the star's tale untold."
+  },
+  {
+    "questId": 9,
+    "questGiver": "The Oracle of Time",
+    "content": "Oh revered potion seller, I seek your wisdom in unlocking the Temporal Doorway to the Age of Ancients. Can you provide me with a potion that will aid me in this transcendent journey?",
+    "stories": [
+      {
+        "potionId": 18,
+        "story": "The Solar Hands potion made the hero's fingertips glow, lighting their path to the peak, but the Fallen Star had already fallen beyond their reach.",
+        "rating": 2,
+        "reveal": false
+      },
+      {
+        "potionId": 22,
+        "story": "Jim Smiley's Brew allowed the hero to summon Plug, but the mischievous imp was of little help in unlocking the Temporal Doorway.",
+        "rating": 1,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "Despite the hero's efforts, the Temporal Doorway remained closed, its secrets locked away. The quest concludes in failure, leaving the Age of Ancients beyond reach."
+  },
+  {
+    "questId": 10,
+    "questGiver": "The Guardian Spirit",
+    "content": "Oh venerable potion seller, I call upon your aid in restoring the Balance of Nature by Cleansing the Corrupted Forest. Will you provide me with a potion to aid me in this noble task?",
+    "stories": [
+      {
+        "potionId": 19,
+        "story": "The Panacea's thunderclap startled the hero, disrupting their focus as they attempted to unlock the Temporal Doorway. Their journey ended in failure.",
+        "rating": 1,
+        "reveal": false
+      },
+      {
+        "potionId": 25,
+        "story": "Despite expanding their vocal range with Ginger Tea, the hero's attempts to communicate with the forest spirits were met with silence.",
+        "rating": 2,
+        "reveal": false
+      }
+    ],
+    "defaultMessage": "Despite valiant efforts, the Corrupted Forest remains shrouded in darkness, its balance disrupted by forces beyond the hero's control. The quest concludes in failure, leaving nature in turmoil."
+  }
 ]
-  

@@ -4,6 +4,7 @@ import { PotionManager } from "../data/PotionManager";
 import { Quest } from "../objects/Quest";
 import { SaveManager } from "../data/SaveManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
+import { QuestRating } from "../objects/QuestRating";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -131,43 +132,86 @@ export class QuestGiver extends Phaser.Scene {
             this.children.bringToTop(gameObject); // Bring the dragged object to the top
         });
 
-        // Create craft button
-        const craftButton = this.add.text(630, 250, 'Submit', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
+        // Create submit button
+        const submitButton = this.add.text(630, 250, 'Submit', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
-                if (this.selectedPotionId) {
-                    const potionId = this.selectedPotionId;
-
-                    if (true) {
-                        // Add white text on top of the overlay
-
-                        //Temporarily removed potion discovery to check potion names
-                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "Thanks!", { color: '#ffffff' });
-                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
-
-                        text1.setOrigin(0.5);
-                        text1.setInteractive();
-                        text1.setDepth(4);
-                        text1.setWordWrapWidth(300);
-
-                        // Create a grey transparent rectangle covering the entire screen
-                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
-                        overlay.setOrigin(0);
-                        overlay.setInteractive();
-                        overlay.setDepth(3);
-                        overlay.on("pointerdown", () => {
-                            overlay.destroy();
-                            text1.destroy();
-                            this.selectedPotionImage?.destroy();
-                        });
-                    }
-
-                    // Clear selected ingredients
-                    this.selectedPotionId = null;
-                } else {
-                    console.log('Please select a potion.');
-                }
+                this.completeQuest();
+                this.handleSubmit();
             });
+    }
+
+    handleSubmit() {
+        if (this.selectedPotionId) {
+            const potionId = this.selectedPotionId;
+
+            if (true) {
+                // Add white text on top of the overlay
+
+                //Temporarily removed potion discovery to check potion names
+                const text1 = this.add.text(this.cameras.main.width / 2, 300, "Thanks!", { color: '#ffffff' });
+                // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+
+                text1.setOrigin(0.5);
+                text1.setInteractive();
+                text1.setDepth(4);
+                text1.setWordWrapWidth(300);
+
+                // Create a grey transparent rectangle covering the entire screen
+                const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
+                overlay.setOrigin(0);
+                overlay.setInteractive();
+                overlay.setDepth(3);
+                overlay.on("pointerdown", () => {
+                    overlay.destroy();
+                    text1.destroy();
+                    this.selectedPotionImage?.destroy();
+                });
+            }
+
+            // Clear selected ingredients
+            this.selectedPotionId = null;
+        } else {
+            console.log('Please select a potion.');
+        }
+    }
+
+    completeQuest() {
+        let currentProgress = SaveManager.loadQuestProgress();
+        let story = this.quest.stories.find(s => s.potionId == this.selectedPotionId);
+
+        if (story) {
+            const result = new QuestRating({
+                questId: this.quest.questId,
+                story: story.story,
+                rating: story.rating,
+                reveal: story.reveal,
+                date: new Date()
+            });
+            currentProgress.push(result);
+            SaveManager.saveProgress(currentProgress);
+
+            if(story.reveal) {
+                let currentPotionLog = SaveManager.loadPotionLog();
+                currentPotionLog.push(story.potionId);
+                SaveManager.savePotionLog(currentPotionLog);
+            }
+        } else {
+            const result = new QuestRating({
+                questId: this.quest.questId,
+                story: this.quest.defaultMessage,
+                rating: 1,
+                reveal: false,
+                date: new Date()
+            });
+            currentProgress.push(result);
+            SaveManager.saveProgress(currentProgress);
+        }
+        SaveManager.saveInventory(this.inventory);
+        let activeQuests = SaveManager.loadActiveQuests();
+        activeQuests = activeQuests.filter(questId => questId != this.quest.questId);
+        SaveManager.saveActiveQuests(activeQuests);
+        this.questManager.processActiveQuests();
     }
 
     updatePage(potionsData: any[]) {
@@ -187,6 +231,20 @@ export class QuestGiver extends Phaser.Scene {
         // Display potions for the current page
 
         this.inventory.forEach((pq: PotionQuantity, index: number) => {
+            if (pq.quantity == 0) {
+                return;
+            }
+
+            if (index < startIndex) {
+                return;
+            }
+
+            if (index == endIndex) {
+                row = 0;
+                column = 0;
+                return;
+            }
+
             column += 1;
 
             if (index % 5 == 0) {
@@ -197,10 +255,9 @@ export class QuestGiver extends Phaser.Scene {
             let originalX = startX + column * spacingX;
             let originalY = 350 + row * 80;
             const potionContainer = this.add.rectangle(originalX, originalY, 64, 64, 0x964B00, 1).setDepth(-1);
-            const potion = this.potionManager.potions.find(potion => potion.potionId == pq.potionId);
-            console.log(potion);
             let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
-
+            let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId);
+            this.potionsContainer.add(quantityText);
             potionImage.setData('potionId', pq.potionId);
             potionImage.setInteractive();
             this.input.setDraggable(potionImage);
@@ -219,13 +276,17 @@ export class QuestGiver extends Phaser.Scene {
             // Set drop zone
             potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
                 const potionId = potionImage.getData('potionId');
-                console.log(potionId);
                 if (dropZone === this.dropzone) {
                     if (this.selectedPotionId) {
                         this.selectedPotionImage.destroy();
+                        const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
+                        this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
+                        previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
                     }
                     this.selectedPotionId = potionId;
                     this.selectedPotionImage = this.add.image(670, 200, `potion${potionId}`).setScale(2, 2);
+                    quantityText.setText(`x${pq.quantity - 1}`);
+                    this.inventory.find(q => q.potionId == potionId).quantity -= 1;
                 }
             });
 

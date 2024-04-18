@@ -36,7 +36,7 @@ export class QuestManager extends DataManager {
 
     processActiveQuests() {
         let activeQuestLength = SaveManager.loadActiveQuests().length;
-        let inactiveQuests = this.quests.filter((quest) => !this.activeQuestIds.includes(quest.questId));
+        let inactiveQuests = this.quests.filter((quest) => !SaveManager.loadActiveQuests().includes(quest.questId));
         for (let i = 1; i <= 3 - activeQuestLength; i++) {
             let randomQuest = inactiveQuests.splice(Math.floor((Math.random() * inactiveQuests.length)), 1)[0];
             this.addActiveQuest(randomQuest.questId);
