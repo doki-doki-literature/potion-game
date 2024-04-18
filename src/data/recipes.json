@@ -32,36 +32,36 @@
     "ingredientId2": 9
   },
   {
-      "name": "Potion of Flight",
-      "potionId": 5,
-      "effectDescription": "Grants ability to fly.",
-      "description": "Combining Goblin Earwax and Fairy Dust",
-      "ingredientId1": 9,
-      "ingredientId2": 6
+    "name": "Potion of Flight",
+    "potionId": 5,
+    "effectDescription": "Grants ability to fly.",
+    "description": "Combining Goblin Earwax and Fairy Dust",
+    "ingredientId1": 9,
+    "ingredientId2": 6
   },
   {
-      "name": "Matter",
-      "potionId": 6,
-      "effectDescription": "Grants power to create or destroy matter.",
-      "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir,",
-      "ingredientId1": 2,
-      "ingredientId2": 8
+    "name": "Matter",
+    "potionId": 6,
+    "effectDescription": "Grants power to create or destroy matter.",
+    "description": "Mixing Mandrake Root and Unicorn Horn yields this humorous elixir,",
+    "ingredientId1": 4,
+    "ingredientId2": 5
   },
   {
-      "name": "Boinkie Toinkie",
-      "potionId": 7,
-      "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
-      "description": "Crafted from Basilisk Venom and Fairy Dust",
-      "ingredientId1": 10,
-      "ingredientId2": 6
+    "name": "Boinkie Toinkie",
+    "potionId": 7,
+    "effectDescription": "Grants super high jumps like the celebrity of Calaveras County!",
+    "description": "Crafted from Basilisk Venom and Fairy Dust",
+    "ingredientId1": 10,
+    "ingredientId2": 6
   },
   {
     "name": "Alopecic Panacea",
     "potionId": 8,
     "effectDescription": "Grants instant hair loss. (The potion to cure baldness is currently out of stock.)",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 1,
-    "ingredientId2": 9
+    "ingredientId1": 9,
+    "ingredientId2": 10
   },
   {
     "name": "Plant Whisperer",
@@ -77,7 +77,7 @@
     "effectDescription": "Grants super farts.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic.",
     "ingredientId1": 1,
-    "ingredientId2": 3
+    "ingredientId2": 6
   },
   {
     "name": "Snail's Trail",
@@ -85,7 +85,7 @@
     "effectDescription": "Grants the power to leave stains wherever you sit.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
     "ingredientId1": 1,
-    "ingredientId2": 6
+    "ingredientId2": 3
   },
   {
     "name": "Solar Hands",
@@ -93,15 +93,15 @@
     "effectDescription": "Grants the power of having fingers glow like glowsticks by cracking knuckles.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
     "ingredientId1": 3,
-    "ingredientId2": 7
+    "ingredientId2": 4
   },
   {
     "name": "Yo Mama",
     "potionId": 13,
     "effectDescription": "Grants powers to summon earthquakes.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 1,
-    "ingredientId2": 10
+    "ingredientId1": 7,
+    "ingredientId2": 7
   },
   {
     "name": "The Rude",
@@ -116,24 +116,24 @@
     "potionId": 15,
     "effectDescription": "Grants Naruto powers.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 4,
-    "ingredientId2": 5
+    "ingredientId1": 2,
+    "ingredientId2": 8
   },
   {
     "name": "Ginger Tea",
     "potionId": 16,
     "effectDescription": "Expands the vocal range of the singer including whistle tones, but does not grant amazing singing ability. Vocal lessons sold separately.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 7,
-    "ingredientId2": 10
+    "ingredientId1": 2,
+    "ingredientId2": 3
   },
   {
     "name": "Addy",
     "potionId": 17,
     "effectDescription": "Grants super focus powers.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 2,
-    "ingredientId2": 6
+    "ingredientId1": 1,
+    "ingredientId2": 1
   },
   {
     "name": "Jojo Juice",
@@ -141,23 +141,23 @@
     "effectDescription": "Turns the consumer into a super buff and handsome person.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
     "ingredientId1": 5,
-    "ingredientId2": 10
+    "ingredientId2": 6
   },
   {
     "name": "Elemental Vial",
     "potionId": 19,
     "effectDescription": "Grants powers to control the elements.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 1,
-    "ingredientId2": 7
+    "ingredientId1": 4,
+    "ingredientId2": 10
   },
   {
     "name": "St. Elmo's Tonic",
     "potionId": 20,
     "effectDescription": "Grants power to summon a ball of light…The potion to control the said ball of light is sold separately.",
     "description": "Mixing Dragon Scale and Mandrake Root results in this explosive tonic",
-    "ingredientId1": 2,
-    "ingredientId2": 3
+    "ingredientId1": 4,
+    "ingredientId2": 4
   }
 ]
   
