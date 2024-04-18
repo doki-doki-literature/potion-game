@@ -22,6 +22,7 @@ export class QuestBillboardScene extends Phaser.Scene {
         this.questManager = new QuestManager(this);
         this.questManager.loadQuests();
         this.questProgress = SaveManager.loadQuestProgress();
+        SceneUtils.loadUi(this);
     }
 
     create() {

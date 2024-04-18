@@ -1,4 +1,5 @@
 import * as Phaser from "phaser";
+import { SceneUtils } from "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -13,12 +14,12 @@ export class ArchiveScene extends Phaser.Scene {
 
     preload() {
         this.load.image("bookBackground", "assets/image/book_background.png");
+        SceneUtils.loadUi(this);
     }
 
     create() {
         // Create a back button
-        const backButton = this.add.text(20, 50, "Back to Cabin").setInteractive();
-        backButton.on("pointerdown", () => this.scene.start("Cabin"));
+        SceneUtils.addNavigation(this);
 
         this.add.image(400, 300, "bookBackground").setScale(.08, .08).setDepth(-1);
     }

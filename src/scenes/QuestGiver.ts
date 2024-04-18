@@ -5,6 +5,7 @@ import { Quest } from "../objects/Quest";
 import { SaveManager } from "../data/SaveManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
 import { QuestRating } from "../objects/QuestRating";
+import { SceneUtils } from "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -56,16 +57,13 @@ export class QuestGiver extends Phaser.Scene {
         this.potionManager.loadIngredients();
 
         this.potionsContainer = this.add.container(0, 0).setName('potions');
+        SceneUtils.loadUi(this);
     }
 
     create() {
         this.potionManager.processData();
 
-        // Create a back button
-        const backButton = this.add.text(20, 50, "Back to Cabin").setInteractive();
-        backButton.on("pointerdown", () => {
-            return this.scene.start("Cabin");
-        });
+        SceneUtils.addNavigation(this);
 
         this.add.text(100, 300, this.quest.questGiver + ": " + this.quest.content).setWordWrapWidth(400);
         this.add.rectangle(300, 230, 450, 300, 0x964B00).setDepth(-1);
@@ -242,7 +240,7 @@ export class QuestGiver extends Phaser.Scene {
 
             let originalX = startX + column * spacingX;
             let originalY = 350 + row * 80;
-            const potionContainer = this.add.rectangle(originalX, originalY, 64, 64, 0x964B00, 1).setDepth(-1);
+            const potionContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1);
             let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
             let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId);
             this.potionsContainer.add(quantityText);

@@ -45,7 +45,7 @@ export class CraftScene extends Phaser.Scene {
         this.load.image('cauldron', 'assets/image/cauldron.png');
         // Load the background image asset
         this.load.image('background', 'assets/image/drawings/cabin-draft.png');
-        this.load.image('navSign', 'assets/image/ui-assets/nav_sign_button.png');
+        SceneUtils.loadUi(this);
     }
 
     create() {
@@ -58,7 +58,7 @@ export class CraftScene extends Phaser.Scene {
         backgroundImage.displayWidth = this.game.canvas.width;
         backgroundImage.displayHeight = this.game.canvas.height;
 
-        const ingredientsContainer = this.add.rectangle(25, 75, 750, 500, 0xe39d2d, 1).setDepth(-1).setOrigin(0, 0);
+        const ingredientsContainer = this.add.image(10, 240, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.65, .65);
 
         // Process loaded data
         this.potionManager.processData();
@@ -85,6 +85,7 @@ export class CraftScene extends Phaser.Scene {
         const cauldronImage = this.add.image(700, 450, 'cauldron').setScale(.5, .5);
 
         // Create a drop zone for the cauldron
+        const dropZoneImage = this.add.image(700, 100, 'selectedIngredients').setScale(.65, .65);
         this.cauldronDropZone = this.add.zone(700, 400, 100, 100);
         this.cauldronDropZone.setDropZone();
 
@@ -254,8 +255,10 @@ export class CraftScene extends Phaser.Scene {
 
         // Create a new container for ingredients on the current page
         this.ingredientsContainer = this.add.container(0, 0).setName('ingredients');
-        const startX = 120;
-        const spacingX = 90;
+        const startX = 95;
+        const spacingX = 100;
+        const spacingY = 100;
+        const startY = 230;
 
         // Calculate start and end index for current page
         const startIndex = this.currentPage * this.ingredientsPerPage;
@@ -272,8 +275,8 @@ export class CraftScene extends Phaser.Scene {
             }
 
             let originalX = startX + column * spacingX;
-            let originalY = 250 + row * 80;
-            const ingredientContainer = this.add.rectangle(originalX, originalY, 64, 64, 0x964B00, 1).setDepth(-1);
+            let originalY = startY + row * spacingY;
+            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.7, .7);
 
             const ingredient = ingredientsData[i];
             let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
