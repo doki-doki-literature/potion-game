@@ -2,19 +2,19 @@ import { PotionQuantity } from "../objects/PotionQuantity";
 import { QuestRating } from "../objects/QuestRating";
 
 export class SaveManager {
-    static saveInventory(inventory: PotionQuantity): void {
+    static saveInventory(inventory: Array<PotionQuantity>): void {
         const serializedInventory = JSON.stringify(inventory);
 
         localStorage.setItem('inventory', serializedInventory);
     }
 
-    static loadInventory(): PotionQuantity {
+    static loadInventory(): Array<PotionQuantity> {
         const serializedInventory = localStorage.getItem('inventory');
         
         if (serializedInventory) {
             return JSON.parse(serializedInventory);
         } else {
-            return {};
+            return [];
         }
     }
 

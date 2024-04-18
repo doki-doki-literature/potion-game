@@ -15,15 +15,15 @@ export class QuestGiver extends Phaser.Scene {
     questManager: QuestManager;
     potionManager: PotionManager;
     quest: Quest;
-    inventory: PotionQuantity;
+    inventory: Array<PotionQuantity>;
     potionDescriptionText: Phaser.GameObjects.Text;
     selectedPotionId: number;
+    selectedPotionImage: Phaser.GameObjects.Image;
     dropzone: Phaser.GameObjects.Zone;
     potionsContainer: Phaser.GameObjects.Container;
     private currentPage: number = 0;
     private potionsPerPage: number = 10;
     private totalPages: number;
-
 
     constructor() {
         super(sceneConfig);
@@ -31,7 +31,6 @@ export class QuestGiver extends Phaser.Scene {
 
     init(data: any) {
         const questId = data.questId;
-        this.inventory = SaveManager.loadInventory();
 
         this.questManager = new QuestManager(this);
         this.questManager.loadQuests();
@@ -41,11 +40,15 @@ export class QuestGiver extends Phaser.Scene {
     }
 
     preload() {
+        this.inventory = SaveManager.loadInventory();
+
         // Load the background image asset
         this.load.image('background', 'assets/image/drawings/cabin-draft.png');
         for (let i = 1; i < 31; i++) {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
+
+        this.load.image('questGiver', 'assets/image/questgiver1.png');
 
         this.potionManager = new PotionManager(this);
         this.potionManager.loadPotions();
@@ -63,8 +66,11 @@ export class QuestGiver extends Phaser.Scene {
             return this.scene.start("Cabin");
         });
 
-        this.add.text(100, 400, this.quest.questGiver + ": " + this.quest.content).setWordWrapWidth(300);
+        this.add.text(100, 300, this.quest.questGiver + ": " + this.quest.content).setWordWrapWidth(400);
+        this.add.rectangle(300, 230, 450, 300, 0x964B00).setDepth(-1);
         console.log(this.quest)
+
+        this.add.image(300, 200, 'questGiver').setScale(.7, .7);
 
         // Add the background image to the scene
         const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0);
@@ -75,12 +81,11 @@ export class QuestGiver extends Phaser.Scene {
         backgroundImage.displayWidth = this.game.canvas.width;
         backgroundImage.displayHeight = this.game.canvas.height;
 
-        const potionsContainer = this.add.rectangle(25, 75, 750, 500, 0xe39d2d, 1).setDepth(-1).setOrigin(0, 0);
+        const potionsContainer = this.add.rectangle(25, 75, 750, 500, 0xe39d2d, 1).setDepth(-2).setOrigin(0, 0);
 
         // Process loaded data
         this.potionManager.processData();
         let potionsData = this.potionManager.potions;
-        console.log(potionsData)
 
         // Create a text object to display ingredient description
         this.potionDescriptionText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' });
@@ -97,26 +102,26 @@ export class QuestGiver extends Phaser.Scene {
         let resultText = this.add.text(20, 320, '', { color: '#ffffff' });
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
-        // Create a container for the cauldron
-        this.add.rectangle(700, 450, 64, 64);
+        // Create a container for the submission box
+        this.add.rectangle(670, 200, 64, 64, 0x964B00);
 
-        // Create a drop zone for the cauldron
-        this.dropzone = this.add.zone(700, 400, 100, 100);
+        // Create a drop zone for the submission box
+        this.dropzone = this.add.zone(670, 200, 100, 100);
         this.dropzone.setDropZone();
 
         // Calculate total pages
-        // this.totalPages = Math.ceil(ingredientsData.length / this.ingredientsPerPage);
+        this.totalPages = Math.ceil(potionsData.length / this.potionsPerPage);
 
         // Create pagination buttons
-        // const prevButton = this.add.text(50, 240, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
-        //     this.currentPage = Phaser.Math.Clamp(this.currentPage - 1, 0, this.totalPages - 1);
-        //     this.updatePage(ingredientsData);
-        // });
+        const prevButton = this.add.text(650, 435, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+            this.currentPage = Phaser.Math.Clamp(this.currentPage - 1, 0, this.totalPages - 1);
+            this.updatePage(potionsData);
+        });
 
-        // const nextButton = this.add.text(50, 270, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
-        //     this.currentPage = Phaser.Math.Clamp(this.currentPage + 1, 0, this.totalPages - 1);
-        //     this.updatePage(ingredientsData);
-        // });
+        const nextButton = this.add.text(650, 485, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+            this.currentPage = Phaser.Math.Clamp(this.currentPage + 1, 0, this.totalPages - 1);
+            this.updatePage(potionsData);
+        });
 
         // Initialize current page
         this.updatePage(potionsData);
@@ -127,7 +132,7 @@ export class QuestGiver extends Phaser.Scene {
         });
 
         // Create craft button
-        const craftButton = this.add.text(630, 200, 'Submit', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
+        const craftButton = this.add.text(630, 250, 'Submit', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 if (this.selectedPotionId) {
@@ -153,6 +158,7 @@ export class QuestGiver extends Phaser.Scene {
                         overlay.on("pointerdown", () => {
                             overlay.destroy();
                             text1.destroy();
+                            this.selectedPotionImage?.destroy();
                         });
                     }
 
@@ -168,7 +174,7 @@ export class QuestGiver extends Phaser.Scene {
         // Clear existing potions
         this.potionsContainer.destroy();
 
-        // Create a new container for ingredients on the current page
+        // Create a new container for potions on the current page
         this.potionsContainer = this.add.container(0, 0).setName('potions');
         const startX = 120;
         const spacingX = 90;
@@ -178,27 +184,28 @@ export class QuestGiver extends Phaser.Scene {
         const endIndex = Math.min(startIndex + this.potionsPerPage, potionsData.length);
         let row = 0;
         let column = 0;
-        // Display ingredients for the current page
-        for (let i = startIndex; i < endIndex; i++) {
+        // Display potions for the current page
+
+        this.inventory.forEach((pq: PotionQuantity, index: number) => {
             column += 1;
 
-            if (i % 5 == 0) {
+            if (index % 5 == 0) {
                 row += 1;
                 column = 0;
             }
 
             let originalX = startX + column * spacingX;
-            let originalY = 250 + row * 80;
+            let originalY = 350 + row * 80;
             const potionContainer = this.add.rectangle(originalX, originalY, 64, 64, 0x964B00, 1).setDepth(-1);
+            const potion = this.potionManager.potions.find(potion => potion.potionId == pq.potionId);
+            console.log(potion);
+            let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
 
-            const potion = potionsData[i];
-            let potionImage = this.add.image(originalX, originalY, `potion${potion.potionId}`).setScale(2, 2);
-
-            potionImage.setData('potionId', potion.potionId);
+            potionImage.setData('potionId', pq.potionId);
             potionImage.setInteractive();
             this.input.setDraggable(potionImage);
 
-            // Set drag event for cauldron
+            // Set drag event
             potionImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
                 potionImage.setX(pointer.x);
                 potionImage.setY(pointer.y);
@@ -209,11 +216,16 @@ export class QuestGiver extends Phaser.Scene {
                 potionImage.setY(originalY);
             });
 
-            // Set drop zone for cauldron
+            // Set drop zone
             potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
                 const potionId = potionImage.getData('potionId');
+                console.log(potionId);
                 if (dropZone === this.dropzone) {
-                    // this.selectedPotionId = ;
+                    if (this.selectedPotionId) {
+                        this.selectedPotionImage.destroy();
+                    }
+                    this.selectedPotionId = potionId;
+                    this.selectedPotionImage = this.add.image(670, 200, `potion${potionId}`).setScale(2, 2);
                 }
             });
 
@@ -232,6 +244,6 @@ export class QuestGiver extends Phaser.Scene {
             });
 
             this.potionsContainer.add(potionImage);
-        }
+        });
     }
 }

@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 import { PotionManager } from "../data/PotionManager";
 import { SaveManager } from "../data/SaveManager";
+import { PotionQuantity } from "../objects/PotionQuantity";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -127,10 +128,11 @@ export class CraftScene extends Phaser.Scene {
                         const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId)!;
                         let discoveredPotions = SaveManager.loadPotionLog();
                         let inventory = SaveManager.loadInventory();
-                        if (inventory[matchedPotion.potionId]) {
-                            inventory[matchedPotion.potionId] = inventory[matchedPotion.potionId] + 1;
+                        let matchedInventory = inventory.find((pq: PotionQuantity) => pq.potionId == matchedPotion.potionId);
+                        if (matchedInventory) {
+                            matchedInventory.quantity = matchedInventory.quantity + 1;
                         } else {
-                            inventory[matchedPotion.potionId] = 1;
+                            inventory.push(new PotionQuantity({ potionId: matchedPotion.potionId, quantity: 1 }));
                         }
                         SaveManager.saveInventory(inventory);
                         let name;
