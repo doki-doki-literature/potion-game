@@ -1,58 +1,402 @@
 [
     {
       "questId": 1,
-      "questGiver" :"Knight",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "questGiver" :"Traveler Knight",
+      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions. Potion Seller, I tell you I am going into battle, and I want only your strongest potions.",
       "imageUrl": "",
       "stories": [
-        { 
+        {
           "potionId": 1,
-          "story": "test",
-          "rating": 3
+          "story": "The knight proudly consumed the Elixir of Hypertrichosis, growing a magnificent beard. Unfortunately, they charged recklessly into battle, the beard getting tangled in their armor and hindering their attacks.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 2,
+          "story": "The Mimicry potion allowed the knight to mimic the enemy's battle cries perfectly. They accidentally rallied the enemy forces instead of confusing them, leading to a fierce counterattack.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 3,
+          "story": "Begone Babel granted the knight the ability to understand the enemy's battle plans. However, they misinterpreted the information and made crucial tactical mistakes, leading to a swift defeat.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 4,
+          "story": "Potion seller. I went face my demons armed with your strongest potion and instead of facing them, I disappeared. My demons looked past me and trampled on my head.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 5,
+          "story": "The Potion of Flight allowed the knight to soar above the battlefield. Unfortunately, they became distracted by the scenery and failed to attack the enemy forces below.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 6,
+          "story": "The Matter potion granted the knight the power to create a bridge across a chasm. However, they built it leading directly into the enemy's encampment, offering them an easy path to attack.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 7,
+          "story": "Boinkie Toinkie granted the knight super jumps, allowing them to leap over enemy lines. However, they landed right in the middle of the enemy formation, surrounded and overwhelmed.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 8,
+          "story": "The Alopecic Panacea caused a sudden thunderclap, startling the enemy horses. In the ensuing chaos, the knight failed to capitalize on the confusion and the enemy quickly regrouped.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 9,
+          "story": "The Plant Whisperer potion allowed the knight to communicate with the battlefield flora. They learned the location of a hidden enemy ambush, but then loudly announced it to the enemy themselves.",
+          "rating": 1,
+          "reveal": false
+        },
+        { 
+          "potionId": 10,
+          "story": "I told this traveler 'my potions are too strong for you'. I gave him my strongest potion as he asked for, and he could not handle my potions. I had warned him, 'my strongest potions are only for the strongest and you clearly are not of the strongest you're clearly the weakest'. I can give any potion, but if one does not have the mind or fortitude to use them, the potions will not help. I will give myself a 3 star rating for teaching such a valuable lesson.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 11,
+          "story": "The Snail's Trail potion left a sticky trail wherever the knight went, allowing them to track enemy movements. Unfortunately, the trail also led the enemy right back to the knight's own army.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 12,
+          "story": "The Solar Hands potion illuminated the battlefield, revealing hidden enemy positions. However, the knight used the light to show off their new armor, becoming a giant glowing target for the enemy archers.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 13,
+          "story": "Yo Mama caused a minor earthquake, disrupting the enemy's formations. However, the knight failed to exploit the opening and the enemy quickly recovered.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 14,
+          "story": "The Rude potion caused a sandstorm on the battlefield, blinding both sides. The knight, instead of using the confusion to their advantage, wandered around lost and disoriented until the storm cleared, leaving them vulnerable.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 15,
+          "story": "Ninja Matcha granted the knight agility and stealth. They infiltrated the enemy ranks with ease, but then accidentally tripped over their own sword and alerted everyone to their presence.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 16,
+          "story": "The Gluglug Juice caused the knight to shrink down to a tiny size. They snuck into the enemy camp unnoticed but were then promptly stepped on by a giant enemy soldier.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 17,
+          "story": "The Invisibility Cloak potion rendered the knight invisible. However, they forgot they were invisible and started giving loud pep talks to their allies, revealing their location to the enemy.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 18,
+          "story": "The Jojo Juice turned the knight into a super buff and handsome person. Unfortunately, they became so preoccupied with their own reflection they failed to see the enemy army charging towards them.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 19,
+          "story": "The Truth Serum potion compelled a captured enemy soldier to reveal their battle plans. However, the knight didn't understand the complex military jargon and completely misinterpreted the information.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 20,
+          "story": "The potion of Forgetfulness caused the knight to forget they were even in a battle. They wandered off humming a merry tune, leaving their allies confused and bewildered.",
+          "rating": 1,
+          "reveal": false
         }
       ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
+      "defaultMessage": "The battle raged on, a cacophony of clashing steel and desperate cries. The knight, though well-equipped with potions, lacked the wit to use them effectively. The outcome of the battle hangs in the balance.",
+      "rewardItems": "",
+      "rewardText": ""
     },
     {
       "questId": 2,
-      "questGiver" :"Lucy",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "questGiver" :"The frustrated fisherman",
+      "content": "There's something haunting the graveyard by the pond that I like to fish in. Every time I go fishing now, I keep catching boots. It's the same old soggy boot, always the left shoe. I can't escape it and I can't catch any fish. Please give me a super power to escape this boot curse.",
       "imageUrl": "",
       "stories": [
-        { 
+        {
           "potionId": 1,
-          "story": "test",
-          "rating": 3
+          "story": "The fisherman eagerly consumed the strange concoction. He cast his line, expecting... well, he wasn't sure what the seller meant by that one.  Sadly, the boot curse remained unbroken.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 2,
+          "story": "The fisherman, desperate at this point, gulped down the dubious potion. The seller mentioned mimicking sounds, so the fisherman tried to mimic a spooky groan. It came out more like a strangled cat. A crow landed nearby and cawed mockingly. The boot remained firmly attached.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 3,
+          "story": "The fisherman clutched at straws and drank the potion. The seller mumbled something about languages. The fisherman hoped it would help him understand the ghostly moans from the graveyard. He heard a mournful cry, but it wasn't about boots. He reeled in... yep, another soggy boot.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 4,
+          "story": "The fisherman downed the potion, unsure what invisibility would do for his boot problem. He cast his line, feeling a tug. He reeled in... his own hat? It seems invisible now, but the boot was firmly hooked, mocking him from the water.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 5,
+          "story": "The fisherman drank the potion, the seller mentioning something about soaring. He envisioned himself flying high above the haunted pond, finally free of the boot. He took flight, only to realize he couldn't cast a line from up there. He landed with a splash, the boot greeting him at the water's surface.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 6,
+          "story": "The fisherman consumed the potion, the seller mentioning something about crafting materials. He figured, why not? Maybe a bridge across the pond would help him escape. He ended up with a small, wobbly hillock in the middle of the water. The boot? Still there, judging him from the depths.",
+          "rating": 1,  
+          "reveal": false
+        },
+        {
+          "potionId": 7,
+          "story": "The fisherman drank the potion, the seller mentioning some vague notion of jumping. He figured super jumps might help him escape the haunted water. He bounced uncontrollably around the pond like a deranged pogo stick. The boot remained stubbornly hooked, a constant reminder of his curse.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 8,
+          "story": "The fisherman took a swig of the murky potion, the seller mentioning a powerful boom. He braced himself for a mighty thunderclap to scare away the ghost. Instead, a tiny puff of smoke emerged. The ghost, barely noticing, sent another boot his way.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 9,
+          "story": "The fisherman drank the potion, the seller mentioning something about talking to plants. The fisherman, desperate at this point, tried to commune with the pond weeds. He learned a fascinating fact about algae reproduction, but the boot remained firmly attached to his line.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 10,
+          "story": "The fisherman downed the potion, the seller mentioning powerful winds. He figured a strong gust might blow the boot away. He let out a mighty toot, only to succeed in blowing his hat off. The boot, ever present, awaited him on the other end of the line.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 11,
+          "story": "The fisherman drank the potion, the seller muttering something about trails. The fisherman wasn't sure what good a trail would do, but he was willing to try anything. He cast his line and reeled in, leaving a sticky trail behind him. He ended up stuck fast to the ground, a human fly trap. The boot, ever opportunistic, landed right beside him.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 12,
+          "story": "The fisherman eyed the potion with suspicion. He drank the potion, his knuckles cracked, and his fingers began glowing brightly. He cast his line, illuminating the murky depths. The source of the curse was revealed! A grumpy spectral washerwoman was churning out an endless supply of left boots in her underwater washing machine. The fisherman, armed with knowledge, finally knew what he had to do.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 13,
+          "story": "The fisherman chugged the dubious concoction, the seller mentioning something about earthquakes. The fisherman wasn't sure how an earthquake would help, but he cast his line anyway. The pond rippled violently, causing him to lose his balance and fall in. He sputtered to the surface, the boot clinging to his line like a leech. The ghost from the graveyard, startled by the commotion, looked down and shrieked. Distracted, she tripped and fell into her own washing machine, vanishing in a puff of steam. The curse was broken, but the fisherman was left shivering and sopping wet, with a boot and a newfound appreciation for a calm pond.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 14,
+          "story": "The fisherman drank the potion, the seller mentioning something about insults. The fisherman wasn't sure how insults would help his predicament, but he was willing to try anything at this point. He reeled in his line and yelled a string of insults at the boot. The water around him bubbled ominously, and a giant spectral hand emerged, holding another left boot. The curse had doubled! The fisherman fainted dead away.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 15,
+          "story": "The fisherman downed the potion with trepidation. He felt a surge of energy and nimbleness course through him. He danced around the pond with newfound grace, effortlessly dodging the spectral boot after spectral boot that the ghost hurled at him. However, his triumph was short-lived. The ghost, impressed by his agility, decided to keep him forever young and spry, forcing him to dance around the haunted pond for eternity.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 16,
+          "story": "The fisherman eyed the potion nervously. The seller, with a Cheshire grin, mentioned shrinking. The fisherman wasn't sure how shrinking would help, but he was desperate. He drank the potion and felt himself shrinking rapidly. He cast his line, and the boot loomed over him like a skyscraper. Panicked, he tried to hide under a pebble, but the spectral washerwoman scooped him up and tossed him into her washing machine with the endless supply of left boots. The fisherman was never seen again.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 17,
+          "story": "The fisherman warily drank the potion. The seller mentioned something about invisibility. The fisherman wasn't sure how invisibility would help with a rogue boot, but he cast his line anyway. He became invisible, chuckling to himself that the ghost wouldn't be able to find him. However, he forgot he was invisible and reeled in his own fishing line, wrapping himself up like a cocoon and tumbling into the pond. The boot, ever persistent, landed on his head.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 18,
+          "story": "The fisherman eyed the brightly colored potion with suspicion. The seller, rambling incoherently, mentioned something about handsomeness. The fisherman wasn't sure how looking good would help with his boot problem, but he was at his wit's end. He drank the potion and admired his reflection in the pond. Suddenly, a chorus of sighs rose from the graveyard. The ghosts, all lovelorn and distracted, forgot about the fisherman entirely. He sheepishly reeled in his line... and of course, the boot was still there. But at least he had a captive audience for his fish tales, if he ever managed to catch any.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 19,
+          "story": "The fisherman, desperate for a solution, drank the potion and envisioned a powerful blast of water to dislodge the boot. Instead, he accidentally summoned a crackling bolt of lightning as well as a big tidal wave. The ghost hiding by the graveyard was startled by a sudden thunderclap that echoed through the surroundings. Dazed and confused, she momentarily forgot about the boot. The fisherman reeled in his line... and the boot was still there. But at least he had the ghost's attention now.",
+          "rating": 2,
+          "reveal": true,
+          "potionName": "Elemental Vial"
+        },
+        {
+          "potionId": 20,
+          "story": "The fisherman, with a sigh, drank the last potion. He drank the potion and a ball of light materialized at the tip of his fishing rod. He cast his line, the illuminated bobber attracting a school of fish for the first time. He reeled in a whopper, finally he didn't catch a boot. The ghost peeked over the gravestone, confused and defeated. The fisherman now had a new reliable way of catching fish. He didn't need the boot anymore, so he decided to give it to you as a token of his appreciation.",
+          "rating": 3,
+          "reveal": true,
+          "potionName": "St. Elmo's Tonic",
+          "rewardItem": "boot.png",
+          "rewardText": "You have received a soggy old boot. You'll find some place for this boot in your cabin."
         }
       ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
+      "defaultMessage": "The fisherman never got back to you about how the potion worked. Oh well, maybe he'll go seeking you out for the solution again."
     },
     {
       "questId": 3,
-      "questGiver" :"Gianna",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "questGiver" :"The Nervous Escort",
+      "content": "I've been told to escort Escia to Tobbek tomorrow, and I am so nervous. I need this mission to be a success, so I can make a good impression on Escia. Please give me a power that will guarantee this mission's success.",
       "imageUrl": "",
       "stories": [
-        { 
+        {
           "potionId": 1,
-          "story": "test",
-          "rating": 3
+          "story": "Desperate for success, the escort downed the potion. Overnight, a thick beard sprouted on their face.  The journey was unexpectedly peaceful until a band of ogres ambushed them.  The escort, surprised but emboldened by their new beard, roared a challenge.  Startled by the unexpected ferocity, the ogres hesitated, giving the escort enough time to unleash a flurry of blows, sending them fleeing.",
+          "rating": 2,
+          "reveal": true
+        },
+        {
+          "potionId": 2,
+          "story": "The first day of the travels was uneventful. On the second day, a pack of goblins ambushed them.  The escort, mimicking a particularly loud and obnoxious goblin leader, sowed confusion among the attackers.  Taking advantage of the chaos, the escort fought their way through the goblins, escaping unharmed.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 3,
+          "story": "Hoping to anticipate dangers, the escort chugged the potion. They learned of a hidden bandit camp ahead.  Using their newfound knowledge, the escort devised a daring plan.  They snuck past the perimeter guards, mimicking the calls of a nocturnal bird to distract the lookouts.  Inside the camp, the escort freed the prisoners and sparked a rebellion.  The bandits were overwhelmed, and the camp was liberated.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 4,
+          "story": "Dreaming of a smooth journey, the escort downed Tom's Potion. They turned invisible!  Disaster struck when a monstrous griffin swooped down, mistaking the escort for a tasty morsel.  The escort, invisible, had to dodge razor-sharp talons and fight back blindly.  Just as the griffin prepared for a final strike, the potion's effect wore off, revealing the escort.  The griffin, surprised, faltered for a moment, giving the escort the opening they needed to deliver a fatal blow.  They arrived in Tobbek, exhausted but victorious.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 5,
+          "story": "Dreaming of a swift journey, the escort drank the Potion of Flight.  Soaring through the air, they spotted a column of smoke rising in the distance.  Investigating, they found a village under attack by a fire-breathing dragon.  The escort, without hesitation, swooped down and engaged the beast in a fierce aerial battle.  Dodging flames and scorching winds, the escort managed to slay the dragon, saving the village.  They landed in Tobbek a hero, their wings singed but their spirit unbroken.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 6,
+          "story": "Hoping to impress, the escort consumed the Matter potion. The journey was smooth, with the escort shaping bridges and clearing paths.  Then, the earth trembled violently.  A monstrous earthworm, awakened by the magic, erupted from the ground.  The escort, thinking fast, used their power to reshape the landscape, creating a series of trenches and earthworks to trap the beast.  In a grueling battle, the escort used their environment to their advantage, finally defeating the earthworm and ensuring the safety of the region.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 8,
+          "story": "Hoping for a clean and easy journey, the escort drank a strange potion. They were startled by a sudden thunderclap that echoed through the surroundings.  Looking down, they realized the potion had caused them to lose all their hair!  Escia, initially surprised, found their bald head oddly endearing.  Despite the embarrassing situation, the journey continued, and the escort arrived in Tobbek, a little self-conscious but determined to complete the mission.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 9,
+          "story": "The escort, yearning to understand the wilderness, drank the potion. They spent the journey conversing with the local wildlife, learning about hidden dangers and forgotten paths.  One day, they encountered a distressed herd of deer fleeing in terror.  Following their tracks, the escort discovered a group of monstrous wolves attacking a hidden village.  The escort, using their newfound ability to communicate with animals, rallied the deer and other forest creatures to defend the village.  In a fierce battle, the beasts drove back the wolves, saving the villagers.  The escort arrived in Tobbek, a protector of nature with a newfound respect for the power of communication.",
+          "rating": 3,
+          "reveal": false,
+          "rewardItem": "antler",
+          "rewardText": "antler.png"
+        },
+        {
+          "potionId": 10,
+          "story": "Hoping to lighten the mood, the escort drank a strange potion. The potion caused them to develop incredibly strong flatulence.  At first, Escia tried to be cordial and understanding about the constant farts, but the constant barrage of smelly blasts quickly became overwhelming.  The journey was disrupted as the escort struggled to control their emissions, and they became a prisoner of the journey.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 11,
+          "story": "Hoping to avoid detection by bandits, the escort drank a strange potion.  The potion caused them to leave behind a trail of sticky goo wherever they sat.  The journey was messy, with the escort constantly sticking to rocks, logs, and even Escia's saddle.  They managed to avoid bandits, but arrived in Tobbek looking like a disaster and smelling faintly of berries.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 12,
+          "story": "Hoping to appear confident and strong, the escort drank a strange potion. The potion caused their knuckles to crackle with glowing light whenever they flexed.  Escia found the glowing hands a bit strange, but the display of power was somewhat reassuring.  The journey was uneventful, and the escort arrived in Tobbek with glowing knuckles and a newfound sense of self-assurance.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 13,
+          "story": "Hoping to clear a path through any obstacles, the escort drank a strange potion. The ground rumbled ominously, and Escia clung to her horse in fear.  Thankfully, there were no obstacles on the path, but the constant tremors made the journey miserable.  The escort arrived in Tobbek, covered in dust and thoroughly shaken, having achieved nothing but a bumpy ride.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 14,
+          "story": "Hoping to create a diversion if needed, the escort drank a strange potion. A swirling sandstorm erupted around them, blinding and disorienting.  Escia became separated from the escort in the chaos, and they spent a frantic hour searching for each other.  The storm eventually subsided, and they were lucky to reunite.  The journey was delayed, and they arrived in Tobbek exhausted and frustrated.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 15,
+          "story": "Hoping to impress Escia with their skills, the escort drank a strange potion. They felt a surge of energy and performed a series of acrobatic feats, much to Escia's amusement.  However, their newfound agility proved useless on the journey.  The escort arrived in Tobbek, slightly out of breath and covered in dirt, having achieved nothing but a brief display of acrobatics.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 16,
+          "story": "Hoping to impress Escia with their skills, the escort drank a strange potion. The escort suddenly decided to be a bard and sang his heart out hitting high notes he could never dream of hitting before.  Initially everyone was impressed with his new vocal range, but it soon became clear that high notes did not equate to greater vocal ability and word spread of a traveling shrieker.",
+          "rating": 1,
+          "reveal": true
+        },
+        {
+          "potionId": 17,
+          "story": "Hoping to impress Escia with their skills, the escort drank a strange potion. They fixated on the wheels of the caravan and nobody could get the escort's attention back.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 18,
+          "story": "The escort drank a strange potion and immediately became the most muscular and handsome person. Escia fell for him immediately. Later on the escort wrote a letter to you thanking you for his newfound beauty, muscles and face. Attached to his letter was a rose.",
+          "rating": 3,
+          "reveal": true,
+          "rewardItem": "rose.png",
+          "rewardText": "You received a Rose from the escort. You think that maybe their beauty may have gone to their head. You're not the biggest fan of roses, but you'll find a place to keep the rose."
+        },
+        {
+          "potionId": 19,
+          "story": "Hoping to overcome any obstacles with a touch of magic, the escort drank a strange potion that granted them incredible power to control the elements. The potion coursed through their veins, granting them incredible power over the elements. However, controlling the power proved difficult. The escort accidentally uprooted a tree while trying to swat a fly with a gust of wind, and tripped over their own feet while attempting to manipulate the earth to form a path. Escia, initially impressed, quickly became concerned about the escort's safety and clumsiness. The escort arrived in Tobbek exhausted and sore, having achieved nothing but a spectacular display of uncontrolled elemental chaos",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 20,
+          "story": "The escort drank the potion and there was a ball of light. Nice.",
+          "rating": 3,
+          "reveal": false
         }
+
       ],
-      "defaultMessage": "Default failure message",
-      "rewardItems": "trophy",
-      "rewardText": "you received a trophy"
+      "defaultMessage": "You didn't get any news from the escort. Maybe he'll come to you again with his problems and you can find out more."
     },
     {
       "questId": 4,
       "questGiver" :"Spencer",
-      "content": "Hello Potion Seller, I am going into battle and I want your strongest potions.",
+      "content": "My significant other gave me a crocheted pig the other day, but I can't find it! I've looked everywhere, and I think I need a miracle in order to find it now. Can you please give me a super power that will help me find it. My significant other will be so mad to know that I lost it.",
       "imageUrl": "",
-      "stories": [
+      "stories": [  
         { 
           "potionId": 1,
           "story": "test",
@@ -62,6 +406,121 @@
       "defaultMessage": "Default failure message",
       "rewardItems": "trophy",
       "rewardText": "you received a trophy"
+    },
+    {
+      "questId": 5,
+      "questGiver": "The Wise Wizard",
+      "content": "Oh great potion seller, I seek your aid in retrieving the Magic Crystal from the Cave of Wonders. Can you provide me with a potion that will aid me in this perilous journey?",
+      "stories": [
+        {
+          "potionId": 1,
+          "story": "The brave adventurer consumed the Elixir of Hypertrichosis and delved into the cave. With a majestic beard, they commanded respect from the cave dwellers and retrieved the Crystal.",
+          "rating": 3,
+          "reveal": true
+        },
+        {
+          "potionId": 2,
+          "story": "The Mimicry potion allowed the adventurer to mimic the growls of a cave lion, scaring away smaller creatures and clearing a path to the Crystal chamber.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 3,
+          "story": "Begone Babel granted the adventurer the ability to speak with the cave's wise old badger. The badger revealed the location of a secret passage leading directly to the Crystal.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 4,
+          "story": "Tom's Potion rendered the adventurer invisible, allowing them to sneak past the cave's many guardians and reach the Crystal undetected.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 5,
+          "story": "The Potion of Flight allowed the adventurer to soar above the treacherous cave passages and reach the Crystal chamber with ease.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 6,
+          "story": "The Matter potion granted the adventurer the power to create a bridge across a chasm, allowing them to safely reach the Crystal chamber.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 7,
+          "story": "Boinkie Toinkie granted the adventurer super high jumps, allowing them to navigate the cave's many vertical challenges and reach the Crystal.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 8,
+          "story": "The Alopecic Panacea caused a sudden thunderclap, startling the cave guardians and giving the adventurer an opportunity to snatch the Crystal and escape.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 9,
+          "story": "The Plant Whisperer potion allowed the adventurer to communicate with the cave moss, which revealed a secret pathway leading directly to the Crystal.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 10,
+          "story": "The Elixir of Strong Flatulence caused a commotion within the cave, distracting the guardians and allowing the adventurer to grab the Crystal and flee.",
+          "rating": 2,
+          "reveal": false
+        },
+        {
+          "potionId": 11,
+          "story": "The Snail's Trail potion left a sticky trail wherever the adventurer went, making it impossible to escape the pursuing cave guardians.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 12,
+          "story": "The Solar Hands potion illuminated the path ahead, revealing hidden dangers and allowing the adventurer to navigate the cave safely and reach the Crystal.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 13,
+          "story": "Yo Mama caused a minor earthquake, collapsing a section of the cave and blocking the entrance. The adventurer was forced to abandon their quest for the Crystal.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 14,
+          "story": "The Rude potion caused a sandstorm within the cave, burying the Crystal and forcing the adventurer to flee.",
+          "rating": 1,
+          "reveal": false
+        },
+        {
+          "potionId": 15,
+          "story": "Ninja Matcha granted the adventurer agility and stealth, allowing them to navigate the cave's perilous traps and reach the Crystal undetected.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 16,
+          "story": "The Gluglug Juice caused the adventurer to shrink down to a tiny size, allowing them to slip through narrow passages and reach the Crystal chamber.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 17,
+          "story": "The Invisibility Cloak potion rendered the adventurer completely invisible, allowing them to bypass the cave's many guardians and retrieve the Crystal with ease.",
+          "rating": 3,
+          "reveal": false
+        },
+        {
+          "potionId": 18,
+          "story": "The Jojo Juice turned the adventurer into a super buff and handsome person, but alas, the Crystal remained hidden within the heavily guarded chamber.",
+          "rating": 1,
+          "reveal": false
+        }
+      ]
     }
 ]
   
