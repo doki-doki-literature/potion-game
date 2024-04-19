@@ -24,7 +24,7 @@ export class QuestGiver extends Phaser.Scene {
     dropzone: Phaser.GameObjects.Zone;
     potionsContainer: Phaser.GameObjects.Container;
     private currentPage: number = 0;
-    private potionsPerPage: number = 10;
+    private potionsPerPage: number = 15;
     private totalPages: number;
 
     constructor() {
@@ -43,6 +43,7 @@ export class QuestGiver extends Phaser.Scene {
 
     preload() {
         this.inventory = SaveManager.loadInventory();
+<<<<<<< HEAD
 
         // Load the background image asset
         this.load.image('background', 'assets/image/drawings/cabin-draft.png');
@@ -53,6 +54,13 @@ export class QuestGiver extends Phaser.Scene {
         for (let i = 1; i < 4; i++){
             this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
         }
+=======
+        for (let i = 1; i < 31; i++) {
+            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
+        }
+
+        this.load.image(`questGiver${this.quest.questId}`, `assets/image/drawings/townspeople${this.quest.questId}.png`);
+>>>>>>> 76da6e68065092e9300949b75d836136d0c00f8c
 
         this.potionManager = new PotionManager(this);
         this.potionManager.loadPotions();
@@ -60,13 +68,17 @@ export class QuestGiver extends Phaser.Scene {
 
         this.potionsContainer = this.add.container(0, 0).setName('potions');
         SceneUtils.loadUi(this);
+        SceneUtils.loadBackground(this);
     }
 
     create() {
         this.potionManager.processData();
 
         SceneUtils.addNavigation(this);
+        SceneUtils.addBackground(this);
+        SceneUtils.addItemSelectContainer(this);
 
+<<<<<<< HEAD
         this.add.text(100, 300, this.quest.questGiver + ": " + this.quest.content).setWordWrapWidth(400);
         this.add.rectangle(300, 230, 450, 300, 0x964B00).setDepth(-1);
         console.log(this.quest)
@@ -84,6 +96,10 @@ export class QuestGiver extends Phaser.Scene {
 
         const potionsContainer = this.add.rectangle(25, 75, 750, 500, 0xe39d2d, 1).setDepth(-2).setOrigin(0, 0);
 
+=======
+        this.add.image(650, 475, `questGiver${this.quest.questId}`).setScale(.3, .3).setDepth(-1);
+        
+>>>>>>> 76da6e68065092e9300949b75d836136d0c00f8c
         // Process loaded data
         this.potionManager.processData();
         let potionsData = this.potionManager.potions;
@@ -104,22 +120,22 @@ export class QuestGiver extends Phaser.Scene {
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
         // Create a container for the submission box
-        this.add.rectangle(670, 200, 64, 64, 0x964B00);
+        this.add.image(650, 250, 'inventoryTile').setScale(.55, .55);
 
         // Create a drop zone for the submission box
-        this.dropzone = this.add.zone(670, 200, 100, 100);
+        this.dropzone = this.add.zone(650, 250, 100, 100);
         this.dropzone.setDropZone();
 
         // Calculate total pages
         this.totalPages = Math.ceil(potionsData.length / this.potionsPerPage);
 
         // Create pagination buttons
-        const prevButton = this.add.text(650, 435, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+        const prevButton = this.add.text(100, 500, 'Prev', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
             this.currentPage = Phaser.Math.Clamp(this.currentPage - 1, 0, this.totalPages - 1);
             this.updatePage(potionsData);
         });
 
-        const nextButton = this.add.text(650, 485, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
+        const nextButton = this.add.text(400, 500, 'Next', { color: '#ffffff' }).setInteractive().on('pointerdown', () => {
             this.currentPage = Phaser.Math.Clamp(this.currentPage + 1, 0, this.totalPages - 1);
             this.updatePage(potionsData);
         });
@@ -133,13 +149,26 @@ export class QuestGiver extends Phaser.Scene {
         });
 
         // Create submit button
-        const submitButton = this.add.text(630, 250, 'Submit', { color: '#ffffff', backgroundColor: '#964B00', padding: { x: 10, y: 10 } })
+        const submitButton = this.add.image(600, 320, 'confirmButton').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 this.completeQuest();
                 this.handleSubmit();
                 this.updatePage(potionsData);
             });
+
+        const submitButtonText = this.add.text(submitButton.x - 25, submitButton.y - 10, "Submit");
+
+        const clearButton = this.add.image(700, 320, 'clearButton').setScale(.45, .5)
+            .setInteractive({ useHandCursor: true })
+            .on('pointerdown', () => {
+                const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
+                this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
+                previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
+                this.selectedPotionId = null;
+                this.selectedPotionImage?.destroy();
+            })
+        const clearButtonText = this.add.text(clearButton.x - 25, clearButton.y - 10, "Clear");
     }
 
     handleSubmit() {
@@ -187,7 +216,8 @@ export class QuestGiver extends Phaser.Scene {
                 story: story.story,
                 rating: story.rating,
                 reveal: story.reveal,
-                date: new Date()
+                date: new Date(),
+                potionId: this.selectedPotionId
             });
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
@@ -203,7 +233,8 @@ export class QuestGiver extends Phaser.Scene {
                 story: this.quest.defaultMessage,
                 rating: 1,
                 reveal: false,
-                date: new Date()
+                date: new Date(),
+                potionId: this.selectedPotionId
             });
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
@@ -221,8 +252,10 @@ export class QuestGiver extends Phaser.Scene {
 
         // Create a new container for potions on the current page
         this.potionsContainer = this.add.container(0, 0).setName('potions');
-        const startX = 40;
+        const startX = -10;
         const spacingX = 90;
+        const spacingY = 90;
+        const startY = 160;
 
         // Calculate start and end index for current page
         const startIndex = this.currentPage * this.potionsPerPage;
@@ -230,8 +263,8 @@ export class QuestGiver extends Phaser.Scene {
         let row = 1;
         let column = 1;
         // Display potions for the current page
-
-        this.inventory.forEach((pq: PotionQuantity, index: number) => {
+        for (let index = 0; index < 15; index++) {
+            const pq = this.inventory.slice(startIndex, endIndex)[index];
             if (index < startIndex) {
                 return;
             }
@@ -241,66 +274,68 @@ export class QuestGiver extends Phaser.Scene {
             }
 
             let originalX = startX + column * spacingX;
-            let originalY = 350 + row * 80;
-            const potionContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1);
-            let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
-            let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId);
-            this.potionsContainer.add(quantityText);
-            potionImage.setData('potionId', pq.potionId);
-            potionImage.setInteractive();
-            if (pq.quantity > 0) {
-                this.input.setDraggable(potionImage);
-            }
+            let originalY = startY + row * spacingY;
+            const potionContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.6, .6);
+            if (!!pq) {
+                let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
+                let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId).setColor("#000000");
+                this.potionsContainer.add(quantityText);
+                potionImage.setData('potionId', pq.potionId);
+                potionImage.setInteractive();
+                if (pq.quantity > 0) {
+                    this.input.setDraggable(potionImage);
+                }
 
-            // Set drag event
-            potionImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
-                potionImage.setX(pointer.x);
-                potionImage.setY(pointer.y);
-            });
+                // Set drag event
+                potionImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
+                    potionImage.setX(pointer.x);
+                    potionImage.setY(pointer.y);
+                });
 
-            potionImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
-                potionImage.setX(originalX);
-                potionImage.setY(originalY);
-            });
+                potionImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
+                    potionImage.setX(originalX);
+                    potionImage.setY(originalY);
+                });
 
-            // Set drop zone
-            potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
-                const potionId = potionImage.getData('potionId');
-                if (dropZone === this.dropzone) {
-                    if (this.selectedPotionId) {
-                        this.selectedPotionImage.destroy();
-                        const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
-                        this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
-                        previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
+                // Set drop zone
+                potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
+                    const potionId = potionImage.getData('potionId');
+                    if (dropZone === this.dropzone) {
+                        if (this.selectedPotionId) {
+                            this.selectedPotionImage.destroy();
+                            const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
+                            this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
+                            previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
+                        }
+                        this.selectedPotionId = potionId;
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        quantityText.setText(`x${pq.quantity - 1}`);
+                        this.inventory.find(q => q.potionId == potionId).quantity -= 1;
                     }
-                    this.selectedPotionId = potionId;
-                    this.selectedPotionImage = this.add.image(670, 200, `potion${potionId}`).setScale(2, 2);
-                    quantityText.setText(`x${pq.quantity - 1}`);
-                    this.inventory.find(q => q.potionId == potionId).quantity -= 1;
-                }
-            });
+                });
 
-            // Set pointer over event for potions
-            potionImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
-                const potionId = potionImage.getData('potionId');
-                const potion = this.potionManager.potions.find(potion => potion.potionId == potionId);
-                if (potion) {
-                    // Set text position to match cursor
-                    this.potionDescriptionText.setPosition(pointer.x - 150, pointer.y + 30);
-                    // Set text content to ingredient description
-                    this.potionDescriptionText.setText(potion.name + ": " + potion.description);
-                    // Show the text
-                    this.potionDescriptionText.setVisible(true);
-                }
-            });
+                // Set pointer over event for potions
+                potionImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
+                    const potionId = potionImage.getData('potionId');
+                    const potion = this.potionManager.potions.find(potion => potion.potionId == potionId);
+                    if (potion) {
+                        // Set text position to match cursor
+                        this.potionDescriptionText.setPosition(pointer.x - 150, pointer.y + 30);
+                        // Set text content to ingredient description
+                        this.potionDescriptionText.setText(potion.name + ": " + potion.description);
+                        // Show the text
+                        this.potionDescriptionText.setVisible(true);
+                    }
+                });
 
-            this.potionsContainer.add(potionImage);
+                this.potionsContainer.add(potionImage);
+            }
             if (column % 5 == 0) {
                 row += 1;
                 column = 1;
             } else {
                 column += 1;
             }
-        });
+        }
     }
 }
