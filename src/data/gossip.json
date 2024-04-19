@@ -1,73 +1,169 @@
 [
-    {
-      "gossipId": 1,
-      "content": "I heard that x ingredient when combined with y ingredient has a certain effect.",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 2,
-      "content": "Interesting fact about x ingredient",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 3,
-      "content": "Phoenix Feather",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 4,
-      "content": "Eye of Newt",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 5,
-      "content": "Wolfsbane",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 6,
-      "content": "Fairy Dust",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 7,
-      "content": "Unicorn Horn",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 8,
-      "content": "Mermaid Scale",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 9,
-      "content": "Goblin Earwax",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    },
-    {
-      "gossipId": 10,
-      "content": "Basilisk Venom",
-      "imageUrl": "",
-      "ingredientId": null,
-      "potionId": null
-    }
+  {
+    "gossipId": 1,
+    "content": "Saw Mayor Peterson sneaking out of the bakery at dawn carrying a giant box of red velvet cupcakes. Wonder who they were for?"
+  },
+  {
+    "gossipId": 2,
+    "content": "Rumor has it that Miss Beatrice, the librarian, is secretly a world-renowned cat whisperer. Apparently, she can make them do anything!"
+  },
+  {
+    "gossipId": 3,
+    "content": "  I overheard the twins from Elm Street talking about a hidden treasure stashed somewhere in the old abandoned mansion. Maybe there's truth to the local legends after all..."
+  },
+  {
+    "gossipId": 4,
+    "content": "The new chef at Luigi's Ristorante is rumored to be a former contestant on a famous cooking competition show! No wonder their pasta is so incredible."
+  },
+  {
+    "gossipId": 5,
+    "content": "Did you hear? The Parkers are putting their prize-winning poodle, Fifi, up for adoption! Apparently, they're getting a hypoallergenic hairless cat."
+  },
+  {
+    "gossipId": 6,
+    "content": "Caught Mr. Henderson from the flower shop talking to his plants this morning.  I swear I saw a rose bush nod back! Maybe he's onto something..."
+  },
+  {
+    "gossipId": 7,
+    "content": "Brenda at the bookstore claims she saw a ghost last night wandering the stacks!  Spooky! Especially since they were the history section..."
+  },
+  {
+    "gossipId": 8,
+    "content": "The annual bake-off is heating up!  Ms. Lee from across the street is rumored to be entering her famous blueberry pie recipe this year.  Looks like we have some tough competition!"
+  },
+  {
+    "gossipId": 9,
+    "content": "Spotted Charlie from the pet store walking a miniature pig down Main Street yesterday.  Apparently, they're offering a new exotic pet sitting service.  Intriguing!"
+  },
+  {
+    "gossipId": 10,
+    "content": "Big news!  The town council is considering building a new dog park on Maple Street.  Fido will be thrilled!"
+  },  
+  {
+    "gossipId": 11,
+    "content": "Have you seen that white powder? I heard that double the white powder works wonders",
+    "ingredientId": 1,
+    "potionId": 17
+  },
+  {
+    "gossipId": 12,
+    "content": "Did you know that Bain Marie is just Mary's bath water?",
+    "ingredientId": null,
+    "potionId": 17
+  },
+  {
+    "gossipId": 13,
+    "content": "Scandal at the Art Guild! The winner of the grand prize last year is rumored to have secretly traced their masterpiece.  Will they be stripped of their title?",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 14,
+    "content": "Oh, the scandal! The whole town is abuzz about the baker's apprentice and the blacksmith's wife! Apparently, their secret rendezvous in the mill shed got interrupted by a flock of very loud pigeons. Talk about a feathery fiasco!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 15,
+    "content": "Looks like sparks are flying between Lady Esmeralda and that handsome visiting knight, Sir William! But not the good kind. Seems the Lady accused him of pilfering a jeweled comb!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 16,
+    "content": "Heard it from the baker himself! King Roderick was spotted sneaking out at midnight to visit that creepy Potion Seller. ",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 17,
+    "content": "The castle guards are whispering about a ghost spotted wandering the halls at night! Seems the poor soul can't find rest. Maybe someone needs to lay their spirit to peace?",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 18,
+    "content": "An alchemist has been spotted peddling strange concoctions in the marketplace.  But that alchemist's potions are weird? They all seem to grant a weird superpower rather than the usual potions.",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 19,
+    "content": "The crows seem particularly bold lately, snatching trinkets and shiny baubles from unsuspecting townsfolk.  Is it just bird-brain behavior or a sign of something more...ominous?",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 20,
+    "content": "The town drunk swears he saw a group of gnomes cavorting beneath the full moon last night.  Given his usual state, most folks dismiss it.  But then again...",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 21,
+    "content": "Do you sometimes feel like you're being watched",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 22,
+    "content": "Did you hear about Farmer John's story? He's gone mad! He has been begging the priest at the Church  to let him and Bess get married at the altar...Bess is a cow! I think he's lost his marbles after drinking his knee remedy...The apothecary was brought to the Church to be exorcised after he was found to be mixing grated Footskin and Eye Crust. What a devil!",
+    "ingredientId": null,
+    "potionId": 3
+  },
+  {
+    "gossipId": 23,
+    "content": "Rumor has it that Tom the Peep hasn't been spotted since the incident at the tavern last month...His tab hasn't been picked up yet so now his face is posted up on every wall of the village. Last thing we heard about him is that he was working on a potion made of a mysterious liquid and another key ingredient that has something to do with Goblins...",
+    "ingredientId": null,
+    "potionId": 4
+  },
+  {
+    "gossipId": 24,
+    "content": "The royal family is in shambles because the princess heir has been in hiding although she is to be wed to the neighboring kingdom's price heir. Rumor has it that the princess, who is a recovering alcoholic, went on a drinking spree and had a concoction from Ectoplasm and a Goblin product...I wonder why that mixture is so bad that it would force one into hiding?",
+    "ingredientId": null,
+    "potionId": 8
+  },
+  {
+    "gossipId": 25,
+    "content": "Word on the street is that Lady Agnes's prized pet frog has been feeling ill lately. Perhaps you could do something about it? You seem like you know a lot about frogs...",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 26,
+    "content": "So Sir Henry suddenly grew a full beard, although everyone in the village knows he is bald as a boiled egg. We are growing suspicious of him thinking he made a deal with the devil, and one time the village people held him at pitchfork-point. He claims he just mixes a root crop with powder! What devilry is afoot!",
+    "ingredientId": null,
+    "potionId": 1
+  },
+  {
+    "gossipId": 27,
+    "content": "The lead singer at the church has improved a lot in singing lately, that she's making a lot of gold coins from busking at the town square! I asked her what the secret is, and she said she adds ginger with a little ingredient she won't tell me about...",
+    "ingredientId": null,
+    "potionId": 16
+  },
+  {
+    "gossipId": 28,
+    "content": "Have you seen the new blacksmith apprentice? The ladies of the village have been saying he looks charming! Rumor has it that he's actually a bastard son of the King from far away, and he was dumped into this village as an infant...But between you and me, I think he's the guy stealing people's goats since they've started to disappear right when he started living in this village...A pox upon it!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 29,
+    "content": "Have you heard of the old Widow who lives by the dumps? I've heard she's brewing love potions lately, and the ladies of the village have been saying they're effective...No wonder the men of the village have been looking dead tired lately...Why aren't you selling love potions anyway?",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 30,
+    "content": "You know that large, muscular guy that has 3 wives who lives in the east side of the village? I heard he wasn't always that way...He used to be a scrawny and ugly kid. Some say it's work of eating cheese and drinking some kind of a weird water...",
+    "ingredientId": null,
+    "potionId": 18
+  },
+  {
+    "gossipId": 31,
+    "content": "I heard that you can take double dosage of the white powder and be able to do any work you always put off!",
+    "ingredientId": null,
+    "potionId": 17
+  }
 ]
   

@@ -22,6 +22,6 @@ export class GossipScene extends Phaser.Scene {
     create() {
         SceneUtils.addNavigation(this);
 
-        this.add.image(400, 300, "townPerson1").setScale(.08, .08).setDepth(-1);
+        this.add.image(400, 350, "townPerson1").setScale(0.6, 0.6).setDepth(-1);
     }
 }
