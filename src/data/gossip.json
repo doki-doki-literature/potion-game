@@ -62,25 +62,25 @@
     },
     {
       "gossipId": 11,
-      "content": "Basilisk Venom",
+      "content": "Did you hear about Farmer John's story? He's gone mad! He has been begging the priest at the Church  to let him and Bess get married at the altar...Bess is a cow! I think he's lost his marbles after drinking his knee remedy...The apothecary was brought to the Church to be exorcised after he was found to be mixing grated Footskin and Eye Crust. What a devil!",
       "ingredientId": null,
-      "potionId": null
+      "potionId": 3
     },
     {
       "gossipId": 12,
-      "content": "Basilisk Venom",
+      "content": "Rumor has it that Tom the Peep hasn't been spotted since the incident at the tavern last month...His tab hasn't been picked up yet so now his face is posted up on every wall of the village. Last thing we heard about him is that he was working on a potion made of a mysterious liquid and another key ingredient that has something to do with Goblins...",
       "ingredientId": null,
-      "potionId": null
+      "potionId": 4
     },
     {
       "gossipId": 13,
-      "content": "Basilisk Venom",
+      "content": "The royal family is in shambles because the princess heir has been in hiding although she is to be wed to the neighboring kingdom's price heir. Rumor has it that the princess, who is a recovering alcoholic, went on a drinking spree and had a concoction from Ectoplasm and a Goblin product...I wonder why that mixture is so bad that it would force one into hiding?",
       "ingredientId": null,
-      "potionId": null
+      "potionId": 8
     },
     {
       "gossipId": 14,
-      "content": "Basilisk Venom",
+      "content": "Word on the street is that Lady Agnes's prized pet frog has been feeling ill lately. Perhaps you could do something about it? You seem like you know a lot about frogs...",
       "ingredientId": null,
       "potionId": null
     },
@@ -88,7 +88,7 @@
       "gossipId": 15,
       "content": "So Sir Henry suddenly grew a full beard, although everyone in the village knows he is bald as a boiled egg. We are growing suspicious of him thinking he made a deal with the devil, and one time the village people held him at pitchfork-point. He claims he just mixes a root crop with powder! What devilry is afoot!",
       "ingredientId": null,
-      "potionId": null
+      "potionId": 1
     },
     {
       "gossipId": 16,
