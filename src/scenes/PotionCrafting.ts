@@ -39,7 +39,7 @@ export class CraftScene extends Phaser.Scene {
             this.load.image(`ingredient${i}`, `assets/image/ingredient${i}.png`);
         }
 
-        for (let i = 1; i < 31; i++) {
+        for (let i = 1; i < 21; i++) {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');

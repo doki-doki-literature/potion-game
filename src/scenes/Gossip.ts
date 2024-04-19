@@ -13,9 +13,9 @@ export class GossipScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("townPerson1", "assets/image/drawings/townspeople1.png");
-        this.load.image("townPerson2", "assets/image/drawings/townspeople2.png");
-        this.load.image("townPerson3", "assets/image/drawings/townspeople3.png");
+        for (let i = 1; i < 4; i++){
+            this.load.image(`townPerson${i}`, `assets/image/drawings/townspeople${i}.png`)
+        }
         SceneUtils.loadUi(this);
     }
 
