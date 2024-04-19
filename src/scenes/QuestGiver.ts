@@ -148,6 +148,9 @@ export class QuestGiver extends Phaser.Scene {
         const clearButton = this.add.image(700, 320, 'clearButton').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
+                if (this.selectedPotionId == null) {
+                    return;
+                }
                 const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
                 this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
                 previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
