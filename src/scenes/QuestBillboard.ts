@@ -22,7 +22,15 @@ export class QuestBillboardScene extends Phaser.Scene {
         this.questManager = new QuestManager(this);
         this.questManager.loadQuests();
         this.questProgress = SaveManager.loadQuestProgress();
+
+        for(let i = 1; i < 5; i++) {
+            this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
+        }
+
+        this.load.bitmapFont('handwritten', 'assets/fonts/Fool_0.png', 'assets/fonts/Fool.fnt');
+
         SceneUtils.loadUi(this);
+        SceneUtils.loadBackground(this);
     }
 
     create() {
@@ -30,12 +38,17 @@ export class QuestBillboardScene extends Phaser.Scene {
         this.questManager.processActiveQuests();
 
         SceneUtils.addNavigation(this);
-        this.add.text(200, 100, "Active Quests: ");
+        SceneUtils.addBackground(this);
+
         const activeQuestIds = SaveManager.loadActiveQuests();
         activeQuestIds.forEach((questId, index) => {
             const quest = this.questManager.quests.find(quest => quest.questId == questId);
-            const questText = this.add.text(200, 200 + index * 40, quest.questGiver);
-            questText.setInteractive().on("pointerdown", () => this.scene.start("QuestGiver", { questId : quest.questId }))
+            const questImage = this.add.image(130 + index * 270, 340, 'itemDisplay').setScale(.65, .73).setDepth(-1);
+            const questGiverImage = this.add.image(130 + index * 270, 540, `questGiver${quest.questId}`).setScale(.3, .3);
+            const questGiverName = this.add.bitmapText(40 + index * 270, 200, 'handwritten', quest.questGiver, 22, 1).setMaxWidth(150);
+            const questText = this.add.bitmapText(30 + index * 270, 250, 'handwritten', quest.content, 14, 1).setMaxWidth(200);
+
+            questImage.setInteractive().on("pointerdown", () => this.scene.start("QuestGiver", { questId : quest.questId }))
         })
     }
 }

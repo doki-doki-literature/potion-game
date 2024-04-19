@@ -24,9 +24,6 @@ export class PotionManager extends DataManager {
         const potionsData = super.getJSON('potions');
         const ingredientsData = super.getJSON('ingredients');
 
-        console.log('Potions data:', potionsData);
-        console.log('Ingredients data:', ingredientsData);
-
         if (potionsData && ingredientsData) {
             this.potions = potionsData.map((data: any) => new Potion(data));
             this.ingredients = ingredientsData.map((data: any) => new Ingredient(data));

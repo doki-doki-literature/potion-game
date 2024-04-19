@@ -43,22 +43,14 @@ export class CraftScene extends Phaser.Scene {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');
-        // Load the background image asset
-        this.load.image('background', 'assets/image/drawings/cabin-draft.png');
         SceneUtils.loadUi(this);
+        SceneUtils.loadBackground(this);
     }
 
     create() {
         // Add the background image to the scene
-        const backgroundImage = this.add.image(0, 0, 'background').setOrigin(0);
-
-        // Set the background image to cover the entire game canvas
-        backgroundImage.setDepth(-3);
-        backgroundImage.setAlpha(.2);
-        backgroundImage.displayWidth = this.game.canvas.width;
-        backgroundImage.displayHeight = this.game.canvas.height;
-
-        const ingredientsContainer = this.add.image(5, 180, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .6);
+        SceneUtils.addBackground(this);
+        SceneUtils.addItemSelectContainer(this);
 
         this.add.text(190, 150, "Drag Ingredients");
         this.add.text(560, 150, "Selected Ingredients");
@@ -73,8 +65,6 @@ export class CraftScene extends Phaser.Scene {
         this.ingredientDescriptionText.setWordWrapWidth(400);
         this.ingredientDescriptionText.setVisible(false); // Initially hide the text
 
-        SceneUtils.addNavigation(this);
-
         // Set pointer out event to hide ingredient description text
         this.input.on('pointerout', () => {
             // Hide the text when the cursor moves away from the ingredient
@@ -85,7 +75,7 @@ export class CraftScene extends Phaser.Scene {
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
         // Create a container for the cauldron
-        const cauldronImage = this.add.image(650, 550, 'cauldron').setScale(.5, .5);
+        this.add.image(650, 550, 'cauldron').setScale(.5, .5);
 
         // Create a drop zone for the cauldron
         const dropZoneImage = this.add.image(655, 250, 'selectedIngredients').setScale(.55, .55);
@@ -132,12 +122,10 @@ export class CraftScene extends Phaser.Scene {
             .on('pointerdown', () => {
                 if (this.selectedIngredients.length === 2) {
                     const ingredientIds = this.selectedIngredients;
-                    console.log('Selected ingredient IDs:', ingredientIds);
 
                     // Attempt to craft potion
                     const result = this.tryCraft(ingredientIds[0], ingredientIds[1]);
                     if (result.isValid) {
-                        console.log('Craft successful! Potion ID:', result.potionId, 'Potion Name', result.name);
                         const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId)!;
                         let discoveredPotions = SaveManager.loadPotionLog();
                         let inventory = SaveManager.loadInventory();
@@ -229,7 +217,6 @@ export class CraftScene extends Phaser.Scene {
                             potionImage.destroy();
                         });
                         visualDescriptionText.setText("");
-                        console.log('Craft failed. No valid potion found.');
                     }
 
                     // Clear selected ingredients
@@ -239,6 +226,8 @@ export class CraftScene extends Phaser.Scene {
                 }
             });
         const craftButtonText = this.add.text(570, 340, "Create");
+
+        SceneUtils.addNavigation(this);
     }
 
     tryCraft(ingredientId1: number, ingredientId2: number): { isValid: boolean, potionId?: number, name?: string } {
