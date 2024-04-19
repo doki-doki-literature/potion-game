@@ -4,6 +4,7 @@
       "questGiver" :"Traveler Knight",
       "content": "Hello Potion Seller, I am going into battle and I want your strongest potions. Potion Seller, I tell you I am going into battle, and I want only your strongest potions.",
       "imageUrl": "",
+      "questGiverId": 1,
       "stories": [
         {
           "potionId": 1,
@@ -135,6 +136,7 @@
       "questGiver" :"The frustrated fisherman",
       "content": "There's something haunting the graveyard by the pond that I like to fish in. Every time I go fishing now, I keep catching boots. It's the same old soggy boot, always the left shoe. I can't escape it and I can't catch any fish. Please give me a super power to escape this boot curse.",
       "imageUrl": "",
+      "questGiverId": 2,
       "stories": [
         {
           "potionId": 1,
@@ -268,6 +270,7 @@
       "questGiver" :"The Nervous Escort",
       "content": "I've been told to escort Escia to Tobbek tomorrow, and I am so nervous. I need this mission to be a success, so I can make a good impression on Escia. Please give me a power that will guarantee this mission's success.",
       "imageUrl": "",
+      "questGiverId": 3,
       "stories": [
         {
           "potionId": 1,
@@ -396,6 +399,7 @@
       "questGiver" :"The worried villager",
       "content": "My prized possession, a golden locket that's been in my family for generations, has gone missing! I believe a mischievous sprite has taken it and hidden it somewhere in the forest. Please help me find it!",
       "imageUrl": "",
+      "questGiverId": 3,
       "stories": [  
         {
           "potionId": 1,
@@ -526,6 +530,7 @@
     {
       "questId": 5,
       "questGiver": "The Wise Wizard",
+      "questGiverId": 2,
       "content": "Oh great potion seller, I seek your aid in retrieving the Magic Crystal from the Cave of Wonders. Can you provide me with a potion that will aid me in this perilous journey?",
       "stories": [
         {

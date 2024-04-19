@@ -3,6 +3,7 @@ import { PotionQuest } from "./PotionQuest";
 export class Quest {
     questId: number;
     questGiver: string;
+    questGiverId: number;
     content: string;
     stories: Array<PotionQuest>;
     defaultMessage: string;
@@ -14,5 +15,6 @@ export class Quest {
         this.content = data.content;
         this.stories = data.stories;
         this.defaultMessage = data.string;
+        this.questGiverId = data.questGiverId;
     }
 }
