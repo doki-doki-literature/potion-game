@@ -12,7 +12,8 @@ const config = {
     new CopyPlugin({
       patterns: [
         { from: 'index.html', to: DIST_DIR },
-        { from: 'assets', to: DIST_DIR + '/assets' }
+        { from: 'assets', to: DIST_DIR + '/assets' },
+        { from: 'src/data', to: DIST_DIR + '/src/data'}
       ]
     })
   ]
