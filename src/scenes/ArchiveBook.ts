@@ -13,7 +13,7 @@ export class ArchiveScene extends Phaser.Scene {
     }
 
     preload() {
-        this.load.image("bookBackground", "assets/image/book_background.png");
+        this.load.image("bookBackground", "assets/image/ui-assets/archive_display.png");
         SceneUtils.loadUi(this);
     }
 
@@ -21,6 +21,6 @@ export class ArchiveScene extends Phaser.Scene {
         // Create a back button
         SceneUtils.addNavigation(this);
 
-        this.add.image(400, 300, "bookBackground").setScale(.08, .08).setDepth(-1);
+        this.add.image(400, 350, "bookBackground").setScale(.8, .8).setDepth(-1);
     }
 }

@@ -17,6 +17,7 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     scenes.ArchiveScene,
     scenes.QuestBillboardScene,
     scenes.QuestGiver,
+    scenes.QuestFinish,
     scenes.GossipScene,
     scenes.InventoryScene
   ],

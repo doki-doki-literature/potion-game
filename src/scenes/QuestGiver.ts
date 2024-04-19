@@ -90,15 +90,15 @@ export class QuestGiver extends Phaser.Scene {
         this.potionManager.processData();
         let potionsData = this.potionManager.potions;
 
-        // Create a text object to display ingredient description
+        // Create a text object to display potion description
         this.potionDescriptionText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' });
         this.potionDescriptionText.setDepth(1); // Ensure the text is above other elements
         this.potionDescriptionText.setWordWrapWidth(400);
         this.potionDescriptionText.setVisible(false); // Initially hide the text
 
-        // Set pointer out event to hide ingredient description text
+        // Set pointer out event to hide potion description text
         this.input.on('pointerout', () => {
-            // Hide the text when the cursor moves away from the ingredient
+            // Hide the text when the cursor moves away from the potion
             this.potionDescriptionText.setVisible(false);
         });
 
@@ -129,7 +129,7 @@ export class QuestGiver extends Phaser.Scene {
         // Initialize current page
         this.updatePage(potionsData);
 
-        // Set drag event for ingredients
+        // Set drag event for potions
         this.input.on('dragstart', (pointer: Phaser.Input.Pointer, gameObject: Phaser.GameObjects.Image) => {
             this.children.bringToTop(gameObject); // Bring the dragged object to the top
         });
@@ -187,6 +187,7 @@ export class QuestGiver extends Phaser.Scene {
 
             // Clear selected ingredients
             this.selectedPotionId = null;
+            this.scene.start("QuestFinish", { questId : this.quest.questId });
         } else {
             console.log('Please select a potion.');
         }

@@ -36,41 +36,41 @@ export class SceneUtils {
     }
 
     private static addCauldronButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(205, scene.scene.key == "Craft" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        const cauldronButton = scene.add.image(205, scene.scene.key == "Craft" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(165, scene.scene.key == "Craft" ? 65 : 35, 'Cauldron').setDepth(4);
-        backButton.on("pointerdown", () => {
+        cauldronButton.on("pointerdown", () => {
             return scene.scene.start("Craft");
         });
     }
 
     private static addInventoryButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(335, scene.scene.key == "Inventory" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        const invButton = scene.add.image(335, scene.scene.key == "Inventory" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(290, scene.scene.key == "Inventory" ? 65 : 35, 'Inventory').setDepth(4);
-        backButton.on("pointerdown", () => {
+        invButton.on("pointerdown", () => {
             return scene.scene.start("Inventory");
         });
     }
 
     private static addQuestLogButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(465, scene.scene.key == "Quest" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        const questButton = scene.add.image(465, scene.scene.key == "Quest" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(420, scene.scene.key == "Quest" ? 65 : 35, 'Quest Log').setDepth(4);
-        backButton.on("pointerdown", () => {
+        questButton.on("pointerdown", () => {
             return scene.scene.start("Quest");
         });
     }
 
     private static addTownButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(595, scene.scene.key == "Gossip" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        const townButton = scene.add.image(595, scene.scene.key == "Gossip" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(575, scene.scene.key == "Gossip" ? 65 : 35, 'Town').setDepth(4);
-        backButton.on("pointerdown", () => {
+        townButton.on("pointerdown", () => {
             return scene.scene.start("Gossip");
         });
     }
 
     private static addArchiveButton(scene: Phaser.Scene) {
-        const backButton = scene.add.image(725, scene.scene.key == "Archive" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        const arcButton = scene.add.image(725, scene.scene.key == "Archive" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(690, scene.scene.key == "Archive" ? 65 : 35, 'Archive').setDepth(4);
-        backButton.on("pointerdown", () => {
+        arcButton.on("pointerdown", () => {
             return scene.scene.start("Archive");
         });
     }

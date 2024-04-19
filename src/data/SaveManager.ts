@@ -26,7 +26,7 @@ export class SaveManager {
 
     static loadPotionLog(): number[] {
         const serializedPotionLog = localStorage.getItem('discoveredPotions');
-        
+
         if (serializedPotionLog) {
             return JSON.parse(serializedPotionLog);
         } else {
@@ -36,7 +36,7 @@ export class SaveManager {
 
     static loadQuestProgress(): Array<QuestRating> {
         const serializedQuests = localStorage.getItem('questProgress');
-        
+
         if (serializedQuests) {
             return JSON.parse(serializedQuests);
         } else {
