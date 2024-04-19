@@ -2,56 +2,48 @@
     {
       "gossipId": 1,
       "content": "I heard that x ingredient when combined with y ingredient has a certain effect.",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 2,
       "content": "Interesting fact about x ingredient",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 3,
       "content": "Phoenix Feather",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 4,
       "content": "Eye of Newt",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 5,
       "content": "Wolfsbane",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 6,
       "content": "Fairy Dust",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 7,
       "content": "Unicorn Horn",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
     {
       "gossipId": 8,
       "content": "Mermaid Scale",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
     },
@@ -65,9 +57,68 @@
     {
       "gossipId": 10,
       "content": "Basilisk Venom",
-      "imageUrl": "",
       "ingredientId": null,
       "potionId": null
+    },
+    {
+      "gossipId": 11,
+      "content": "Basilisk Venom",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 12,
+      "content": "Basilisk Venom",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 13,
+      "content": "Basilisk Venom",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 14,
+      "content": "Basilisk Venom",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 15,
+      "content": "So Sir Henry suddenly grew a full beard, although everyone in the village knows he is bald as a boiled egg. We are growing suspicious of him thinking he made a deal with the devil, and one time the village people held him at pitchfork-point. He claims he just mixes a root crop with powder! What devilry is afoot!",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 16,
+      "content": "The lead singer at the church has improved a lot in singing lately, that she's making a lot of gold coins from busking at the town square! I asked her what the secret is, and she said she adds ginger with a little ingredient she won't tell me about...",
+      "ingredientId": null,
+      "potionId": 16
+    },
+    {
+      "gossipId": 17,
+      "content": "Have you seen the new blacksmith apprentice? The ladies of the village have been saying he looks charming! Rumor has it that he's actually a bastard son of the King from far away, and he was dumped into this village as an infant...But between you and me, I think he's the guy stealing people's goats since they've started to disappear right when he started living in this village...A pox upon it!",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 18,
+      "content": "Have you heard of the old Widow who lives by the dumps? I've heard she's brewing love potions lately, and the ladies of the village have been saying they're effective...No wonder the men of the village have been looking dead tired lately...Why aren't you selling love potions anyway?",
+      "ingredientId": null,
+      "potionId": null
+    },
+    {
+      "gossipId": 19,
+      "content": "You know that large, muscular guy that has 3 wives who lives in the east side of the village? I heard he wasn't always that way...He used to be a scrawny and ugly kid. Some say it's work of eating cheese and drinking some kind of a weird water...",
+      "ingredientId": null,
+      "potionId": 18
+    },
+    {
+      "gossipId": 20,
+      "content": "I heard that you can take double dosage of the white powder and be able to do any work you always put off!",
+      "ingredientId": null,
+      "potionId": 17
     }
 ]
   
