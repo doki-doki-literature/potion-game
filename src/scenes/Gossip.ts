@@ -1,5 +1,6 @@
 import * as Phaser from "phaser";
 import { SceneUtils } from "../utils/SceneUtils";
+import { GossipManager } from "../data/GossipManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -8,20 +9,57 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 };
 
 export class GossipScene extends Phaser.Scene {
+    private gossipManager: GossipManager;
+    private gossipText: Phaser.GameObjects.Text;
     constructor() {
         super(sceneConfig);
     }
 
     preload() {
+        this.gossipManager = new GossipManager(this);
+        this.gossipManager.loadGossips();
         for (let i = 1; i < 4; i++){
             this.load.image(`townPerson${i}`, `assets/image/drawings/townspeople${i}.png`)
         }
         SceneUtils.loadUi(this);
+        this.load.image('crystalBall', 'assets/image/drawings/crystal-ball.png');
     }
 
     create() {
         SceneUtils.addNavigation(this);
 
-        this.add.image(400, 350, "townPerson1").setScale(0.6, 0.6).setDepth(-1);
+        //background image
+        this.add.image(420, 375, 'crystalBall').setScale(3, 3).setDepth(-3);
+
+        //displaying a random townsperson
+        this.add.image(400, 350, `townPerson${Math.floor(Math.random()*3)+1}`).setScale(0.6, 0.6).setDepth(-1);
+
+        //textbox to display gossip
+        this.add.image(20, 400, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(1.5, .8);
+        this.add.image(400, 500, 'inventoryTile').setDepth(-1).setScale(4.5, 1);
+
+        //creating an object to display the gossip text
+        this.gossipText = this.add.text(120, 450, '', { color: '#000000' });
+        this.gossipText.setDepth(3); // Ensure the text is above other elements
+        this.gossipText.setWordWrapWidth(580);
+
+        //setting the gossip text
+        this.gossipManager.processData();
+        console.log(this.gossipManager.gossips)
+        let gossipData = this.gossipManager.gossips;
+        let randNum = Math.floor(Math.random()*gossipData.length) + 1;
+        let displayedText = this.gossipManager.gossips.find(gossip => gossip.gossipId === randNum)
+        console.log(displayedText);
+        if (displayedText) {
+            this.gossipText.setText(displayedText.content);
+        }
+
+        //generate new gossip button
+        const townButton = this.add.image(400,  390, 'confirmButton').setInteractive().setScale(1, .6).setDepth(3);
+        this.add.text(350, 380, 'Listen Again').setDepth(4);
+        townButton.on("pointerdown", () => {
+            return this.scene.start("Gossip");
+        });
+
     }
 }
