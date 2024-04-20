@@ -210,7 +210,8 @@ export class QuestGiver extends Phaser.Scene {
                 rating: story.rating,
                 reveal: story.reveal,
                 date: new Date(),
-                potionId: this.selectedPotionId
+                potionId: this.selectedPotionId,
+                revealText: story.revealText
             });
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);

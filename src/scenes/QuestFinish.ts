@@ -8,7 +8,7 @@ import { PotionManager } from "../data/PotionManager";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: "QuestFinish",
+    key: "QuestFinish"
 };
 
 export class QuestFinish extends Phaser.Scene {
@@ -65,14 +65,14 @@ export class QuestFinish extends Phaser.Scene {
         this.add.image(490, 235, `potion${this.lastResult.potionId}`).setScale(3, 3).setDepth(2);
 
         //displaying the potion text
-        this.add.text(550, 200, "Submitted Potion:")
+        this.add.text(550, 200, "Submitted Potion:");
 
         this.potionManager.processData();
-        let potionText = this.potionManager.potions[this.lastResult.potionId].name;
+        let potionText = this.potionManager.potions[this.lastResult.potionId - 1].name;
 
         this.potionText = this.add.text(550, 240, '', { color: '#ffffff' });
         this.potionText.setDepth(3);
-        this.potionText.setWordWrapWidth(250);
+        this.potionText.setWordWrapWidth(160);
         if (this.discoveredPotions.includes(this.lastResult.potionId)) {
             this.potionText.setText(potionText)
         } else {
@@ -93,10 +93,19 @@ export class QuestFinish extends Phaser.Scene {
 
         //displaying success or failure
         if (this.lastResult.rating == 1) {
-            this.add.text(545, 440, "Failure :(")
+            this.add.text(540, 410, "Failure :(")
+        }
+        if (this.lastResult.rating == 2) {
+            this.add.text(540, 410, "Meh.")
         }
         if (this.lastResult.rating == 3) {
-            this.add.text(545, 440, "Success!")
+            this.add.text(540, 410, "Success!")
         }
+
+        //displaying reveal text
+        if (this.lastResult.revealText) {
+            this.add.text (450, 450, `Notes: ${this.lastResult.revealText}`).setWordWrapWidth(300);
+        }
+
     }
 }

@@ -5,6 +5,7 @@ export class QuestRating {
     date: Date;
     story: string;
     reward: string;
+    revealText: string;
 
     constructor(data: any) {
         this.questId = data.questId;
@@ -12,5 +13,7 @@ export class QuestRating {
         this.rating = data.rating;
         this.date = data.date;
         this.story = data.story;
+        this.reward = data.reward;
+        this.revealText = data.revealText;
     }
 }
