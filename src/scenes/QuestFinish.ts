@@ -29,7 +29,6 @@ export class QuestFinish extends Phaser.Scene {
         this.result = SaveManager.loadQuestProgress();
         //getting the last object of the quest rating array
         this.lastResult = this.result[this.result.length - 1];
-        console.log(this.lastResult);
 
         // load potions array from local storage
         this.discoveredPotions = SaveManager.loadPotionLog();

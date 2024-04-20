@@ -225,7 +225,6 @@ export class QuestGiver extends Phaser.Scene {
                 currentPotionLog.push(story.potionId);
                 SaveManager.savePotionLog(currentPotionLog);
             }
-            console.log(result);
         } else {
             const result = new QuestRating({
                 questId: this.quest.questId,
