@@ -8,91 +8,100 @@
       "stories": [
         {
           "potionId": 1,
-          "story": "The knight proudly consumed the potion, growing a magnificent beard. Unfortunately, they charged recklessly into battle, the beard getting tangled in their armor and hindering their attacks. Word spread of the knight who tripped over his own beard, and soon every barber shop was filled with people asking for a beard trim",
-          "rating": 1,
-          "reveal": true
+          "story": "The knight proudly consumed the potion and immediately after hair started growing magnificently out of his chin forming a luscious beard. Unfortunately, the knight, still not used to his new locks, charged recklessly into battle, the beard getting tangled in their armor and snared on other people's armor. Word spread of the knight who tripped over his own beard, and soon every barber shop was filled with people asking for shorter beard styles.",
+          "rating": 2,
+          "reveal": true,
+          "revealText": "Traveler knight consumed this potion and started growing a magnificent beard."
         },
         {
           "potionId": 2,
-          "story": "The Mimicry potion allowed the knight to mimic the enemy's battle cries perfectly. They accidentally rallied the enemy forces instead of confusing them, leading to a fierce counterattack.",
-          "rating": 1,
-          "reveal": false
+          "story": "The knight drank the potion and immediately let out a perfect replica of the enemy's battle cries. Their loud cry rallied the enemy forces and gave away his own position. They quickly charged and poopy-di scoop scoop-diddy whoop whoop-di-scoop-di-poop poop-di-scoopty scoopty-whoop whoopity-scoop, whoop-poop poop-diddy, whoop-scoop poop, poop scoop-diddy-whoop whoop-diddy-scoopy whoop-diddy-scoop, poop",
+          "rating": 2,
+          "reveal": true,
+          "revealText": "The traveling knight got beat up when he used this potion and was able to imitate another person perfectly. But watching the knight get poopity-scooped gave you the idea that maybe this potion could open the doors to a successful rap career if you choose to go down that road."
         },
         {
           "potionId": 3,
-          "story": "The knight drank the potion and suddenly he could understand the birds chirping in the forest. They were gossiping about the enemy's battle plans. However, the knight, not being very smart, misinterpreted the information and made crucial tactical mistakes, leading to a swift defeat.",
+          "story": "The knight drank the potion and suddenly he could understand the birds chirping in the forest. They were gossiping about the enemy's battle plans. However, the knight, not being very smart, couldn't keep up with the speed of the gossip and kept getting lost in all the side tangents in the stories. Eventually he wandered straight into the enemy army's camp clutching his head like a duck with a headache.",
           "rating": 1,
-          "reveal": true
+          "reveal": true,
+          "revealText": "When someone says to you 'a little bird told me' this potion helped them understand the little bird."
         },
         {
           "potionId": 4,
-          "story": "Potion seller. I went face my demons armed with your strongest potion and instead of facing them, I disappeared. My demons looked past me and trampled on my head.",
+          "story": "Potion seller. I went face my demons armed with your strongest potion. I stared at them with my most ferocious stare and drank the potion, never breaking eye contact. Well, they weren't really looking at me, but I was looking at them. And I didn't blink. However, drinking the potion just made them ignore me better. The potion turned me invisible! All my toes got trampled.",
           "rating": 1,
-          "reveal": true
+          "reveal": true,
+          "revealText": "There was a traveling knight that made me realize that some people just seem to blend into the background naturally, but for the others, this potion should turn them invisible."
         },
         {
           "potionId": 5,
-          "story": "The Potion of Flight allowed the knight to soar above the battlefield. Unfortunately, they became distracted by the scenery and failed to attack the enemy forces below.",
+          "story": "You tried to watch the knight through your glass ball, but it seemed you were a little late in tuning in and the knight had already drank the potion. Currently your crystal ball was just showing you clouds billowing around no matter how hard to tried to get a clearer picture. You're not really sure what this is about or why your ball was so cloudy.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 6,
-          "story": "The Matter potion granted the knight the power to create a bridge across a chasm. However, they built it leading directly into the enemy's encampment, offering them an easy path to attack.",
+          "story": "When you used your crystal ball to check how the knight was doing after drinking the potion you were just greeted with a black void. Did your crystal ball get unplugged? But your crystal ball doesn't use electricity. And there is no electricity here. The more you think, the more your head gets filled with confusing thoughts. Bedge time, you think.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 7,
-          "story": "Boinkie Toinkie granted the knight super jumps, allowing them to leap over enemy lines. However, they landed right in the middle of the enemy formation, surrounded and overwhelmed.",
+          "story": "The knight drank the potion and immediately felt power surging through his legs. 'ONCE A BANDLE GUNNER, ALWAYS A BANDLE GUNNER!' he yelled as the knight catapulted in like a big rock. However, the knight, clearly lacking in foresight, landed right in the middle of the enemy formation, surrounded and overwhelmed.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "Seems like this potion may make people prone to sending it with a big jump"
         },
         {
           "potionId": 8,
-          "story": "The Alopecic Panacea caused a sudden thunderclap, startling the enemy horses. In the ensuing chaos, the knight failed to capitalize on the confusion and the enemy quickly regrouped.",
+          "story": "The knight drank the potion, and it seemed nothing had happened. He looked the same as ever, clad head to toe in armor like he might have been compensating for something. After a bit longer of seeing no change, you left to go eat some food.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 9,
-          "story": "The Plant Whisperer potion allowed the knight to communicate with the battlefield flora. They learned the location of a hidden enemy ambush, but then loudly announced it to the enemy themselves.",
+          "story": "The knight drank the potion and immediately his eyes began darting around. 'The trees' he said 'the trees are speaking'.  This fact seemed to really mess with the knights brain. You're not sure if his sanity will come back.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "The trees will speak apparently"
         },
         { 
           "potionId": 10,
-          "story": "I told this traveler 'my potions are too strong for you'. I gave him my strongest potion as he asked for, and he could not handle my potions. I had warned him, 'my strongest potions are only for the strongest and you clearly are not of the strongest you're clearly the weakest'. I can give any potion, but if one does not have the mind or fortitude to use them, the potions will not help. I will give myself a 3 star rating for teaching such a valuable lesson.",
+          "story": "I told this traveler 'my potions are too strong for you'. I had warned him, 'my strongest potions are only for the strongest and you clearly are not of the strongest, you're clearly the weakest'. I can give any potion, but if one does not have the mind or fortitude to use them, the potions will not help. This traveler took my potion and let out a fart so large and so powerful that he imploded in on himself and must have teleported to a new dimension or something. I will give myself a 3 star rating for teaching such a valuable lesson.",
           "rating": 3,
-          "reveal": true
+          "reveal": true,
+          "revealText": "This potion is my pride and joy. A super large fart."
         },
         {
           "potionId": 11,
-          "story": "The Snail's Trail potion left a sticky trail wherever the knight went, allowing them to track enemy movements. Unfortunately, the trail also led the enemy right back to the knight's own army.",
+          "story": "The knight took the potion and immediately a stain began forming under his feet. As the knight walked around the stain spread to where ever he walked. As the knight approached the long awaited battle, the enemies quickly realize this quirk from their opponent. Seeing this they quickly changed their battle plan and started luring the knight along a very peculiar path. By the end of the battle, there seemed to be a cryptic message left on the battlefield. The potion seller needed to zoom out on his crystal ball to see the full message: 'send beautiful renaissance painting' it said.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "Can use human as paintbrush to write messages or draw with this potion"
         },
         {
           "potionId": 12,
-          "story": "The Solar Hands potion illuminated the battlefield, revealing hidden enemy positions. However, the knight used the light to show off their new armor, becoming a giant glowing target for the enemy archers.",
+          "story": "The knight took the potion and waved his arms around. The knight was acting strange, but you couldn't really tell anything too different about him.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 13,
-          "story": "Yo Mama caused a minor earthquake, disrupting the enemy's formations. However, the knight failed to exploit the opening and the enemy quickly recovered.",
+          "story": "As he stood in front of the enemy, the knight drank the potion and was immediately compelled to yell 'YO MAMA' at the top of his lungs. As he bellow the ground shook forming an earthquake that shook everyone. It felt like something with a very large mass had hit the ground. After the ground stopped shaking the enemy quipped back 'I know you are, but what am I'. It didn't make much sense to you, but the knight seemed devastated",
           "rating": 1,
-          "reveal": false
+          "reveal": "The knight said Yo mama makes a big earthquake"
         },
         {
           "potionId": 14,
-          "story": "The Rude potion caused a sandstorm on the battlefield, blinding both sides. The knight, instead of using the confusion to their advantage, wandered around lost and disoriented until the storm cleared, leaving them vulnerable.",
+          "story": "After drinking the potion, the knight held his hands up and with the powers of the potion summoned a giant sandstorm. The stupid sandstorm made the visibility so bad, so you couldn't see what else happened but at least you knew that this potion gave the power to summon sandstorms. And despite the low visibility, you could safely assume that the knight was not succeeding in fighting his battle. He always seemed to be a failure.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "The knight used this to summon an earthquake"
         },
         {
           "potionId": 15,
-          "story": "Ninja Matcha granted the knight agility and stealth. They infiltrated the enemy ranks with ease, but then accidentally tripped over their own sword and alerted everyone to their presence.",
+          "story": "After taking the potion, the knight seemed to just start tripping over himself. Maybe his suit of armor was limiting his movements? You could tell that your potion was doing something, but what exactly you weren't sure.",
           "rating": 1,
           "reveal": false
         },
@@ -104,32 +113,31 @@
         },
         {
           "potionId": 17,
-          "story": "The Invisibility Cloak potion rendered the knight invisible. However, they forgot they were invisible and started giving loud pep talks to their allies, revealing their location to the enemy.",
+          "story": "The knight drank the potion and let out a shrill something that made your ears bleed. You could not keep watching for the health of your auditory channels. With your hands over your ears you left the room and the crystal ball as quickly and you could.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 18,
-          "story": "The Jojo Juice turned the knight into a super buff and handsome person. Unfortunately, they became so preoccupied with their own reflection they failed to see the enemy army charging towards them.",
+          "story": "The knight took the potion and maybe seemed to grow taller? You couldn't really tell from this angle. The suit of armor was also making it difficult to see anything.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 19,
-          "story": "The Truth Serum potion compelled a captured enemy soldier to reveal their battle plans. However, the knight didn't understand the complex military jargon and completely misinterpreted the information.",
+          "story": "The knight drank the potion and was immediately buried by a bunch of rocks. The potion definitely had something to do with rocks, but this knight didn't seem to be a very good test subject for this potion.",
           "rating": 1,
           "reveal": false
         },
         {
           "potionId": 20,
-          "story": "The potion of Forgetfulness caused the knight to forget they were even in a battle. They wandered off humming a merry tune, leaving their allies confused and bewildered.",
+          "story": "The knight drank the potion and used his hands to summon a ball of light. And then he just looked at the light, like a moth to a flame or a moth to a light. This knight might as well be a moth.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "The knight was drawn to the summoned ball of light like a moth to a ball of light"
         }
       ],
-      "defaultMessage": "The battle raged on, a cacophony of clashing steel and desperate cries. The knight, though well-equipped with potions, lacked the wit to use them effectively. The outcome of the battle hangs in the balance.",
-      "rewardItems": "",
-      "rewardText": ""
+      "defaultMessage": "The battle raged on, a cacophony of clashing steel and desperate cries. The knight, though well-equipped with potions, lacked the wit to use them effectively. The outcome of the battle hangs in the balance."
     },
     {
       "questId": 2,
@@ -140,9 +148,10 @@
       "stories": [
         {
           "potionId": 1,
-          "story": "The fisherman eagerly consumed the strange concoction. He cast his line, expecting... well, he wasn't sure what the seller meant by that one.  Sadly, the boot curse remained unbroken.",
+          "story": "The fisherman eagerly consumed the strange concoction. A beard quickly grew out from his face. The beard really helped the fisherman look more like a fisherman. It bothered you that the fisherman didn't look the part, so you considered this change to be a success.",
           "rating": 1,
-          "reveal": false
+          "reveal": true,
+          "revealText": "Fishermen and fisherwomen look like they catch more fish with beard and this potion helps with that."
         },
         {
           "potionId": 2,

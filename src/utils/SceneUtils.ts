@@ -12,6 +12,7 @@ export class SceneUtils {
         scene.load.image('inventoryTile', 'assets/image/ui-assets/inventory_tile.png');
         scene.load.image('selectIngredients', 'assets/image/ui-assets/select_ingredients.png');
         scene.load.image('selectedIngredients', 'assets/image/ui-assets/selected_ingredients.png');
+        scene.load.image('star', 'assets/image/ui-assets/rating_star.png');
     }
 
     static loadBackground(scene: Phaser.Scene) {
