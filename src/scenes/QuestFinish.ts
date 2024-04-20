@@ -29,11 +29,12 @@ export class QuestFinish extends Phaser.Scene {
         this.result = SaveManager.loadQuestProgress();
         //getting the last object of the quest rating array
         this.lastResult = this.result[this.result.length - 1];
+        console.log(this.lastResult);
 
-        //load potions array from local storage
+        // load potions array from local storage
         this.discoveredPotions = SaveManager.loadPotionLog();
 
-        //load the potion manager so we can get the name of the potion from potionId
+        // load the potion manager so we can get the name of the potion from potionId
         this.potionManager = new PotionManager(this);
         this.potionManager.loadPotions();
 
@@ -52,7 +53,7 @@ export class QuestFinish extends Phaser.Scene {
         this.add.image(240, 350, "scroll").setScale(.8, .8).setDepth(-1);
         this.add.image(400, 150, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(.7, .7);
 
-        //creating an object to display the story text
+        // creating an object to display the story text
         this.add.text(180, 190, "Quest Report:").setColor('#000000')
         this.storyText = this.add.text(130, 220, '', { color: '#000000' });
         this.storyText.setDepth(3);
@@ -60,11 +61,16 @@ export class QuestFinish extends Phaser.Scene {
         this.storyText.setWordWrapWidth(240);
         this.storyText.setText(this.lastResult.story)
 
-        //displaying the potion picture
+        // text for new potion discovered
+        if (this.lastResult.newPotion){
+            this.add.text(480, 130, "New Potion Discovered!")
+        }
+
+        // displaying the potion picture
         this.add.image(490, 235, "inventoryTile").setScale(.75, .75).setDepth(1);
         this.add.image(490, 235, `potion${this.lastResult.potionId}`).setScale(3, 3).setDepth(2);
 
-        //displaying the potion text
+        // displaying the potion text
         this.add.text(550, 200, "Submitted Potion:");
 
         this.potionManager.processData();
@@ -79,7 +85,7 @@ export class QuestFinish extends Phaser.Scene {
             this.potionText.setText("???")
         }
 
-        //displaying rating
+        // displaying rating
         this.add.text(460, 340, "Rating:");
         if (this.lastResult.rating >= 1) {
             this.add.image(580, 350, "star").setScale(.75, .75).setDepth(1);
@@ -91,7 +97,7 @@ export class QuestFinish extends Phaser.Scene {
             this.add.image(660, 350, "star").setScale(.75, .75).setDepth(1);
         }
 
-        //displaying success or failure
+        // displaying success or failure
         if (this.lastResult.rating == 1) {
             this.add.text(540, 410, "Failure :(")
         }
@@ -102,7 +108,7 @@ export class QuestFinish extends Phaser.Scene {
             this.add.text(540, 410, "Success!")
         }
 
-        //displaying reveal text
+        // displaying reveal text
         if (this.lastResult.revealText) {
             this.add.text (450, 450, `Notes: ${this.lastResult.revealText}`).setWordWrapWidth(300);
         }

@@ -16,6 +16,7 @@ const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
 export class QuestGiver extends Phaser.Scene {
     questManager: QuestManager;
     potionManager: PotionManager;
+    discoveredPotions: number[];
     quest: Quest;
     inventory: Array<PotionQuantity>;
     potionDescriptionText: Phaser.GameObjects.Text;
@@ -63,6 +64,9 @@ export class QuestGiver extends Phaser.Scene {
         this.potionManager.loadPotions();
         this.potionManager.loadIngredients();
 
+        // load potions array from local storage
+        this.discoveredPotions = SaveManager.loadPotionLog();
+
         this.potionsContainer = this.add.container(0, 0).setName('potions');
         SceneUtils.loadUi(this);
         SceneUtils.loadBackground(this);
@@ -90,7 +94,6 @@ export class QuestGiver extends Phaser.Scene {
         this.add.text(50, 125, `Quest: ${this.quest.content}`).setWordWrapWidth(700).setFontSize(14)
 
         // Process loaded data
-        this.potionManager.processData();
         let potionsData = this.potionManager.potions;
 
         // Create a text object to display potion description
@@ -202,6 +205,7 @@ export class QuestGiver extends Phaser.Scene {
     completeQuest() {
         let currentProgress = SaveManager.loadQuestProgress();
         let story = this.quest.stories.find(s => s.potionId == this.selectedPotionId);
+        let currentPotionLog = SaveManager.loadPotionLog();
 
         if (story) {
             const result = new QuestRating({
@@ -211,16 +215,17 @@ export class QuestGiver extends Phaser.Scene {
                 reveal: story.reveal,
                 date: new Date(),
                 potionId: this.selectedPotionId,
-                revealText: story.revealText
+                revealText: story.revealText,
+                newPotion: !currentPotionLog.includes(story.potionId) && story.reveal
             });
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
 
             if (story.reveal) {
-                let currentPotionLog = SaveManager.loadPotionLog();
                 currentPotionLog.push(story.potionId);
                 SaveManager.savePotionLog(currentPotionLog);
             }
+            console.log(result);
         } else {
             const result = new QuestRating({
                 questId: this.quest.questId,
@@ -309,15 +314,20 @@ export class QuestGiver extends Phaser.Scene {
                 });
 
                 // Set pointer over event for potions
+                this.potionManager.processData();
                 potionImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
                     const potionId = potionImage.getData('potionId');
                     const potion = this.potionManager.potions.find(potion => potion.potionId == potionId);
-                    if (potion) {
+                    if (potion && this.discoveredPotions.includes(potionId)) {
                         // Set text position to match cursor
                         this.potionDescriptionText.setPosition(pointer.x - 150, pointer.y + 30);
                         // Set text content to ingredient description
                         this.potionDescriptionText.setText(potion.name + ": " + potion.description);
                         // Show the text
+                        this.potionDescriptionText.setVisible(true);
+                    } else {
+                        this.potionDescriptionText.setPosition(pointer.x - 20, pointer.y + 30);
+                        this.potionDescriptionText.setText("???");
                         this.potionDescriptionText.setVisible(true);
                     }
                 });

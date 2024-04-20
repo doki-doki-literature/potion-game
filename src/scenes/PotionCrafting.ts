@@ -146,8 +146,8 @@ export class CraftScene extends Phaser.Scene {
                         // Add white text on top of the overlay
 
                         //Temporarily removed potion discovery to check potion names
-                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
-                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
 
                         text1.setOrigin(0.5);
                         text1.setInteractive();
@@ -155,9 +155,9 @@ export class CraftScene extends Phaser.Scene {
                         text1.setWordWrapWidth(300);
 
                         //Used effect description for text2
-                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.effectDescription, { color: '#ffffff' });
+                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.effectDescription, { color: '#ffffff' });
 
-                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
+                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
                         text2.setOrigin(0.5);
                         text2.setInteractive();
                         text2.setDepth(4);
