@@ -261,8 +261,9 @@ export class QuestGiver extends Phaser.Scene {
         let row = 1;
         let column = 1;
         // Display potions for the current page
-        for (let index = 0; index < 15; index++) {
-            const pq = this.inventory.slice(startIndex, endIndex)[index];
+        for (let index = startIndex; index < endIndex; index++) {
+            //bug fix - potions not displaying when currentPage = 1
+            const pq = this.inventory.slice(startIndex, endIndex)[index - startIndex];
             if (index < startIndex) {
                 return;
             }
