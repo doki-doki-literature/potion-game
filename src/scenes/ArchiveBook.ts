@@ -22,5 +22,6 @@ export class ArchiveScene extends Phaser.Scene {
         SceneUtils.addNavigation(this);
 
         this.add.image(400, 350, "bookBackground").setScale(.8, .8).setDepth(-1);
+        this.add.text(250, 300, "Hope you like this book.").setColor('#000000');
     }
 }

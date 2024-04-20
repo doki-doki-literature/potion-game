@@ -100,11 +100,3 @@ export class QuestFinish extends Phaser.Scene {
         }
     }
 }
-
-// constructor(data: any) {
-//     this.questId = data.questId;
-//     this.potionId = data.potionId;
-//     this.rating = data.rating;
-//     this.date = data.date;
-//     this.story = data.story;
-// }

@@ -86,6 +86,9 @@ export class QuestGiver extends Phaser.Scene {
         backgroundImage.displayWidth = this.game.canvas.width;
         backgroundImage.displayHeight = this.game.canvas.height;
 
+        //Add quest text
+        this.add.text(50, 125, `Quest: ${this.quest.content}`).setWordWrapWidth(700).setFontSize(14)
+
         // Process loaded data
         this.potionManager.processData();
         let potionsData = this.potionManager.potions;

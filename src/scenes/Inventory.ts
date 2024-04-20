@@ -19,6 +19,6 @@ export class InventoryScene extends Phaser.Scene {
     create() {
         SceneUtils.addNavigation(this);
 
-        this.add.text(400, 300, "Inventory").setScale(.08, .08).setDepth(-1);
+        this.add.text(250, 300, "Construction: Inventory Page coming soon");
     }
 }
