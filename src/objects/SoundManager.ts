@@ -1,8 +1,8 @@
 import * as Phaser from "phaser";
 
 export class SoundManager {
-    private music: Phaser.Sound.Sound;
     private scene: Phaser.Scene;
+    sounds: any = {};
 
     constructor(scene: Phaser.Scene) {
         this.scene = scene;
@@ -12,19 +12,19 @@ export class SoundManager {
         this.scene.load.audio('backgroundMusic', 'assets/sound/backgroundMusic.mp3');
     }
 
-    create() {
-        this.music = this.scene.sound.add('backgroundMusic');
+    create(key: string) {
+        this.sounds[key] = this.scene.sound.add(key);
     }
 
-    play() {
-        this.music.play({ loop: true, volume: 0.5 });
+    play(key: string) {
+        this.sounds[key].play({ loop: true, volume: 0.05 });
     }
 
-    pause() {
-        this.music.pause();
+    pause(key: string) {
+        this.sounds[key].pause();
     }
 
-    stop() {
-        this.music.stop();
+    stop(key: string) {
+        this.sounds[key].stop();
     }
 }
