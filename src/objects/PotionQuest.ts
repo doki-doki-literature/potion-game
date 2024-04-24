@@ -4,6 +4,7 @@ export class PotionQuest {
     story: string;
     rating: number;
     reveal: boolean;
+    revealText: string;
 
     constructor(data: any)
     {
@@ -11,5 +12,6 @@ export class PotionQuest {
         this.story = data.story;
         this.rating = data.rating;
         this.reveal = data.reveal;
+        this.revealText = data.revealText;
     }
 }

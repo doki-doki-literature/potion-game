@@ -36,7 +36,7 @@ export class CraftScene extends Phaser.Scene {
         this.potionManager.loadIngredients();
 
         for (let i = 1; i < 11; i++) {
-            this.load.image(`ingredient${i}`, `assets/image/ingredient${i}.png`);
+            this.load.image(`ingredient${i}`, `assets/image/drawings/ingredients/ingredient${i}.png`);
         }
 
         for (let i = 1; i < 21; i++) {
@@ -146,8 +146,8 @@ export class CraftScene extends Phaser.Scene {
                         // Add white text on top of the overlay
 
                         //Temporarily removed potion discovery to check potion names
-                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
-                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+                        // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
 
                         text1.setOrigin(0.5);
                         text1.setInteractive();
@@ -155,9 +155,9 @@ export class CraftScene extends Phaser.Scene {
                         text1.setWordWrapWidth(300);
 
                         //Used effect description for text2
-                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.effectDescription, { color: '#ffffff' });
+                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.effectDescription, { color: '#ffffff' });
 
-                        // const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
+                        const text2 = this.add.text(this.cameras.main.width / 2, 350, matchedPotion.visualDescription, { color: '#ffffff' });
                         text2.setOrigin(0.5);
                         text2.setInteractive();
                         text2.setDepth(4);
@@ -285,7 +285,7 @@ export class CraftScene extends Phaser.Scene {
 
             const ingredient = ingredientsData[i];
             if (!!ingredient) {
-                let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(2.5, 2.5);
+                let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(.04, .04);
 
             ingredientImage.setData('ingredientId', ingredient.ingredientId);
             ingredientImage.setInteractive();
@@ -307,9 +307,9 @@ export class CraftScene extends Phaser.Scene {
                 const ingredientId = ingredientImage.getData('ingredientId');
                 if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
                     if (this.selectedIngredients.length == 1) {
-                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
+                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
                     } else {
-                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(2, 2);
+                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
                     }
 
                     // Add the ingredient to the selected ingredients

@@ -10,7 +10,7 @@ export class SaveManager {
 
     static loadInventory(): Array<PotionQuantity> {
         const serializedInventory = localStorage.getItem('inventory');
-        
+
         if (serializedInventory) {
             return JSON.parse(serializedInventory);
         } else {
@@ -25,7 +25,7 @@ export class SaveManager {
     }
 
     static loadPotionLog(): number[] {
-        const serializedPotionLog = localStorage.getItem('discoveredPotions');
+        const serializedPotionLog = localStorage.getItem('discoveredPotions')
 
         if (serializedPotionLog) {
             return JSON.parse(serializedPotionLog);
@@ -58,7 +58,7 @@ export class SaveManager {
 
     static loadActiveQuests(): Array<number> {
         const serializedActiveQuests = localStorage.getItem('activeQuests');
-        
+
         if (serializedActiveQuests) {
             return JSON.parse(serializedActiveQuests);
         } else {

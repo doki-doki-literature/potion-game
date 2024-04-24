@@ -5,7 +5,7 @@ import { GossipManager } from "../data/GossipManager";
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
     visible: false,
-    key: "Gossip",
+    key: "Gossip"
 };
 
 export class GossipScene extends Phaser.Scene {
@@ -35,21 +35,19 @@ export class GossipScene extends Phaser.Scene {
         this.add.image(400, 350, `townPerson${Math.floor(Math.random()*3)+1}`).setScale(0.6, 0.6).setDepth(-1);
 
         //textbox to display gossip
-        this.add.image(20, 400, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(1.5, .8);
-        this.add.image(400, 500, 'inventoryTile').setDepth(-1).setScale(4.5, 1);
+        this.add.image(20, 410, 'townTextbox').setDepth(-1).setOrigin(0, 0).setScale(1, 1);
+        this.add.image(408, 495, 'inventoryTile').setDepth(-1).setScale(5.3, .9);
 
         //creating an object to display the gossip text
-        this.gossipText = this.add.text(120, 450, '', { color: '#000000' });
+        this.gossipText = this.add.text(100, 450, '', { color: '#000000' });
         this.gossipText.setDepth(3); // Ensure the text is above other elements
-        this.gossipText.setWordWrapWidth(580);
+        this.gossipText.setWordWrapWidth(620);
 
         //setting the gossip text
         this.gossipManager.processData();
-        console.log(this.gossipManager.gossips)
         let gossipData = this.gossipManager.gossips;
         let randNum = Math.floor(Math.random()*gossipData.length) + 1;
         let displayedText = this.gossipManager.gossips.find(gossip => gossip.gossipId === randNum)
-        console.log(displayedText);
         if (displayedText) {
             this.gossipText.setText(displayedText.content);
         }

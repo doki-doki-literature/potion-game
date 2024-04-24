@@ -5,7 +5,8 @@
     "effectDescription": "Grants the consumer a full beard.",
     "description": "Brewed with ginger and a mysterious powder, this concoction has a yellow-brown tint and has a spicy, tingling aftertaste. This elixir is also used as a stimulant with the full beard as a side effect.",
     "ingredientId1": 1,
-    "ingredientId2": 2
+    "ingredientId2": 2,
+    "revealText": "Hmmm... hair growth. I think I will name this potion the Elixir of Hypertrichosis."
   },
   {
     "name": "Mimicry",

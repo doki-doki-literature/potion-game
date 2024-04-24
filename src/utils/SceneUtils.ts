@@ -12,6 +12,8 @@ export class SceneUtils {
         scene.load.image('inventoryTile', 'assets/image/ui-assets/inventory_tile.png');
         scene.load.image('selectIngredients', 'assets/image/ui-assets/select_ingredients.png');
         scene.load.image('selectedIngredients', 'assets/image/ui-assets/selected_ingredients.png');
+        scene.load.image('star', 'assets/image/ui-assets/rating_star.png');
+        scene.load.image('townTextbox', 'assets/image/ui-assets/town_textbox.png');
     }
 
     static loadBackground(scene: Phaser.Scene) {
@@ -29,7 +31,7 @@ export class SceneUtils {
 
     private static addBackButton(scene: Phaser.Scene) {
         const backButton = scene.add.image(75, 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
-        scene.add.text(55, 35, 'Back').setDepth(4);
+        scene.add.text(50, 35, 'Cabin').setDepth(4);
         backButton.on("pointerdown", () => {
             return scene.scene.start("Cabin");
         });
@@ -53,7 +55,7 @@ export class SceneUtils {
 
     private static addQuestLogButton(scene: Phaser.Scene) {
         const questButton = scene.add.image(465, scene.scene.key == "Quest" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
-        scene.add.text(420, scene.scene.key == "Quest" ? 65 : 35, 'Quest Log').setDepth(4);
+        scene.add.text(438, scene.scene.key == "Quest" ? 65 : 35, 'Quest').setDepth(4);
         questButton.on("pointerdown", () => {
             return scene.scene.start("Quest");
         });
