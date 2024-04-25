@@ -111,6 +111,9 @@ export class QuestGiver extends Phaser.Scene {
         let resultText = this.add.text(20, 320, '', { color: '#ffffff' });
         let visualDescriptionText = this.add.text(20, 350, '', { color: '#ffffff' });
 
+        // some instruction
+        this.add.text(570, 190, 'Give this potion?');
+
         // Create a container for the submission box
         this.add.image(650, 250, 'inventoryTile').setScale(.55, .55);
 
@@ -141,17 +144,18 @@ export class QuestGiver extends Phaser.Scene {
         });
 
         // Create submit button
-        const submitButton = this.add.image(600, 320, 'confirmButton').setScale(.45, .5)
+        const submitButton = this.add.image(600, 320, 'button').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 this.completeQuest();
                 this.handleSubmit();
                 this.updatePage(potionsData);
             });
+        SceneUtils.addButtonHover(this, submitButton, 600, 320, 0, .45, .5);
 
         const submitButtonText = this.add.text(submitButton.x - 25, submitButton.y - 10, "Submit");
 
-        const clearButton = this.add.image(700, 320, 'clearButton').setScale(.45, .5)
+        const clearButton = this.add.image(700, 320, 'button').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 if (this.selectedPotionId == null) {
@@ -163,6 +167,7 @@ export class QuestGiver extends Phaser.Scene {
                 this.selectedPotionId = null;
                 this.selectedPotionImage?.destroy();
             })
+        SceneUtils.addButtonHover(this, clearButton, 700, 320, 0, .45, .5);
         const clearButtonText = this.add.text(clearButton.x - 25, clearButton.y - 10, "Clear");
     }
 

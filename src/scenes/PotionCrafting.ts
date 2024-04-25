@@ -107,17 +107,18 @@ export class CraftScene extends Phaser.Scene {
             this.children.bringToTop(gameObject); // Bring the dragged object to the top
         });
 
-        const clearButton = this.add.image(710, 350, 'clearButton').setScale(.45, .5).setInteractive()
+        const clearButton = this.add.image(710, 350, 'button').setScale(.45, .5).setInteractive()
             .on('pointerdown', () => {
                 this.selectedIngredients = [];
                 this.selectedItem1Image?.destroy();
                 this.selectedItem2Image?.destroy();
-            })
+            });
+        SceneUtils.addButtonHover(this, clearButton, 710, 350, 0, .45, .5);
 
         const clearButtonText = this.add.text(685, 340, "Clear");
 
         // Create craft button
-        const craftButton = this.add.image(600, 350, 'confirmButton').setScale(.45, .5)
+        const craftButton = this.add.image(600, 350, 'button').setScale(.45, .5)
             .setInteractive({ useHandCursor: true })
             .on('pointerdown', () => {
                 if (this.selectedIngredients.length === 2) {
@@ -225,6 +226,7 @@ export class CraftScene extends Phaser.Scene {
                     console.log('Please select two ingredients before crafting a potion.');
                 }
             });
+        SceneUtils.addButtonHover(this, craftButton, 600, 350, 0, .45, .5);
         const craftButtonText = this.add.text(570, 340, "Create");
 
         SceneUtils.addNavigation(this);

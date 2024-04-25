@@ -14,6 +14,10 @@ export class SceneUtils {
         scene.load.image('selectedIngredients', 'assets/image/ui-assets/selected_ingredients.png');
         scene.load.image('star', 'assets/image/ui-assets/rating_star.png');
         scene.load.image('townTextbox', 'assets/image/ui-assets/town_textbox.png');
+        scene.load.image('button', 'assets/image/ui-assets/button.png');
+        scene.load.image('hoverButton', 'assets/image/ui-assets/hover_button.png');
+        scene.load.image('backButton', 'assets/image/ui-assets/back_button.png');
+        scene.load.image('hoverBackButton', 'assets/image/ui-assets/hover_back_button.png');
     }
 
     static loadBackground(scene: Phaser.Scene) {
@@ -90,4 +94,16 @@ export class SceneUtils {
     static addItemSelectContainer(scene: Phaser.Scene) {
         scene.add.image(5, 180, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .6);
     }
+
+    // tried making a util for the hover button, but there's too much specific things i.e what happens on pointerdown and setScale of button
+    static addButtonHover(scene: Phaser. Scene, button: Phaser.GameObjects.Image, x: number, y: number, depth, scaleX: number, scaleY: number) {
+        const hoverButton = scene.add.image(x,  y, 'hoverButton').setDepth(depth).setScale(scaleX, scaleY).setAlpha(.5).setVisible(false);
+        button.on("pointerover", () => {
+            return hoverButton.setVisible(true);
+        });
+        button.on("pointerout", () => hoverButton.setVisible(false));
+        return button;
+    }
+
+    // Maybe should have a background music button toggle util but then need to import SoundManager
 }

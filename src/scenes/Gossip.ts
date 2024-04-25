@@ -53,11 +53,16 @@ export class GossipScene extends Phaser.Scene {
         }
 
         //generate new gossip button
-        const townButton = this.add.image(400,  390, 'confirmButton').setInteractive().setScale(1, .6).setDepth(3);
         this.add.text(350, 380, 'Listen Again').setDepth(4);
+        const townButton = this.add.image(410,  390, 'button').setInteractive().setScale(1, .6).setDepth(3);
         townButton.on("pointerdown", () => {
             return this.scene.start("Gossip");
         });
-
+        SceneUtils.addButtonHover(this, townButton, 410, 390, 3, 1, .6)
+        // const hoverButton = this.add.image(410,  390, 'hoverButton').setDepth(3).setVisible(false).setScale(1, .6);
+        // townButton.on("pointerover", () => {
+        //     return hoverButton.setVisible(true);
+        // });
+        // townButton.on("pointerout", () => hoverButton.setVisible(false));
     }
 }

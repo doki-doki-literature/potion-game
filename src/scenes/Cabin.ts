@@ -37,14 +37,15 @@ export class CabinScene extends Phaser.Scene {
         this.load.image('soundUnmuteButton', 'assets/image/ui-assets/volume_unmuted_button.png')
         this.soundManager = new SoundManager(this);
         this.soundManager.preload();
+
+        // placeholder
+        this.load.image('placeholder', 'assets/image/frogplaceholder.png');
     }
 
     create() {
         // background music button toggle
-        this.soundManager.create('backgroundMusic');
-        this.soundManager.play('backgroundMusic');
-        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2);
-        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setVisible(false);
+        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5);
+        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5).setVisible(false);
 
         soundMuteButton.on("pointerdown", () => {
             this.soundManager.stop('backgroundMusic')
