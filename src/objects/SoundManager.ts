@@ -14,11 +14,10 @@ export class SoundManager {
 
     create(key: string) {
         this.sounds[key] = this.scene.sound.add(key);
-        console.log(this.sounds[key]);
     }
 
     play(key: string) {
-        this.sounds[key] = this.sounds[key].play({ loop: true, volume: 0.01 });
+        this.sounds[key] = this.scene.sound.play(key, { loop: true, volume: 0.01 });
     }
 
     // the pause is broken this.sounds[key].pause is not a function

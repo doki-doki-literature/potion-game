@@ -32,16 +32,34 @@ export class CabinScene extends Phaser.Scene {
         this.load.image('hoverQuest', 'assets/image/ui-assets/hover_quest_cabin.png');
         this.load.image('hoverCauldron', 'assets/image/ui-assets/hover_cabin_cauldron.png');
 
-        // placeholder
-        this.load.image('placeholder', 'assets/image/frogplaceholder.png')
+        // load sound
+        this.load.image('soundMuteButton', 'assets/image/ui-assets/volume_muted_button.png')
+        this.load.image('soundUnmuteButton', 'assets/image/ui-assets/volume_unmuted_button.png')
         this.soundManager = new SoundManager(this);
         this.soundManager.preload();
     }
 
     create() {
+        // background music button toggle
+        this.soundManager.create('backgroundMusic');
+        this.soundManager.play('backgroundMusic');
+        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2);
+        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setVisible(false);
+
+        soundMuteButton.on("pointerdown", () => {
+            this.soundManager.stop('backgroundMusic')
+            soundMuteButton.setVisible(false);
+            soundUnmuteButton.setVisible(true);
+        });
+        soundUnmuteButton.on("pointerdown", () => {
+            this.soundManager.play('backgroundMusic')
+            soundUnmuteButton.setVisible(false);
+            soundMuteButton.setVisible(true);
+        });
+
         // hover text
         this.hoverText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' });
-        this.hoverText.setDepth(1); // Ensure the text is above other elements
+        this.hoverText.setDepth(3); // Ensure the text is above other elements
         this.hoverText.setWordWrapWidth(400);
         this.hoverText.setVisible(false);
         this.hoverText.setScale(1);
@@ -52,16 +70,12 @@ export class CabinScene extends Phaser.Scene {
             this.hoverText.setVisible(false);
         });
 
-        // sound mute button
-        const soundMuteButton = this.add.image(600, 50, 'placeholder').setScale(.05, .05).setInteractive().setDepth(1);
-        soundMuteButton.on("pointerdown", () => this.soundManager.stop('backgroundMusic'));
-
         const cabinImage = this.add.image(400, 300, 'cabin').setScale(0.7, .84);
 
         const crystalBallImage = this.add.image(700, 150, 'crystalBall').setScale(0.7,0.7).setInteractive();
         crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
         this.hoverCrystal = this.add.image(696, 150, 'hoverCrystal').setScale(.77, .77).setDepth(1).setVisible(false);
-        crystalBallImage.on("pointerover", () => this.hoverCrystal.setVisible(true).setAlpha(.2));
+        crystalBallImage.on("pointerover", () => this.hoverCrystal.setVisible(true).setAlpha(.1));
         crystalBallImage.on("pointerout", () => this.hoverCrystal.setVisible(false));
         crystalBallImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
             // Set text position to match cursor
@@ -73,7 +87,7 @@ export class CabinScene extends Phaser.Scene {
             this.hoverText.setVisible(true);
         });
 
-        const questBoardImage = this.add.image(350, 100, 'questBoard').setScale(0.7, 0.7).setInteractive();
+        const questBoardImage = this.add.image(350, 100, 'questBoard').setScale(0.7, 0.7).setInteractive().setDepth(2);
         questBoardImage.on("pointerdown", () => this.scene.start("Quest"));
         this.hoverQuest = this.add.image(346, 100, 'hoverQuest').setScale(.77, .77).setDepth(1).setVisible(false);
         questBoardImage.on("pointerover", () => this.hoverQuest.setVisible(true).setAlpha(.2));
@@ -91,7 +105,7 @@ export class CabinScene extends Phaser.Scene {
         const cauldronImage = this.add.image(700, 425, 'cauldron').setScale(.65, .65).setInteractive();
         cauldronImage.on("pointerdown", () => this.scene.start("Craft"));
         this.hoverCauldron = this.add.image(696, 425, 'hoverCauldron').setScale(.65, .65).setDepth(1).setVisible(false);
-        cauldronImage.on("pointerover", () => this.hoverCauldron.setVisible(true).setAlpha(.2));
+        cauldronImage.on("pointerover", () => this.hoverCauldron.setVisible(true).setAlpha(.1));
         cauldronImage.on("pointerout", () => this.hoverCauldron.setVisible(false));
         cauldronImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
             // Set text position to match cursor
@@ -106,7 +120,7 @@ export class CabinScene extends Phaser.Scene {
         const bookImage = this.add.image(325, 275, "book").setScale(.8, .8).setInteractive();
         bookImage.on("pointerdown", () => this.scene.start("Archive"));
         this.hoverBook = this.add.image(321, 275, 'hoverBook').setScale(.87, .87).setDepth(1).setVisible(false);
-        bookImage.on("pointerover", () => this.hoverBook.setVisible(true).setAlpha(.2));
+        bookImage.on("pointerover", () => this.hoverBook.setVisible(true).setAlpha(.1));
         bookImage.on("pointerout", () => this.hoverBook.setVisible(false));
         bookImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
             // Set text position to match cursor
