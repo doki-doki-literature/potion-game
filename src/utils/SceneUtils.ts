@@ -54,8 +54,8 @@ export class SceneUtils {
     }
 
     private static addQuestLogButton(scene: Phaser.Scene) {
-        const questButton = scene.add.image(465, scene.scene.key == "Quest" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
-        scene.add.text(438, scene.scene.key == "Quest" ? 65 : 35, 'Quest').setDepth(4);
+        const questButton = scene.add.image(465, scene.scene.key == "Quest" || scene.scene.key == "QuestGiver" || scene.scene.key == "QuestFinish" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
+        scene.add.text(438, scene.scene.key == "Quest" || scene.scene.key == "QuestGiver" || scene.scene.key == "QuestFinish" ? 65 : 35, 'Quest').setDepth(4);
         questButton.on("pointerdown", () => {
             return scene.scene.start("Quest");
         });
