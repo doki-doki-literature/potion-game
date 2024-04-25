@@ -303,6 +303,22 @@ export class QuestGiver extends Phaser.Scene {
                     potionImage.setY(originalY);
                 });
 
+                potionImage.on('pointerup', () => {
+                    const potionId = potionImage.getData('potionId');
+                    if (this.inventory.find(q => q.potionId == potionId).quantity > 0) {
+                        if (this.selectedPotionId) {
+                            this.selectedPotionImage.destroy();
+                            const previousQuantityText = this.potionsContainer.list.find((go: Phaser.GameObjects.GameObject) => go.data?.get("potionQuantityId") == this.selectedPotionId && go instanceof Phaser.GameObjects.Text) as Phaser.GameObjects.Text;
+                            this.inventory.find(q => q.potionId == this.selectedPotionId).quantity += 1;
+                            previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
+                        }
+                        this.selectedPotionId = potionId;
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        quantityText.setText(`x${pq.quantity - 1}`);
+                        this.inventory.find(q => q.potionId == potionId).quantity -= 1;
+                    }
+                })
+
                 // Set drop zone
                 potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
                     const potionId = potionImage.getData('potionId');

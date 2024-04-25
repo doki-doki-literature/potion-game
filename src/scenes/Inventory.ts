@@ -18,6 +18,7 @@ export class InventoryScene extends Phaser.Scene {
     selectedPotionId: number;
     selectedPotionImage: Phaser.GameObjects.Image;
     dropzone: Phaser.GameObjects.Zone;
+    clickDropZone: Phaser.GameObjects.Zone;
     potionsContainer: Phaser.GameObjects.Container;
     defaultText: Phaser.GameObjects.Text;
     private potionText: Phaser.GameObjects.Text;
@@ -195,25 +196,27 @@ export class InventoryScene extends Phaser.Scene {
                 });
 
                 potionImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
-                    const potionId = potionImage.getData('potionId');
                     potionImage.setX(originalX);
                     potionImage.setY(originalY);
-                    // need to change the true to something that clarifies just a click instead of a drag to nowhere
-                    if (true) {
+                });
+
+                potionImage.on('pointerup', () => {
+                    const potionId = potionImage.getData('potionId');
+                    if (this.selectedPotionImage) {
                         this.selectedPotionImage.destroy();
                         this.potionText.destroy();
                         this.descriptionText.destroy();
-                        this.selectedPotionId = potionId;
-                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
-                        this.handleSubmit();
-                        this.defaultText.destroy();
                     }
-                });
+                    this.selectedPotionId = potionId;
+                    this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                    this.handleSubmit();
+                    this.defaultText.destroy();
+                })
 
                 // Set drop zone
                 potionImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
                     const potionId = potionImage.getData('potionId');
-                    if (dropZone === this.dropzone) {
+                    if (dropZone === this.dropzone || dropZone === this.clickDropZone) {
                         if (this.selectedPotionId) {
                             this.selectedPotionImage.destroy();
                             this.potionText.destroy();
