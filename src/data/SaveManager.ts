@@ -65,4 +65,46 @@ export class SaveManager {
             return [];
         }
     }
+
+    static loadBeans(): number {
+        return parseInt(localStorage.getItem('beans')) ?? 0;
+    }
+
+    static saveBeans(beans: number) {
+        localStorage.setItem('beans', beans.toString());
+    }
+
+    static awardBeans(beansToAdd: number) {
+        const beans = this.loadBeans();
+        if (!!beans && beans >= 0) {
+            this.saveBeans(this.loadBeans() + beansToAdd);
+        } else {
+            this.saveBeans(beansToAdd);
+        }
+    }
+
+    static loadUnlockedIngredients(): Array<number> {
+        const serializedIngredients = localStorage.getItem('unlockedIngredients');
+
+        if (serializedIngredients) {
+            return JSON.parse(serializedIngredients);
+        } else {
+            return [];
+        }
+    }
+
+    static saveUnlockedIngredients(unlockedIngredients: Array<number>) {
+        const serializedIngredients = JSON.stringify(unlockedIngredients);
+
+        localStorage.setItem('unlockedIngredients', serializedIngredients);
+    }
+
+    static unlockIngredient(ingredientId: number) {
+        const unlockedIngredients = this.loadUnlockedIngredients();
+
+        if (!unlockedIngredients.includes(ingredientId)) {
+            unlockedIngredients.push(ingredientId);
+            this.saveUnlockedIngredients(unlockedIngredients);
+        }
+    }
 }

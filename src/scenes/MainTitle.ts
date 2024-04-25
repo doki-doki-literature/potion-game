@@ -1,5 +1,6 @@
 import * as Phaser from "phaser";
 import { SoundManager } from "../objects/SoundManager";
+import { SaveManager } from "../data/SaveManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -44,6 +45,14 @@ export class MainTitleScene extends Phaser.Scene {
             soundUnmuteButton.setVisible(false);
             soundMuteButton.setVisible(true);
         });
+
+        if (!SaveManager.loadBeans()) {
+            SaveManager.saveBeans(0);
+        }
+
+        for (let i = 1; i < 6; i++) {
+            SaveManager.unlockIngredient(i);
+        }
 
         this.add.text(450, 300, "Potion Gaem");
         const startButton = this.add.text(450, 350, "Start").setInteractive();

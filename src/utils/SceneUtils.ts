@@ -1,4 +1,6 @@
 import * as Phaser from "phaser";
+import { QuestManager } from "../data/QuestManager";
+import { SaveManager } from "../data/SaveManager";
 
 export class SceneUtils {
     static loadUi(scene: Phaser.Scene) {
@@ -14,6 +16,8 @@ export class SceneUtils {
         scene.load.image('selectedIngredients', 'assets/image/ui-assets/selected_ingredients.png');
         scene.load.image('star', 'assets/image/ui-assets/rating_star.png');
         scene.load.image('townTextbox', 'assets/image/ui-assets/town_textbox.png');
+        scene.load.image('bean', 'assets/image/bean.png');
+        scene.load.bitmapFont('handwritten', 'assets/fonts/Fool_0.png', 'assets/fonts/Fool.fnt');
     }
 
     static loadBackground(scene: Phaser.Scene) {
@@ -57,6 +61,10 @@ export class SceneUtils {
         const questButton = scene.add.image(465, scene.scene.key == "Quest" || scene.scene.key == "QuestGiver" || scene.scene.key == "QuestFinish" ? 40 : 10, 'navSign').setInteractive().setScale(.6, .6).setDepth(3);
         scene.add.text(438, scene.scene.key == "Quest" || scene.scene.key == "QuestGiver" || scene.scene.key == "QuestFinish" ? 65 : 35, 'Quest').setDepth(4);
         questButton.on("pointerdown", () => {
+            const questManager = new QuestManager(scene);
+            questManager.loadQuests();
+            questManager.processData();
+            questManager.processActiveQuests();
             return scene.scene.start("Quest");
         });
     }
@@ -89,5 +97,10 @@ export class SceneUtils {
 
     static addItemSelectContainer(scene: Phaser.Scene) {
         scene.add.image(5, 180, 'selectIngredients').setDepth(-1).setOrigin(0, 0).setScale(.6, .6);
+    }
+
+    static addBeanCounter(scene: Phaser.Scene) {
+        scene.add.image(scene.cameras.main.width / 16, scene.cameras.main.height * 7.4 / 8, 'bean').setDepth(6).setScale(.06, .06);
+        scene.add.text(scene.cameras.main.width * 1.5 / 16, scene.cameras.main.height * 7.4 / 8, 'x' + SaveManager.loadBeans()).setDepth(6).setColor('#ffffff').setFontSize(24);
     }
 }

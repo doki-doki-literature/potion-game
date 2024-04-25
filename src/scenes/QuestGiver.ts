@@ -78,6 +78,7 @@ export class QuestGiver extends Phaser.Scene {
         SceneUtils.addNavigation(this);
         SceneUtils.addBackground(this);
         SceneUtils.addItemSelectContainer(this);
+        SceneUtils.addBeanCounter(this);
 
         this.add.image(650, 475, `questGiver${this.quest.questGiverId}`).setScale(.3, .3).setDepth(-1);
 
@@ -221,7 +222,7 @@ export class QuestGiver extends Phaser.Scene {
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
 
-            if (story.reveal) {
+            if (story.reveal && !currentPotionLog.includes(story.potionId)) {
                 currentPotionLog.push(story.potionId);
                 SaveManager.savePotionLog(currentPotionLog);
             }
@@ -237,6 +238,7 @@ export class QuestGiver extends Phaser.Scene {
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
         }
+        SaveManager.awardBeans(story.rating * 10);
         SaveManager.saveInventory(this.inventory);
         let activeQuests = SaveManager.loadActiveQuests();
         activeQuests = activeQuests.filter(questId => questId != this.quest.questId);

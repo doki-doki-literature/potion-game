@@ -35,7 +35,6 @@ export class QuestBillboardScene extends Phaser.Scene {
 
     create() {
         this.questManager.processData();
-        this.questManager.processActiveQuests();
 
         SceneUtils.addNavigation(this);
         SceneUtils.addBackground(this);

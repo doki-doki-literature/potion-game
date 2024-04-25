@@ -51,6 +51,7 @@ export class QuestFinish extends Phaser.Scene {
 
     create() {
         SceneUtils.addNavigation(this);
+        
         this.add.image(240, 350, "scroll").setScale(.8, .8).setDepth(-1);
         this.add.image(400, 150, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(.7, .7);
 
@@ -123,26 +124,21 @@ export class QuestFinish extends Phaser.Scene {
         for (let i = 0; i < this.lastResult.rating; i++) {
             this.add.image(580 + i * 40, 350, "star").setScale(.75, .75).setDepth(-1);
         }
-        // if (this.lastResult.rating >= 1) {
-        //     this.add.image(580, 350, "star").setScale(.75, .75).setDepth(-1);
+
+        // // displaying success or failure
+        // if (this.lastResult.rating == 1) {
+        //     this.add.text(540, 410, "Failure :(")
         // }
-        // if (this.lastResult.rating >= 2) {
-        //     this.add.image(620, 350, "star").setScale(.75, .75).setDepth(-1);
+        // if (this.lastResult.rating == 2) {
+        //     this.add.text(540, 410, "Meh.")
         // }
-        // if (this.lastResult.rating >= 3) {
-        //     this.add.image(660, 350, "star").setScale(.75, .75).setDepth(-1);
+        // if (this.lastResult.rating == 3) {
+        //     this.add.text(540, 410, "Success!")
         // }
 
-        // displaying success or failure
-        if (this.lastResult.rating == 1) {
-            this.add.text(540, 410, "Failure :(")
-        }
-        if (this.lastResult.rating == 2) {
-            this.add.text(540, 410, "Meh.")
-        }
-        if (this.lastResult.rating == 3) {
-            this.add.text(540, 410, "Success!")
-        }
+        this.add.text(460, 400, 'Earned:');
+        this.add.image(580, 410, 'bean').setScale(.06, .06);
+        this.add.text(610, 400, `x${this.lastResult.rating * 10}`);
 
         // displaying reveal text
         if (this.lastResult.revealText) {

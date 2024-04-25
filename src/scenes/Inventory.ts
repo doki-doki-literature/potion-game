@@ -66,6 +66,7 @@ export class InventoryScene extends Phaser.Scene {
         SceneUtils.addNavigation(this);
         SceneUtils.addBackground(this);
         SceneUtils.addItemSelectContainer(this);
+        SceneUtils.addBeanCounter(this);
 
         // Process loaded data
         const potionsData = this.potionManager.potions;

@@ -1,5 +1,7 @@
 import * as Phaser from "phaser";
 import { SoundManager } from "../objects/SoundManager";
+import { SceneUtils } from "../utils/SceneUtils";
+import { QuestManager } from "../data/QuestManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -14,6 +16,7 @@ export class CabinScene extends Phaser.Scene {
     hoverBook: Phaser.GameObjects.Image;
     hoverCauldron: Phaser.GameObjects.Image;
     hoverText: Phaser.GameObjects.Text;
+    questManager: QuestManager;
 
     constructor() {
         super(sceneConfig);
@@ -35,14 +38,22 @@ export class CabinScene extends Phaser.Scene {
         // load sound
         this.load.image('soundMuteButton', 'assets/image/ui-assets/volume_muted_button.png')
         this.load.image('soundUnmuteButton', 'assets/image/ui-assets/volume_unmuted_button.png')
+        this.load.image('bean', 'assets/image/bean.png');
+        this.load.bitmapFont('handwritten', 'assets/fonts/Fool_0.png', 'assets/fonts/Fool.fnt');
+        this.load.image('townTextbox', 'assets/image/ui-assets/town_textbox.png');
         this.soundManager = new SoundManager(this);
         this.soundManager.preload();
+
+        this.questManager = new QuestManager(this);
+        this.questManager.loadQuests();
     }
 
     create() {
+        SceneUtils.addBeanCounter(this);
+        this.questManager.processData();
+        this.questManager.processActiveQuests();
+
         // background music button toggle
-        this.soundManager.create('backgroundMusic');
-        this.soundManager.play('backgroundMusic');
         const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2);
         const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setVisible(false);
 

@@ -2,7 +2,7 @@ import * as Phaser from "phaser";
 import { PotionManager } from "../data/PotionManager";
 import { SaveManager } from "../data/SaveManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
-import { SceneUtils } from  "../utils/SceneUtils";
+import { SceneUtils } from "../utils/SceneUtils";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -43,6 +43,8 @@ export class CraftScene extends Phaser.Scene {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
         this.load.image('cauldron', 'assets/image/cauldron.png');
+        this.load.image('locked', 'assets/image/ui-assets/cauldron_locked_ingredient_icon.png');
+        this.load.image('lockedTile', 'assets/image/ui-assets/cauldron_locked_ingredient_tile.png');
         SceneUtils.loadUi(this);
         SceneUtils.loadBackground(this);
     }
@@ -51,6 +53,7 @@ export class CraftScene extends Phaser.Scene {
         // Add the background image to the scene
         SceneUtils.addBackground(this);
         SceneUtils.addItemSelectContainer(this);
+        SceneUtils.addBeanCounter(this);
 
         this.add.text(190, 150, "Drag Ingredients");
         this.add.text(560, 150, "Selected Ingredients");
@@ -60,7 +63,7 @@ export class CraftScene extends Phaser.Scene {
         let ingredientsData = this.potionManager.ingredients;
 
         // Create a text object to display ingredient description
-        this.ingredientDescriptionText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' });
+        this.ingredientDescriptionText = this.add.text(0, 0, '', { color: '#ffffff', backgroundColor: '#000000' }).setPadding(5, 5, 5, 5);
         this.ingredientDescriptionText.setDepth(1); // Ensure the text is above other elements
         this.ingredientDescriptionText.setWordWrapWidth(400);
         this.ingredientDescriptionText.setVisible(false); // Initially hide the text
@@ -147,7 +150,7 @@ export class CraftScene extends Phaser.Scene {
 
                         //Temporarily removed potion discovery to check potion names
                         // const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  result.name, { color: '#ffffff' });
-                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " +  name, { color: '#ffffff' });
+                        const text1 = this.add.text(this.cameras.main.width / 2, 300, "You have crafted: " + name, { color: '#ffffff' });
 
                         text1.setOrigin(0.5);
                         text1.setInteractive();
@@ -173,7 +176,7 @@ export class CraftScene extends Phaser.Scene {
                         overlay.setOrigin(0);
                         overlay.setInteractive();
                         overlay.setDepth(3);
-                        overlay.on("pointerdown", () => { 
+                        overlay.on("pointerdown", () => {
                             overlay.destroy();
                             text1.destroy();
                             text2.destroy();
@@ -210,7 +213,7 @@ export class CraftScene extends Phaser.Scene {
                         overlay.setOrigin(0);
                         overlay.setInteractive();
                         overlay.setDepth(3);
-                        overlay.on("pointerdown", () => { 
+                        overlay.on("pointerdown", () => {
                             overlay.destroy();
                             text1.destroy();
                             text2.destroy();
@@ -281,57 +284,125 @@ export class CraftScene extends Phaser.Scene {
 
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
-            const ingredientContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.6, .6);
+
 
             const ingredient = ingredientsData[i];
+            let isUnlocked = SaveManager.loadUnlockedIngredients().includes(ingredient?.ingredientId ?? -1);
+            const ingredientContainer = this.add.image(originalX, originalY, isUnlocked || !ingredient ? 'inventoryTile' : 'lockedTile').setDepth(-1).setScale(.6, .6);
+
             if (!!ingredient) {
                 let ingredientImage = this.add.image(originalX, originalY, `ingredient${ingredient.ingredientId}`).setScale(.04, .04);
 
-            ingredientImage.setData('ingredientId', ingredient.ingredientId);
-            ingredientImage.setInteractive();
-            this.input.setDraggable(ingredientImage);
+                ingredientImage.setData('ingredientId', ingredient.ingredientId);
+                ingredientImage.setInteractive();
 
-            // Set drag event for cauldron
-            ingredientImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
-                ingredientImage.setX(pointer.x);
-                ingredientImage.setY(pointer.y);
-            });
+                if (isUnlocked) {
+                    this.input.setDraggable(ingredientImage);
+                } else {
+                    let lockedIcon = this.add.image(originalX, originalY, 'locked');
+                    ingredientImage.setTint(0x777777);
+                    ingredientImage.on('pointerdown', () => {
+                        const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
+                        overlay.setOrigin(0);
+                        overlay.setInteractive();
+                        overlay.setDepth(4);
 
-            ingredientImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
-                ingredientImage.setX(originalX);
-                ingredientImage.setY(originalY);
-            });
+                        const itemPurchaseContainer = this.add.image(this.cameras.main.width / 2, 200, 'inventoryTile').setDepth(4).setScale(.7, .7);
+                        const itemPurchaseImage = this.add.image(this.cameras.main.width / 2, 200, `ingredient${ingredient.ingredientId}`).setScale(.05, .05).setDepth(5);
+                        const itemPurchaseText = this.add.text(this.cameras.main.width / 2, 300, "Purchase " + ingredient.name + " for 100 beans?").setDepth(5).setFontSize(20).setOrigin(.5, 0);
+                        const confirmPurchaseButton = this.add.image(this.cameras.main.width * 2 / 5, 350, 'confirmButton').setScale(.45, .5).setInteractive().setDepth(4);
+                        const confirmPurchaseText = this.add.text(this.cameras.main.width * 2 / 5, 350, 'Purchase').setDepth(5).setOrigin(.5, .5);
+                        const cancelPurchaseButton = this.add.image(this.cameras.main.width * 3 / 5, 350, 'clearButton').setScale(.45, .5).setInteractive().setDepth(4);
+                        const cancelPurchaseText = this.add.text(this.cameras.main.width * 3 / 5, 350, 'Cancel').setDepth(5).setOrigin(.5, .5);
+                        const beans = SaveManager.loadBeans();
 
-            // Set drop zone for cauldron
-            ingredientImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
-                const ingredientId = ingredientImage.getData('ingredientId');
-                if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
-                    if (this.selectedIngredients.length == 1) {
-                        this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
-                    } else {
-                        this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
+                        if (beans < 100) {
+                            confirmPurchaseButton.setTint(0x808080);
+                            confirmPurchaseText.setTint(0x808080);
+                            confirmPurchaseButton.on("pointerover", (pointer: Phaser.Input.Pointer) => {
+                                this.ingredientDescriptionText.setPosition(pointer.x - 50, pointer.y + 30);
+                                this.ingredientDescriptionText.setText("Not enough beans.");
+                                this.ingredientDescriptionText.setDepth(6);
+                                this.ingredientDescriptionText.setVisible(true);
+                            })
+                        } else {
+                            confirmPurchaseButton.on('pointerdown', () => {
+                                if (beans >= 100) {
+                                    SaveManager.saveBeans(beans - 100);
+                                    SaveManager.unlockIngredient(ingredient.ingredientId);
+                                }
+                                this.scene.restart();
+                            });
+                        }
+                        
+
+                        cancelPurchaseButton.on("pointerdown", () => {
+                            overlay.destroy();
+                            itemPurchaseText.destroy();
+                            itemPurchaseImage.destroy();
+                            itemPurchaseContainer.destroy();
+                            confirmPurchaseButton.destroy();
+                            cancelPurchaseButton.destroy();
+                            confirmPurchaseText.destroy();
+                            cancelPurchaseText.destroy();
+                        });
+
+                        overlay.on("pointerdown", () => {
+                            overlay.destroy();
+                            itemPurchaseText.destroy();
+                            itemPurchaseImage.destroy();
+                            itemPurchaseContainer.destroy();
+                            confirmPurchaseButton.destroy();
+                            cancelPurchaseButton.destroy();
+                            confirmPurchaseText.destroy();
+                            cancelPurchaseText.destroy();
+                        });
+                    })
+
+                }
+
+                // Set drag event for cauldron
+                ingredientImage.on('drag', (pointer: Phaser.Input.Pointer, dragX: number, dragY: number) => {
+                    ingredientImage.setX(pointer.x);
+                    ingredientImage.setY(pointer.y);
+                });
+
+                ingredientImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
+                    ingredientImage.setX(originalX);
+                    ingredientImage.setY(originalY);
+                });
+
+                // Set drop zone for cauldron
+                ingredientImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
+                    const ingredientId = ingredientImage.getData('ingredientId');
+                    if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
+                        if (this.selectedIngredients.length == 1) {
+                            this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
+                        } else {
+                            this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
+                        }
+
+                        // Add the ingredient to the selected ingredients
+                        this.selectedIngredients.push(ingredientId);
                     }
+                });
 
-                    // Add the ingredient to the selected ingredients
-                    this.selectedIngredients.push(ingredientId);
-                }
-            });
+                // Set pointer over event for ingredients
+                ingredientImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
+                    const ingredientId = ingredientImage.getData('ingredientId');
+                    const ingredient = this.potionManager.ingredients.find(ingredient => ingredient.ingredientId == ingredientId);
+                    if (ingredient) {
+                        // Set text position to match cursor
+                        this.ingredientDescriptionText.setPosition(pointer.x - 50, pointer.y + 30);
+                        // Set text content to ingredient description
+                        let descriptionText = isUnlocked ? ingredient.name + ": " + ingredient.description : "Locked: " + ingredient.name;
+                        this.ingredientDescriptionText.setText(descriptionText);
+                        // Show the text
+                        this.ingredientDescriptionText.setVisible(true);
+                    }
+                });
 
-            // Set pointer over event for ingredients
-            ingredientImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
-                const ingredientId = ingredientImage.getData('ingredientId');
-                const ingredient = this.potionManager.ingredients.find(ingredient => ingredient.ingredientId == ingredientId);
-                if (ingredient) {
-                    // Set text position to match cursor
-                    this.ingredientDescriptionText.setPosition(pointer.x - 150, pointer.y + 30);
-                    // Set text content to ingredient description
-                    this.ingredientDescriptionText.setText(ingredient.name + ": " + ingredient.description);
-                    // Show the text
-                    this.ingredientDescriptionText.setVisible(true);
-                }
-            });
-
-            this.ingredientsContainer.add(ingredientImage);
+                this.ingredientsContainer.add(ingredientImage);
             }
         }
     }
