@@ -18,6 +18,10 @@ export class SceneUtils {
         scene.load.image('townTextbox', 'assets/image/ui-assets/town_textbox.png');
         scene.load.image('bean', 'assets/image/bean.png');
         scene.load.bitmapFont('handwritten', 'assets/fonts/Fool_0.png', 'assets/fonts/Fool.fnt');
+        scene.load.image('button', 'assets/image/ui-assets/button.png');
+        scene.load.image('hoverButton', 'assets/image/ui-assets/hover_button.png');
+        scene.load.image('backButton', 'assets/image/ui-assets/back_button.png');
+        scene.load.image('hoverBackButton', 'assets/image/ui-assets/hover_back_button.png');
     }
 
     static loadBackground(scene: Phaser.Scene) {
@@ -103,4 +107,16 @@ export class SceneUtils {
         scene.add.image(scene.cameras.main.width / 16, scene.cameras.main.height * 7.4 / 8, 'bean').setDepth(6).setScale(.06, .06);
         scene.add.text(scene.cameras.main.width * 1.5 / 16, scene.cameras.main.height * 7.4 / 8, 'x' + SaveManager.loadBeans()).setDepth(6).setColor('#ffffff').setFontSize(24);
     }
+    
+    // tried making a util for the hover button, but there's too much specific things i.e what happens on pointerdown and setScale of button
+    static addButtonHover(scene: Phaser. Scene, button: Phaser.GameObjects.Image, x: number, y: number, depth, scaleX: number, scaleY: number) {
+        const hoverButton = scene.add.image(x,  y, 'hoverButton').setDepth(depth).setScale(scaleX, scaleY).setAlpha(.5).setVisible(false);
+        button.on("pointerover", () => {
+            return hoverButton.setVisible(true);
+        });
+        button.on("pointerout", () => hoverButton.setVisible(false));
+        return button;
+    }
+
+    // Maybe should have a background music button toggle util but then need to import SoundManager
 }

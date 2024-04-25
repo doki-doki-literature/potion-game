@@ -46,6 +46,8 @@ export class CabinScene extends Phaser.Scene {
 
         this.questManager = new QuestManager(this);
         this.questManager.loadQuests();
+        // placeholder
+        this.load.image('placeholder', 'assets/image/frogplaceholder.png');
     }
 
     create() {
@@ -54,8 +56,8 @@ export class CabinScene extends Phaser.Scene {
         this.questManager.processActiveQuests();
 
         // background music button toggle
-        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2);
-        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setVisible(false);
+        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5);
+        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5).setVisible(false);
 
         soundMuteButton.on("pointerdown", () => {
             this.soundManager.stop('backgroundMusic')
