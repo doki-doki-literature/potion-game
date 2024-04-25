@@ -287,7 +287,6 @@ export class CraftScene extends Phaser.Scene {
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
 
-
             const ingredient = ingredientsData[i];
             let isUnlocked = SaveManager.loadUnlockedIngredients().includes(ingredient?.ingredientId ?? -1);
             const ingredientContainer = this.add.image(originalX, originalY, isUnlocked || !ingredient ? 'inventoryTile' : 'lockedTile').setDepth(-1).setScale(.6, .6);
@@ -336,7 +335,6 @@ export class CraftScene extends Phaser.Scene {
                                 this.scene.restart();
                             });
                         }
-                        
 
                         cancelPurchaseButton.on("pointerdown", () => {
                             overlay.destroy();

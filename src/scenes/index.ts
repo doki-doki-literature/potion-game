@@ -7,6 +7,7 @@ import { QuestGiver } from "./QuestGiver";
 import { QuestFinish } from "./QuestFinish";
 import { GossipScene } from "./Gossip";
 import { InventoryScene } from "./Inventory";
+import { TutorialScene } from "./Tutorial";
 
 export default {
     CabinScene,
@@ -17,5 +18,6 @@ export default {
     QuestGiver,
     QuestFinish,
     GossipScene,
-    InventoryScene
+    InventoryScene,
+    TutorialScene
 }

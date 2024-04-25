@@ -107,7 +107,7 @@ export class SceneUtils {
         scene.add.image(scene.cameras.main.width / 16, scene.cameras.main.height * 7.4 / 8, 'bean').setDepth(6).setScale(.06, .06);
         scene.add.text(scene.cameras.main.width * 1.5 / 16, scene.cameras.main.height * 7.4 / 8, 'x' + SaveManager.loadBeans()).setDepth(6).setColor('#ffffff').setFontSize(24);
     }
-    
+
     // tried making a util for the hover button, but there's too much specific things i.e what happens on pointerdown and setScale of button
     static addButtonHover(scene: Phaser. Scene, button: Phaser.GameObjects.Image, x: number, y: number, depth, scaleX: number, scaleY: number) {
         const hoverButton = scene.add.image(x,  y, 'hoverButton').setDepth(depth).setScale(scaleX, scaleY).setAlpha(.5).setVisible(false);

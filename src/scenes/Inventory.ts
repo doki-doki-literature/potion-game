@@ -195,8 +195,19 @@ export class InventoryScene extends Phaser.Scene {
                 });
 
                 potionImage.on('dragend', (pointer: Phaser.Input.Pointer) => {
+                    const potionId = potionImage.getData('potionId');
                     potionImage.setX(originalX);
                     potionImage.setY(originalY);
+                    // need to change the true to something that clarifies just a click instead of a drag to nowhere
+                    if (true) {
+                        this.selectedPotionImage.destroy();
+                        this.potionText.destroy();
+                        this.descriptionText.destroy();
+                        this.selectedPotionId = potionId;
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        this.handleSubmit();
+                        this.defaultText.destroy();
+                    }
                 });
 
                 // Set drop zone
