@@ -372,10 +372,12 @@ export class CraftScene extends Phaser.Scene {
                     ingredientImage.setY(originalY);
                 });
 
-                // Set drop zone for cauldron
-                ingredientImage.on('drop', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
+                // allow for clicking or dragging (anywhere) to put ingredient in cauldron
+                ingredientImage.on('pointerup', () => {
                     const ingredientId = ingredientImage.getData('ingredientId');
-                    if (dropZone === this.cauldronDropZone && this.selectedIngredients.length < 2) {
+                    // getting rid of the dropZone for now dropZone === this.cauldronDropZone
+                    // getting rid of the dropZone somehow doesn't change anything, pointerup doesn't work for click
+                    if (this.selectedIngredients.length < 2) {
                         if (this.selectedIngredients.length == 1) {
                             this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
                         } else {
@@ -386,6 +388,23 @@ export class CraftScene extends Phaser.Scene {
                         this.selectedIngredients.push(ingredientId);
                     }
                 });
+
+                // Set drop zone for cauldron
+                // ingredientImage.on('drop' || 'pointerup', (pointer: Phaser.Input.Pointer, dropZone: Phaser.GameObjects.Zone) => {
+                //     const ingredientId = ingredientImage.getData('ingredientId');
+                //     // getting rid of the dropZone for now dropZone === this.cauldronDropZone
+                //     // getting rid of the dropZone somehow doesn't change anything, pointerup doesn't work for click
+                //     if (this.selectedIngredients.length < 2) {
+                //         if (this.selectedIngredients.length == 1) {
+                //             this.selectedItem1Image = this.add.image(this.cauldronDropZone.x + 110, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
+                //         } else {
+                //             this.selectedItem2Image = this.add.image(this.cauldronDropZone.x, this.cauldronDropZone.y + 5, `ingredient${ingredient.ingredientId}`).setScale(0.04, 0.04);
+                //         }
+
+                //         // Add the ingredient to the selected ingredients
+                //         this.selectedIngredients.push(ingredientId);
+                //     }
+                // });
 
                 // Set pointer over event for ingredients
                 ingredientImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
