@@ -162,6 +162,66 @@
     "content": "I heard that you can take double dosage of the white powder and be able to do any work you always put off!",
     "ingredientId": null,
     "potionId": 17
+  },
+  {
+    "gossipId": 31,
+    "content": "Did you hear that the orc boy is actually the son of a deposed king and his beloved concubine? The kingdom had been discreet with the disposal of the boy and covering up his past, but he turned out to be a really smart guy with great qualities of a true leader, unlike his father.",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 32,
+    "content": "You seen the scar on the red hood girl's neck? It was gashed by a band of thieves when she was held ransom at dagger-point at the town center. Little do the stupid thieves know that she used to be a street urchin and had her way with any physical altercations...The band of thieves had to pack up and leave for the next town due to embarrassment!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 33,
+    "content": "That little old man always hanging by the docks claiming to be a fisherman...some say he's not what he seems to be.",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 34,
+    "content": "Did you know you can combine two of the same ingredients together? My friend said she mixed a few of them and accidentally made prescription for confusion? Or was it a lamp juice that she made? Wait, no...It might have been something for earthquakes...",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 35,
+    "content": "If you really need to push stuff out of your digestive system, mix white powder with cheese and you'll get a really potent laxative.",
+    "ingredientId": null,
+    "potionId": 10,
+  },
+  {
+    "gossipId": 36,
+    "content": "I know summer is coming so everyone is scrambling to get their 'summer body'...But let me tell you a trick since I think we're cool: Mix cheese with a little bit of water. You'll look better. Hey, you can even mix this with some macaroni and it's just Mac n Cheese!",
+    "ingredientId": null,
+    "potionId": 18
+  },
+  {
+    "gossipId": 37,
+    "content": "I heard that ginger tea can not only relax your vocal cords and thereby expanding your vocal range, it can also make the throat pocket of amphibian's enlarge like crazy!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 38,
+    "content": "The blonde kid running around with a bowl of oatmeal. Apparently she's a thief! Don't judge people based on their looks and never trust a stranger, no matter how innocent they seem!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 39,
+    "content": "I received 3 gold coins, so here's your palm reading: Chase love and it will hide away from you! Ignore it and it will find its way to you!",
+    "ingredientId": null,
+    "potionId": null
+  },
+  {
+    "gossipId": 40,
+    "content": "A glow up tip for you: Bald is okay...Haired is also okay...Somewhere in between is NOT okay.",
+    "ingredientId": null,
+    "potionId": null
   }
 ]
   

@@ -18,7 +18,7 @@ export class GossipScene extends Phaser.Scene {
     preload() {
         this.gossipManager = new GossipManager(this);
         this.gossipManager.loadGossips();
-        for (let i = 1; i < 5; i++){
+        for (let i = 1; i < 6; i++){
             this.load.image(`townPerson${i}`, `assets/image/drawings/townspeople${i}.png`)
         }
         SceneUtils.loadUi(this);
@@ -32,7 +32,7 @@ export class GossipScene extends Phaser.Scene {
         this.add.image(420, 375, 'crystalBall').setScale(3, 3).setDepth(-3);
 
         //displaying a random townsperson
-        this.add.image(400, 350, `townPerson${Math.floor(Math.random()*3)+1}`).setScale(0.6, 0.6).setDepth(-1);
+        this.add.image(400, 350, `townPerson${Math.floor(Math.random()*5)+1}`).setScale(0.6, 0.6).setDepth(-1);
 
         //textbox to display gossip
         this.add.image(20, 410, 'townTextbox').setDepth(-1).setOrigin(0, 0).setScale(1, 1);
