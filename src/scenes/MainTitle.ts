@@ -23,6 +23,19 @@ export class MainTitleScene extends Phaser.Scene {
         // construct instance of sound manager
         this.soundManager = new SoundManager(this);
         this.soundManager.preload();
+        // load potion images
+        for (let i = 1; i < 21; i++) {
+            this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
+        }
+
+        // load ingredient images
+        for (let i = 1; i < 11; i++) {
+            this.load.image(`ingredient${i}`, `assets/image/drawings/ingredients/ingredient${i}.png`)
+        }
+
+        for (let i = 1; i < 5; i++){
+            this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
+        }
     }
 
     create() {
