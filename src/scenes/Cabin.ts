@@ -16,6 +16,7 @@ export class CabinScene extends Phaser.Scene {
     hoverQuest: Phaser.GameObjects.Image;
     hoverBook: Phaser.GameObjects.Image;
     hoverCauldron: Phaser.GameObjects.Image;
+    hoverInv: Phaser.GameObjects.Image;
     hoverText: Phaser.GameObjects.Text;
     questManager: QuestManager;
     rewards: string[];
@@ -154,8 +155,11 @@ export class CabinScene extends Phaser.Scene {
             this.hoverText.setVisible(true);
         });
 
-        const inventoryImage = this.add.image(45, 300, 'placeholder').setScale(.1, .6).setInteractive()
+        const inventoryImage = this.add.image(50, 200, 'hoverQuest').setScale(.35, 1.8).setInteractive().setAlpha(0.01);
         inventoryImage.on("pointerdown", () => this.scene.start("Inventory"));
+        this.hoverInv = this.add.image(50, 200, 'hoverQuest').setScale(.35, 1.8).setDepth(1).setVisible(false);
+        inventoryImage.on("pointerover", () => this.hoverInv.setVisible(true).setAlpha(.1));
+        inventoryImage.on("pointerout", () => this.hoverInv.setVisible(false));
         inventoryImage.on('pointerover', (pointer: Phaser.Input.Pointer) => {
             // Set text position to match cursor
             this.hoverText.setPosition(pointer.x - 50, pointer.y + 30);

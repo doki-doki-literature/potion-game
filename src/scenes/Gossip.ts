@@ -18,7 +18,7 @@ export class GossipScene extends Phaser.Scene {
     preload() {
         this.gossipManager = new GossipManager(this);
         this.gossipManager.loadGossips();
-        for (let i = 1; i < 4; i++){
+        for (let i = 1; i < 5; i++){
             this.load.image(`townPerson${i}`, `assets/image/drawings/townspeople${i}.png`)
         }
         SceneUtils.loadUi(this);
