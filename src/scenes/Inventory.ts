@@ -131,7 +131,6 @@ export class InventoryScene extends Phaser.Scene {
             if (true) {
                 const potion = this.potionManager.potions.find((p) => p.potionId==potionId);
                 this.potionText = this.add.text(620, 240, '', { color: '#000000' });
-                this.potionText.setText('');
                 this.potionText.setDepth(3);
                 this.potionText.setWordWrapWidth(150);
                 this.descriptionText = this.add.text(540, 300, 'Click or drag a potion to the box to view your notes.', { color: '#000000' });

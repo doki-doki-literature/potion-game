@@ -1,15 +1,17 @@
 [
   {
     "gossipId": 1,
-    "content": "Saw Mayor Peterson sneaking out of the bakery at dawn carrying a giant box of red velvet cupcakes. Wonder who they were for?"
+    "content": "Pretty sure I saw that old Wizard guy dealing some kind of product behind the old mill."
   },
   {
     "gossipId": 2,
-    "content": "Rumor has it that Miss Beatrice, the librarian, is secretly a world-renowned cat whisperer. Apparently, she can make them do anything!"
+    "content": "Rumor has it that Miss Beatrice, the librarian, is secretly a world-renowned cat whisperer. Apparently, she can make them do anything!",
+    "ingredientId": null,
+    "potionId": 3
   },
   {
     "gossipId": 3,
-    "content": "  I overheard the twins from Elm Street talking about a hidden treasure stashed somewhere in the old abandoned mansion. Maybe there's truth to the local legends after all..."
+    "content": "https://www.amazon.com/Lipton-Green-Bags-Mandarin-Orange/dp/B01LS2A2K6/ref=sr_1_5_pp?dib=eyJ2IjoiMSJ9.Dq-Le4dWeyWvLNLLGgDS1eY26RSqTjMH8iYPqk6kozvX54oOfN-TEg6LyWxpsq0mwMRilqMRdgM5PsqBt77Lodpr-nTadBqwT2-m9c1Q6aIjuKzKfJktUuE3mF1iaBHI8xvlqtE3W0mMtjrcG4rPmtARij5pcp4NcDsCj-jVV0E7Wle3khjbvh6Xzxwv4r9K_hJOHk3GgrkPrsQtsyBIoIcRl1OX0vYtWatbrcgzKF7AWaRYQ3mkSMt5sQXPocfRO1qHqWP-_NfafTprS3S713K_Oawmzuj_ZNVIAcWQBkc.a90SnIRL4fgasTJN1Ehm-GIFWPp4OG5u0wdbVH8yqoI&dib_tag=se&keywords=tea&qid=1713638493&sr=8-5"
   },
   {
     "gossipId": 4,
@@ -17,7 +19,9 @@
   },
   {
     "gossipId": 5,
-    "content": "Did you hear? The Parkers are putting their prize-winning poodle, Fifi, up for adoption! Apparently, they're getting a hypoallergenic hairless cat."
+    "content": "You know that large, muscular guy that has 3 wives who lives in the east side of the village? I heard he wasn't always that way...He used to be a scrawny and ugly kid. Some say it's work of eating cheese and drinking some kind of a weird water...",
+    "ingredientId": [6, 5],
+    "potionId": 18
   },
   {
     "gossipId": 6,
@@ -25,35 +29,35 @@
   },
   {
     "gossipId": 7,
-    "content": "Brenda at the bookstore claims she saw a ghost last night wandering the stacks!  Spooky! Especially since they were the history section..."
+    "content": "You think that frog at the potion sellers house could be a prince? It seems pretty special."
   },
   {
     "gossipId": 8,
-    "content": "The annual bake-off is heating up!  Ms. Lee from across the street is rumored to be entering her famous blueberry pie recipe this year.  Looks like we have some tough competition!"
+    "content": "I heard the potion seller makes some potions using a foot. Where do you even get this foot? Would you want to drink a foot potion even if it gave you cool powers?"
   },
   {
     "gossipId": 9,
-    "content": "Spotted Charlie from the pet store walking a miniature pig down Main Street yesterday.  Apparently, they're offering a new exotic pet sitting service.  Intriguing!"
+    "content": "Nipesh drank a potion and stole the cookie."
   },
   {
     "gossipId": 10,
-    "content": "Big news!  The town council is considering building a new dog park on Maple Street.  Fido will be thrilled!"
+    "content": "I heard Sir Henry actually turned into a boiled egg..."
   },  
   {
     "gossipId": 11,
     "content": "Have you seen that white powder? I heard that double the white powder works wonders",
-    "ingredientId": 1,
+    "ingredientId": [1],
     "potionId": 17
   },
   {
     "gossipId": 12,
     "content": "Did you know that Bain Marie is just Mary's bath water?",
-    "ingredientId": null,
-    "potionId": 17
+    "ingredientId": [5],
+    "potionId": null
   },
   {
     "gossipId": 13,
-    "content": "Scandal at the Art Guild! The winner of the grand prize last year is rumored to have secretly traced their masterpiece.  Will they be stripped of their title?",
+    "content": "Have you heard, Sir Barry seem to gone missing? His wife Mrs Barry has already found a new husband. But everyday he seems to be slowly losing his health. I wonder if Mrs Barry's new husband is going to be alright.",
     "ingredientId": null,
     "potionId": null
   },
@@ -65,7 +69,7 @@
   },
   {
     "gossipId": 15,
-    "content": "Looks like sparks are flying between Lady Esmeralda and that handsome visiting knight, Sir William! But not the good kind. Seems the Lady accused him of pilfering a jeweled comb!",
+    "content": "Looks like sparks are flying between Lady Esmeralda and that handsome visiting knight, Sir William! But not the good kind...",
     "ingredientId": null,
     "potionId": null
   },
@@ -77,9 +81,9 @@
   },
   {
     "gossipId": 17,
-    "content": "The castle guards are whispering about a ghost spotted wandering the halls at night! Seems the poor soul can't find rest. Maybe someone needs to lay their spirit to peace?",
-    "ingredientId": null,
-    "potionId": null
+    "content": "Ginger has so many health benefits, maybe I can mix it with something to make me fun faster",
+    "ingredientId": [2],
+    "potionId": 15
   },
   {
     "gossipId": 18,
@@ -89,7 +93,7 @@
   },
   {
     "gossipId": 19,
-    "content": "The crows seem particularly bold lately, snatching trinkets and shiny baubles from unsuspecting townsfolk.  Is it just bird-brain behavior or a sign of something more...ominous?",
+    "content": "The crows seem particularly bold lately. Is someone talking to them?",
     "ingredientId": null,
     "potionId": null
   },
@@ -155,12 +159,6 @@
   },
   {
     "gossipId": 30,
-    "content": "You know that large, muscular guy that has 3 wives who lives in the east side of the village? I heard he wasn't always that way...He used to be a scrawny and ugly kid. Some say it's work of eating cheese and drinking some kind of a weird water...",
-    "ingredientId": null,
-    "potionId": 18
-  },
-  {
-    "gossipId": 31,
     "content": "I heard that you can take double dosage of the white powder and be able to do any work you always put off!",
     "ingredientId": null,
     "potionId": 17
