@@ -61,7 +61,7 @@ export class QuestArchiveViewScene extends Phaser.Scene {
             align: 'center'
         }).setWordWrapWidth(280).setDepth(4).setOrigin(0, 0);
 
-        const submittedPotionText = this.add.text(420, 250, "", {
+        const submittedPotionText = this.add.text(450, 270, "", {
             fontFamily: 'Montserrat Alternates, sans-serif',
             fontSize: '12px',
             color: '#000000',
