@@ -212,6 +212,7 @@ export class QuestGiver extends Phaser.Scene {
         let currentProgress = SaveManager.loadQuestProgress();
         let story = this.quest.stories.find(s => s.potionId == this.selectedPotionId);
         let currentPotionLog = SaveManager.loadPotionLog();
+        let currentRewardLog = SaveManager.loadRewards();
 
         if (story) {
             const result = new QuestRating({
@@ -222,7 +223,10 @@ export class QuestGiver extends Phaser.Scene {
                 date: new Date(),
                 potionId: this.selectedPotionId,
                 revealText: story.revealText,
-                newPotion: !currentPotionLog.includes(story.potionId) && story.reveal
+                newPotion: !currentPotionLog.includes(story.potionId) && story.reveal,
+                reward: story.reward,
+                rewardItem: story.rewardItem,
+                rewardText: story.rewardText
             });
             currentProgress.push(result);
             SaveManager.saveProgress(currentProgress);
@@ -230,6 +234,11 @@ export class QuestGiver extends Phaser.Scene {
             if (story.reveal && !currentPotionLog.includes(story.potionId)) {
                 currentPotionLog.push(story.potionId);
                 SaveManager.savePotionLog(currentPotionLog);
+            }
+
+            if (story.reward) {
+                currentRewardLog.push(story.rewardItem);
+                SaveManager.saveRewards(currentRewardLog);
             }
         } else {
             const result = new QuestRating({

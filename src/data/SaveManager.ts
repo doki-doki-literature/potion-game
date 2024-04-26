@@ -66,6 +66,22 @@ export class SaveManager {
         }
     }
 
+    static saveRewards(rewardLog: string[]): void {
+        const serializedRewardLog = JSON.stringify(rewardLog);
+
+        localStorage.setItem('rewards', serializedRewardLog);
+    }
+
+    static loadRewards(): string[] {
+        const serializedRewardLog = localStorage.getItem('rewards')
+
+        if (serializedRewardLog) {
+            return JSON.parse(serializedRewardLog);
+        } else {
+            return [];
+        }
+    }
+
     static loadBeans(): number {
         return parseInt(localStorage.getItem('beans')) ?? 0;
     }

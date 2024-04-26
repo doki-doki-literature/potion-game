@@ -280,6 +280,7 @@
           "rating": 3,
           "reveal": true,
           "potionName": "St. Elmo's Tonic",
+          "reward": true,
           "rewardItem": "boot.png",
           "rewardText": "You have received a soggy old boot as a token of the fisher's appreciation."
         }
@@ -326,6 +327,7 @@
           "rating": 3,
           "reveal": true,
           "revealText": "Flying is pretty cool",
+          "reward": true,
           "rewardItem": "dragonScale.png",
           "rewardText": "You received a Dragon Scale from the nervous escort"
         },
@@ -354,7 +356,8 @@
           "story": "The escort drank the potion. They spent the journey conversing with the local wildlife, learning about hidden dangers and forgotten paths.  One day, they encountered a distressed herd of deer fleeing in terror.  Following their tracks, the escort discovered a group of monstrous wolves attacking a hidden village.  The escort, using their newfound ability to communicate with animals, rallied the deer and other forest creatures to defend the village.  In a fierce battle, the beasts drove back the wolves, saving the villagers.  The escort came by to give the head of one of their new deer friends that died in battle as a thanks.",
           "rating": 3,
           "reveal": true,
-          "rewardItem": "deerHead.png",
+          "reward": true,
+          "rewardItem": "deerHead",
           "rewardText": "You received a deer head from the nervous escort. Apparently this deer used to be their friend."
         },
         {
@@ -417,6 +420,7 @@
           "story": "The escort drank a strange potion and immediately became the most muscular and handsome person. Escia fell for him immediately. Later on the escort wrote a letter to you thanking you for his newfound beauty, muscles and face. Attached to his letter was a rose.",
           "rating": 3,
           "reveal": true,
+          "reward": true,
           "rewardItem": "rose.png",
           "rewardText": "You received a Rose from the escort. You think that maybe their beauty may have gone to their head. You're not the biggest fan of roses, but you'll find a place to keep the rose."
         },
