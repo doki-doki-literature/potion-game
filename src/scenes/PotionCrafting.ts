@@ -204,12 +204,11 @@ export class CraftScene extends Phaser.Scene {
                         text2.setDepth(4);
                         text2.setWordWrapWidth(300);
 
-                        // we don't have an image of a potion failed potion
-                        // const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion1");
-                        // potionImage.setOrigin(0.5);
-                        // potionImage.setDepth(4);
-                        // potionImage.setInteractive();
-                        // potionImage.setScale(10, 10);
+                        const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion1");
+                        potionImage.setOrigin(0.5);
+                        potionImage.setDepth(4);
+                        potionImage.setInteractive();
+                        potionImage.setScale(10, 10);
                         // Create a grey transparent rectangle covering the entire screen
                         const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
                         overlay.setOrigin(0);
