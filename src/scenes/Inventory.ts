@@ -34,13 +34,9 @@ export class InventoryScene extends Phaser.Scene {
     preload() {
         this.inventory = SaveManager.loadInventory();
 
-        for (let i = 1; i < 21; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
-        }
-
         // load potion images
-        for (let i = 1; i < 31; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
+        for (let i = 1; i < 21; i++) {
+            this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
         }
 
         // load ingredient images
@@ -181,7 +177,7 @@ export class InventoryScene extends Phaser.Scene {
             let originalY = startY + row * spacingY;
             const potionContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.6, .6);
             if (!!pq) {
-                let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
+                let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(.03, .03);
                 let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId).setColor("#000000");
                 this.potionsContainer.add(quantityText);
                 potionImage.setData('potionId', pq.potionId);
@@ -207,7 +203,7 @@ export class InventoryScene extends Phaser.Scene {
                         this.descriptionText.destroy();
                     }
                     this.selectedPotionId = potionId;
-                    this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                    this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(.03, .03);
                     this.handleSubmit();
                     this.defaultText.destroy();
                 })
@@ -222,7 +218,7 @@ export class InventoryScene extends Phaser.Scene {
                             this.descriptionText.destroy();
                         }
                         this.selectedPotionId = potionId;
-                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(.03, .03);
                         this.handleSubmit();
                         this.defaultText.destroy();
                     }

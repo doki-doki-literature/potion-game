@@ -45,7 +45,7 @@ export class QuestFinish extends Phaser.Scene {
 
         //load potion images
         for (let i = 1; i < 21; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
+            this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
         }
     }
 
@@ -73,7 +73,7 @@ export class QuestFinish extends Phaser.Scene {
 
         // displaying the potion picture
         this.add.image(490, 235, "inventoryTile").setScale(.75, .75).setDepth(1);
-        let potionImage = this.add.image(490, 235, `potion${this.lastResult.potionId}`).setScale(3, 3).setDepth(2).setInteractive();
+        let potionImage = this.add.image(490, 235, `potion${this.lastResult.potionId}`).setScale(.03, .03).setDepth(2).setInteractive();
 
         // hover to display potion description is currently not working
         // Create a text object to display potion description
