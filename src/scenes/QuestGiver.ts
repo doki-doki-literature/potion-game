@@ -47,15 +47,12 @@ export class QuestGiver extends Phaser.Scene {
 
         // Load the background image asset
         this.load.image('background', 'assets/image/drawings/cabin-draft.png');
-        for (let i = 1; i < 21; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
-        }
 
         for (let i = 1; i < 5; i++){
             this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
         }
-        for (let i = 1; i < 31; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
+        for (let i = 1; i < 21; i++) {
+            this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
         }
 
         this.load.image(`questGiver${this.quest.questGiverId}`, `assets/image/drawings/townspeople${this.quest.questGiverId}.png`);
@@ -292,7 +289,7 @@ export class QuestGiver extends Phaser.Scene {
             let originalY = startY + row * spacingY;
             const potionContainer = this.add.image(originalX, originalY, 'inventoryTile').setDepth(-1).setScale(.6, .6);
             if (!!pq) {
-                let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(2, 2);
+                let potionImage = this.add.image(originalX, originalY, `potion${pq.potionId}`).setScale(.03, .03);
                 let quantityText = this.add.text(originalX + 12, originalY + 15, `x${pq.quantity}`).setData("potionQuantityId", pq.potionId).setColor("#000000");
                 this.potionsContainer.add(quantityText);
                 potionImage.setData('potionId', pq.potionId);
@@ -322,7 +319,7 @@ export class QuestGiver extends Phaser.Scene {
                             previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
                         }
                         this.selectedPotionId = potionId;
-                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(.03, .03);
                         quantityText.setText(`x${pq.quantity - 1}`);
                         this.inventory.find(q => q.potionId == potionId).quantity -= 1;
                     }
@@ -339,7 +336,7 @@ export class QuestGiver extends Phaser.Scene {
                             previousQuantityText?.setText(`x${this.inventory.find((q) => q.potionId == this.selectedPotionId).quantity}`);
                         }
                         this.selectedPotionId = potionId;
-                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(2, 2);
+                        this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(.03, .03);
                         quantityText.setText(`x${pq.quantity - 1}`);
                         this.inventory.find(q => q.potionId == potionId).quantity -= 1;
                     }

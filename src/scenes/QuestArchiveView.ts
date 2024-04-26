@@ -31,7 +31,7 @@ export class QuestArchiveViewScene extends Phaser.Scene {
             this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
         }
         for (let i = 1; i < 21; i++) {
-            this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
+            this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
         }
         this.load.bitmapFont('handwritten', 'assets/fonts/Fool_0.png', 'assets/fonts/Fool.fnt');
 
@@ -61,7 +61,7 @@ export class QuestArchiveViewScene extends Phaser.Scene {
             align: 'center'
         }).setWordWrapWidth(280).setDepth(4).setOrigin(0, 0);
 
-        const submittedPotionText = this.add.text(420, 250, "", {
+        const submittedPotionText = this.add.text(450, 270, "", {
             fontFamily: 'Montserrat Alternates, sans-serif',
             fontSize: '12px',
             color: '#000000',
@@ -131,7 +131,7 @@ export class QuestArchiveViewScene extends Phaser.Scene {
             questScrollableContainer.add(questText);
 
             const potion = this.potionManager.potions.find(p => p.potionId == qp.potionId);
-            const potionImage = this.add.image(-70, index * 60, `potion${potion.potionId}`);
+            const potionImage = this.add.image(-70, index * 60, `potion${potion.potionId}`).setScale(.015, .015);
             questScrollableContainer.add(potionImage);
 
             const questGiverImage = this.add.image(-100, index * 60, `questGiver${quest.questGiverId}`).setScale(.06, .06);
