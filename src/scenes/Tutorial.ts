@@ -26,6 +26,7 @@ export class TutorialScene extends Phaser.Scene {
         "Frog: I've gathered all these ingredients looking for a potion to live out my dream. I've really put a lot of work into it. Finding the best potion ingredients. For the power of infinite mouth storage, you need to make a potion with blue grass and cordyceps.",
         "Frog: Please will you make this potion for me?",
         "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot to make a potion.",
+        "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot to make a potion.",
         "Frog: GULP. I… I think I feel my mouth expanding. My dreams of chipmunk mouth are coming true! Unfortunately, I don't have anymore blue grass and cordyceps, but you can keep the rest of the ingredients. If you give me some beans, I can bring you more ingredients soon. My name is Plug, by the way.",
         "Narrator: The frog bounced away and left you with his extensive collection of ingredients. What a great beginner kit for your potion creating journey! You bring the ingredients to your cabin so you can start your own experiments."
     ]
@@ -37,14 +38,14 @@ export class TutorialScene extends Phaser.Scene {
             'key': 'book',
             'type': 'image',
             'x': 350,
-            'y': 320,
+            'y': 330,
             'scale': 1
         },
         {
             'key': 'book',
             'type': 'image',
             'x': 350,
-            'y': 320,
+            'y': 330,
             'scale': 1
         },
         null,
@@ -59,11 +60,18 @@ export class TutorialScene extends Phaser.Scene {
         null,
         null,
         {
-            'key': 'cauldron',
+            'key': 'tutorial1',
             'type': 'image',
             'x': 400,
             'y': 300,
-            'scale': .5
+            'scale': 1
+        },
+        {
+            'key': 'tutorial2',
+            'type': 'image',
+            'x': 400,
+            'y': 300,
+            'scale': 1
         },
         null,
         null
@@ -84,7 +92,8 @@ export class TutorialScene extends Phaser.Scene {
 
         this.load.image('frog', 'assets/image/drawings/frog.png');
         this.load.image('book', 'assets/image/drawings/book.png');
-        this.load.image('cauldron', 'assets/image/drawings/cauldron.png');
+        this.load.image('tutorial1', 'assets/image/tutorial/tutorial_image1.png');
+        this.load.image('tutorial2', 'assets/image/tutorial/tutorial_image2.png');
 
         this.load.spritesheet('chipmunk', 'assets/image/tutorial/chipmunkSprite.png', { frameWidth: 400, frameHeight: 225 });
     }
@@ -101,8 +110,6 @@ export class TutorialScene extends Phaser.Scene {
         // sprite.anims.play('walk', true);
 
         // background music button toggle
-        this.soundManager.create('backgroundMusic');
-        this.soundManager.play('backgroundMusic');
         const soundMuteButton = this.add.image(775, 25, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5);
         const soundUnmuteButton = this.add.image(775, 25, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5).setVisible(false);
 
@@ -154,7 +161,7 @@ export class TutorialScene extends Phaser.Scene {
 
                         this.anims.create({
                             key: 'walk',
-                            frames: this.anims.generateFrameNumbers(imageKey.key, { start: 0, end: 120 }),
+                            frames: this.anims.generateFrameNumbers(imageKey.key, { start: 10, end: 120 }),
                             frameRate: 10,
                             repeat: -1 // Repeat indefinitely
                         });

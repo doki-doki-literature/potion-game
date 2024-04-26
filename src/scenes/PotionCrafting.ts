@@ -3,6 +3,7 @@ import { PotionManager } from "../data/PotionManager";
 import { SaveManager } from "../data/SaveManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
 import { SceneUtils } from "../utils/SceneUtils";
+import { SoundManager } from "../objects/SoundManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -22,6 +23,7 @@ export class CraftScene extends Phaser.Scene {
     private selectedItem1Image: Phaser.GameObjects.Image;
     private selectedItem2Image: Phaser.GameObjects.Image;
     private ingredientDescriptionText: Phaser.GameObjects.Text;
+    soundManager: SoundManager;
 
     constructor() {
         super(sceneConfig);
@@ -34,6 +36,10 @@ export class CraftScene extends Phaser.Scene {
         // Load potion and ingredient JSON data
         this.potionManager.loadPotions();
         this.potionManager.loadIngredients();
+
+        // load sound
+        this.soundManager = new SoundManager(this);
+        this.soundManager.preload();
 
         for (let i = 1; i < 11; i++) {
             this.load.image(`ingredient${i}`, `assets/image/drawings/ingredients/ingredient${i}.png`);
@@ -126,10 +132,12 @@ export class CraftScene extends Phaser.Scene {
             .on('pointerdown', () => {
                 if (this.selectedIngredients.length === 2) {
                     const ingredientIds = this.selectedIngredients;
+                    this.soundManager.playSoftSFX('potionCreation');
 
                     // Attempt to craft potion
                     const result = this.tryCraft(ingredientIds[0], ingredientIds[1]);
                     if (result.isValid) {
+                        this.soundManager.playLoudSFX('successfulPotion');
                         const matchedPotion = this.potionManager.potions.find(potion => potion.potionId == result.potionId)!;
                         let discoveredPotions = SaveManager.loadPotionLog();
                         let inventory = SaveManager.loadInventory();
@@ -204,11 +212,12 @@ export class CraftScene extends Phaser.Scene {
                         text2.setDepth(4);
                         text2.setWordWrapWidth(300);
 
-                        const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion1");
-                        potionImage.setOrigin(0.5);
-                        potionImage.setDepth(4);
-                        potionImage.setInteractive();
-                        potionImage.setScale(10, 10);
+                        // no failed potion art asset
+                        // const potionImage = this.add.image(this.cameras.main.width / 2, 175, "potion1");
+                        // potionImage.setOrigin(0.5);
+                        // potionImage.setDepth(4);
+                        // potionImage.setInteractive();
+                        // potionImage.setScale(10, 10);
                         // Create a grey transparent rectangle covering the entire screen
                         const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
                         overlay.setOrigin(0);
@@ -287,6 +296,7 @@ export class CraftScene extends Phaser.Scene {
             let originalX = startX + column * spacingX;
             let originalY = startY + row * spacingY;
 
+            // locked ingredients logic
             const ingredient = ingredientsData[i];
             let isUnlocked = SaveManager.loadUnlockedIngredients().includes(ingredient?.ingredientId ?? -1);
             const ingredientContainer = this.add.image(originalX, originalY, isUnlocked || !ingredient ? 'inventoryTile' : 'lockedTile').setDepth(-1).setScale(.6, .6);
@@ -309,12 +319,14 @@ export class CraftScene extends Phaser.Scene {
                             }
                             // Add the ingredient to the selected ingredients
                             this.selectedIngredients.push(ingredientId);
+                            this.soundManager.playSoftSFX('dragIngredient');
                         }
                     });
                 } else {
                     let lockedIcon = this.add.image(originalX, originalY, 'locked');
-                    ingredientImage.setTint(0x777777);
-                    ingredientImage.on('pointerdown', () => {
+                    // ingredientImage.setTint(0x777777);
+                    ingredientImage.setAlpha(0.01);
+                    ingredientImage.on('pointerup', () => {
                         const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
                         overlay.setOrigin(0);
                         overlay.setInteractive();
@@ -322,7 +334,7 @@ export class CraftScene extends Phaser.Scene {
 
                         const itemPurchaseContainer = this.add.image(this.cameras.main.width / 2, 200, 'inventoryTile').setDepth(4).setScale(.7, .7);
                         const itemPurchaseImage = this.add.image(this.cameras.main.width / 2, 200, `ingredient${ingredient.ingredientId}`).setScale(.05, .05).setDepth(5);
-                        const itemPurchaseText = this.add.text(this.cameras.main.width / 2, 300, "Purchase " + ingredient.name + " for 100 beans?").setDepth(5).setFontSize(20).setOrigin(.5, 0);
+                        const itemPurchaseText = this.add.text(this.cameras.main.width / 2, 300, "Purchase ingredient for 100 beans?").setDepth(5).setFontSize(20).setOrigin(.5, 0);
                         const confirmPurchaseButton = this.add.image(this.cameras.main.width * 2 / 5, 350, 'confirmButton').setScale(.45, .5).setInteractive().setDepth(4);
                         const confirmPurchaseText = this.add.text(this.cameras.main.width * 2 / 5, 350, 'Purchase').setDepth(5).setOrigin(.5, .5);
                         const cancelPurchaseButton = this.add.image(this.cameras.main.width * 3 / 5, 350, 'clearButton').setScale(.45, .5).setInteractive().setDepth(4);
@@ -339,10 +351,11 @@ export class CraftScene extends Phaser.Scene {
                                 this.ingredientDescriptionText.setVisible(true);
                             })
                         } else {
-                            confirmPurchaseButton.on('pointerdown', () => {
+                            confirmPurchaseButton.on('pointerup', () => {
                                 if (beans >= 100) {
                                     SaveManager.saveBeans(beans - 100);
                                     SaveManager.unlockIngredient(ingredient.ingredientId);
+                                    this.soundManager.playLoudSFX('purchaseIngredient');
                                 }
                                 this.scene.restart();
                             });
@@ -392,7 +405,7 @@ export class CraftScene extends Phaser.Scene {
                         // Set text position to match cursor
                         this.ingredientDescriptionText.setPosition(pointer.x - 50, pointer.y + 30);
                         // Set text content to ingredient description
-                        let descriptionText = isUnlocked ? ingredient.name + ": " + ingredient.description : "Locked: " + ingredient.name;
+                        let descriptionText = isUnlocked ? ingredient.name + ": " + ingredient.description : "Ingredient Locked";
                         this.ingredientDescriptionText.setText(descriptionText);
                         // Show the text
                         this.ingredientDescriptionText.setVisible(true);

@@ -1,6 +1,7 @@
 import * as Phaser from "phaser";
 import { QuestManager } from "../data/QuestManager";
 import { SaveManager } from "../data/SaveManager";
+import { SoundManager } from "../objects/SoundManager";
 
 export class SceneUtils {
     static loadUi(scene: Phaser.Scene) {

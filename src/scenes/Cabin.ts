@@ -96,7 +96,10 @@ export class CabinScene extends Phaser.Scene {
         const cabinImage = this.add.image(400, 300, 'cabin').setScale(0.7, .84);
 
         const crystalBallImage = this.add.image(700, 150, 'crystalBall').setScale(0.7,0.7).setInteractive();
-        crystalBallImage.on("pointerdown", () => this.scene.start("Gossip"));
+        crystalBallImage.on("pointerdown", () => {
+            this.scene.start("Gossip");
+            this.soundManager.playLoudSFX('crystalBall');
+        });
         this.hoverCrystal = this.add.image(696, 150, 'hoverCrystal').setScale(.77, .77).setDepth(1).setVisible(false);
         crystalBallImage.on("pointerover", () => this.hoverCrystal.setVisible(true).setAlpha(.1));
         crystalBallImage.on("pointerout", () => this.hoverCrystal.setVisible(false));
