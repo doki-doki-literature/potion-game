@@ -22,6 +22,21 @@ export class ArchiveScene extends Phaser.Scene {
         SceneUtils.addNavigation(this);
 
         this.add.image(400, 350, "bookBackground").setScale(.8, .8).setDepth(-1);
-        this.add.text(250, 300, "Hope you like this book.").setColor('#000000');
+
+        const questButton = this.add.bitmapText(500, 200, "handwritten", "Quests").setFontSize(30).setInteractive();
+        questButton.on("pointerover", () => {
+            questButton.setTintFill(0xffffff);
+        })
+
+        questButton.on("pointerout", () => {
+            questButton.setTintFill(0x000000);
+        })
+
+        questButton.on("pointerdown", () => {
+            this.scene.start("QuestArchiveView");
+        })
+
+        const potionButton = this.add.bitmapText(500, 300, "handwritten", "Potions").setFontSize(30);
+        const ingredientButton = this.add.bitmapText(500, 400, "handwritten", "Ingredients").setFontSize(30);
     }
 }

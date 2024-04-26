@@ -51,7 +51,7 @@ export class QuestGiver extends Phaser.Scene {
             this.load.image(`potion${i}`, `assets/image/potions/item_${i}.png`)
         }
 
-        for (let i = 1; i < 4; i++){
+        for (let i = 1; i < 5; i++){
             this.load.image(`questGiver${i}`, `assets/image/drawings/townspeople${i}.png`);
         }
         for (let i = 1; i < 31; i++) {

@@ -20,7 +20,8 @@ const gameConfig: Phaser.Types.Core.GameConfig = {
     scenes.QuestFinish,
     scenes.GossipScene,
     scenes.InventoryScene,
-    scenes.TutorialScene
+    scenes.TutorialScene,
+    scenes.QuestArchiveViewScene
   ],
   scale: {
     width: CANVAS_WIDTH,

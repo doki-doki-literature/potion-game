@@ -8,6 +8,7 @@ import { QuestFinish } from "./QuestFinish";
 import { GossipScene } from "./Gossip";
 import { InventoryScene } from "./Inventory";
 import { TutorialScene } from "./Tutorial";
+import { QuestArchiveViewScene } from "./QuestArchiveView";
 
 export default {
     CabinScene,
@@ -19,5 +20,6 @@ export default {
     QuestFinish,
     GossipScene,
     InventoryScene,
-    TutorialScene
+    TutorialScene,
+    QuestArchiveViewScene
 }
