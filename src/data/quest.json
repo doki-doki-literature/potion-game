@@ -281,7 +281,7 @@
           "reveal": true,
           "potionName": "St. Elmo's Tonic",
           "reward": true,
-          "rewardItem": "boot.png",
+          "rewardItem": "boot",
           "rewardText": "You have received a soggy old boot as a token of the fisher's appreciation."
         }
       ],
@@ -328,7 +328,7 @@
           "reveal": true,
           "revealText": "Flying is pretty cool",
           "reward": true,
-          "rewardItem": "dragonScale.png",
+          "rewardItem": "dragonScale",
           "rewardText": "You received a Dragon Scale from the nervous escort"
         },
         {
@@ -421,7 +421,7 @@
           "rating": 3,
           "reveal": true,
           "reward": true,
-          "rewardItem": "rose.png",
+          "rewardItem": "rose",
           "rewardText": "You received a Rose from the escort. You think that maybe their beauty may have gone to their head. You're not the biggest fan of roses, but you'll find a place to keep the rose."
         },
         {

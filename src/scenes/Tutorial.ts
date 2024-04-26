@@ -103,8 +103,8 @@ export class TutorialScene extends Phaser.Scene {
         // background music button toggle
         this.soundManager.create('backgroundMusic');
         this.soundManager.play('backgroundMusic');
-        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5);
-        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5).setVisible(false);
+        const soundMuteButton = this.add.image(775, 25, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5);
+        const soundUnmuteButton = this.add.image(775, 25, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(.5).setVisible(false);
 
         soundMuteButton.on("pointerdown", () => {
             this.soundManager.stop('backgroundMusic')

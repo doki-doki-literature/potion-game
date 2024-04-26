@@ -2,6 +2,7 @@ import * as Phaser from "phaser";
 import { SoundManager } from "../objects/SoundManager";
 import { SceneUtils } from "../utils/SceneUtils";
 import { QuestManager } from "../data/QuestManager";
+import { SaveManager } from "../data/SaveManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -17,6 +18,7 @@ export class CabinScene extends Phaser.Scene {
     hoverCauldron: Phaser.GameObjects.Image;
     hoverText: Phaser.GameObjects.Text;
     questManager: QuestManager;
+    rewards: string[];
 
     constructor() {
         super(sceneConfig);
@@ -46,8 +48,15 @@ export class CabinScene extends Phaser.Scene {
 
         this.questManager = new QuestManager(this);
         this.questManager.loadQuests();
-        // placeholder
-        this.load.image('placeholder', 'assets/image/frogplaceholder.png');
+
+        // load rewards from local storage
+        this.rewards = SaveManager.loadRewards();
+
+        // load reward images
+        this.load.image('boot', 'assets/image/drawings/rewards/boot.png');
+        this.load.image('deerHead', 'assets/image/drawings/rewards/deer-head.png');
+        this.load.image('dragonScale', 'assets/image/drawings/rewards/dragon-scale.png');
+        this.load.image('rose', 'assets/image/drawings/rewards/rose.png');
     }
 
     create() {
@@ -56,8 +65,8 @@ export class CabinScene extends Phaser.Scene {
         this.questManager.processActiveQuests();
 
         // background music button toggle
-        const soundMuteButton = this.add.image(600, 50, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5);
-        const soundUnmuteButton = this.add.image(600, 50, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5).setVisible(false);
+        const soundMuteButton = this.add.image(775, 25, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5);
+        const soundUnmuteButton = this.add.image(775, 25, 'soundUnmuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5).setVisible(false);
 
         soundMuteButton.on("pointerdown", () => {
             this.soundManager.stop('backgroundMusic')
@@ -156,6 +165,20 @@ export class CabinScene extends Phaser.Scene {
             // Show the text
             this.hoverText.setVisible(true);
         });
+
+        // reward display logic
+        if (this.rewards.includes("deerHead")) {
+            this.add.image(590, 140, "deerHead").setScale(-.1, .1).setDepth(0);
+        }
+        if (this.rewards.includes("boot")) {
+            this.add.image(80, 500, "boot").setScale(-.05, .05).setDepth(0);
+        }
+        if (this.rewards.includes("dragonScale")) {
+            this.add.image(200, 295, "dragonScale").setScale(.04, .04).setDepth(0).setRotation(.4);
+        }
+        if (this.rewards.includes("rose")) {
+            this.add.image(720, 205, "rose").setScale(.04).setDepth(0).setRotation(.55);
+        }
     }
 }
 
