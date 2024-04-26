@@ -23,12 +23,12 @@ export class TutorialScene extends Phaser.Scene {
         "Frog: I have a confession and something to ask of you. I swear I'll follow you for all of eternity if you help me.",
         "Frog: I've always wanted the power to be able to hold an infinite number of things in my mouth. It's been a dream of mine ever since I saw a chipmunk for the first time.",
         "Frog: Have you seen them? they're like this ^",
-        "Frog: I've gathered all these ingredients looking for a potion to live out my dream. I've really put a lot of work into it. Finding the best potion ingredients. For the power of infinite mouth storage, you need to make a potion with blue grass and cordyceps.",
+        "Frog: I've gathered all these ingredients looking for a potion to live out my dream. I've really put a lot of work into it. Finding the best potion ingredients. For the power of infinite mouth storage, you need to make a potion with blue grass and mysterious mushrooms.",
         "Frog: Please will you make this potion for me?",
-        "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot to make a potion.",
-        "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot to make a potion.",
-        "Frog: GULP. I… I think I feel my mouth expanding. My dreams of chipmunk mouth are coming true! Unfortunately, I don't have anymore blue grass and cordyceps, but you can keep the rest of the ingredients. If you give me some beans, I can bring you more ingredients soon. My name is Plug, by the way.",
-        "Narrator: The frog bounced away and left you with his extensive collection of ingredients. What a great beginner kit for your potion creating journey! You bring the ingredients to your cabin so you can start your own experiments."
+        "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot.",
+        "Narrator: To make the potion that the frog asked for, you combine the two ingredients into the pot.",
+        "Frog: GULP. I… I think I feel my mouth expanding. My dreams of chipmunk mouth are coming true! Unfortunately, I don't have anymore blue grass and mysterious mushrooms, but you can keep the rest of the ingredients. If you give me some beans, I can bring you more ingredients soon. My name is Plug, by the way.",
+        "Narrator: Plug bounced away and left you with his extensive collection of ingredients. What a great beginner kit for your potion creating journey! You bring the ingredients to your cabin so you can start your own experiments."
     ]
 
     imageKeys: (any | null)[] = [

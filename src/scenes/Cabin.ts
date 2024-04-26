@@ -3,6 +3,7 @@ import { SoundManager } from "../objects/SoundManager";
 import { SceneUtils } from "../utils/SceneUtils";
 import { QuestManager } from "../data/QuestManager";
 import { SaveManager } from "../data/SaveManager";
+// import frogSpeech from "../data/frogSpeech";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -20,17 +21,38 @@ export class CabinScene extends Phaser.Scene {
     hoverText: Phaser.GameObjects.Text;
     questManager: QuestManager;
     rewards: string[];
+    // speechBubble: Phaser.GameObjects.Image;
+    // speechText: Phaser.GameObjects.Text;
+
+    frogSpeech: string[] = [
+        "CRA CRA",
+        "KWAAK",
+        "VRAK",
+        "KUM KUM",
+        "GAE GOOL",
+        "OP OP",
+        "GUO GUO",
+        "BREKEKEKE",
+        "KEROKERO",
+        "KOKAK",
+        "lol",
+        "RIBBIT"
+    ];
 
     constructor() {
         super(sceneConfig);
     }
 
     preload() {
+        SceneUtils.loadUi;
+
         this.load.image('cabin', 'assets/image/drawings/cabin-draft.png');
         this.load.image('cauldron', 'assets/image/drawings/cauldron.png');
         this.load.image('book', 'assets/image/drawings/book.png');
         this.load.image('crystalBall', 'assets/image/drawings/crystal-ball.png');
         this.load.image('questBoard', 'assets/image/drawings/questboard.png');
+        this.load.image('frog', 'assets/image/drawings/frog.png');
+        this.load.image('speechBubble', 'assets/image/ui-assets/speech_bubble.png');
 
         // load hover glows
         this.load.image('hoverCrystal', 'assets/image/ui-assets/hover_crystal_ball_cabin.png')
@@ -64,6 +86,15 @@ export class CabinScene extends Phaser.Scene {
         SceneUtils.addBeanCounter(this);
         this.questManager.processData();
         this.questManager.processActiveQuests();
+
+        // back to title button
+        this.add.text(300, 545, "Main Menu").setDepth(3);
+        const titleButton = this.add.image(350, 553, 'button').setScale(.8, .6).setInteractive().setDepth(2);
+        titleButton.on("pointerdown", () => {
+            this.scene.start("Title")
+            this.soundManager.stop('backgroundMusic');
+        });
+        SceneUtils.addButtonHover(this, titleButton, 350, 553, 2, .8, .6);
 
         // background music button toggle
         const soundMuteButton = this.add.image(775, 25, 'soundMuteButton').setScale(1, 1).setInteractive().setDepth(2).setAlpha(0.5);
@@ -186,6 +217,23 @@ export class CabinScene extends Phaser.Scene {
         if (this.rewards.includes("rose")) {
             this.add.image(720, 205, "rose").setScale(.04).setDepth(0).setRotation(.55);
         }
+
+        // creating speech bubble
+        const speechBubble = this.add.image(400, 200, 'speechBubble').setScale(.4, .4).setAlpha(.8).setDepth(2).setVisible(false);
+        const speechText = this.add.text(350, 185, '', { align: 'center', color: '#000000', fontFamily: 'Montserrat Alternates, sans-serif' }).setDepth(2).setVisible(false);
+
+        // frog text
+        const frog = this.add.image(500, 292, 'frog').setAlpha(.01).setScale(.7, .8).setDepth(4).setInteractive();
+        frog.on("pointerdown", () => {
+            speechBubble.visible = true;
+            const randInt = Math.round(Math.random() * (this.frogSpeech.length));
+            speechText.setText(this.frogSpeech[randInt]);
+            speechText.setVisible(true);
+            setTimeout(() => {
+                speechBubble.setVisible(false);
+                speechText.setVisible(false);
+            }, 500)
+        });
     }
 }
 

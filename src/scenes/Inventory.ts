@@ -3,6 +3,7 @@ import { SaveManager } from "../data/SaveManager";
 import { PotionManager } from "../data/PotionManager";
 import { PotionQuantity } from "../objects/PotionQuantity";
 import { SceneUtils } from "../utils/SceneUtils";
+import { SoundManager } from "../objects/SoundManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -21,6 +22,7 @@ export class InventoryScene extends Phaser.Scene {
     clickDropZone: Phaser.GameObjects.Zone;
     potionsContainer: Phaser.GameObjects.Container;
     defaultText: Phaser.GameObjects.Text;
+    soundManager: SoundManager;
     private potionText: Phaser.GameObjects.Text;
     private descriptionText: Phaser.GameObjects.Text;
     private currentPage: number = 0;
@@ -33,6 +35,10 @@ export class InventoryScene extends Phaser.Scene {
 
     preload() {
         this.inventory = SaveManager.loadInventory();
+
+        // load sound
+        this.soundManager = new SoundManager(this);
+        this.soundManager.preload();
 
         // load potion images
         for (let i = 1; i < 21; i++) {
@@ -202,6 +208,7 @@ export class InventoryScene extends Phaser.Scene {
                         this.potionText.destroy();
                         this.descriptionText.destroy();
                     }
+                    this.soundManager.playSoftSFX('dragPotion');
                     this.selectedPotionId = potionId;
                     this.selectedPotionImage = this.add.image(this.dropzone.x, this.dropzone.y, `potion${potionId}`).setScale(.03, .03);
                     this.handleSubmit();

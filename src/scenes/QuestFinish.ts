@@ -4,6 +4,7 @@ import { QuestManager } from "../data/QuestManager";
 import { SaveManager } from "../data/SaveManager";
 import { QuestRating } from "../objects/QuestRating";
 import { PotionManager } from "../data/PotionManager";
+import { SoundManager } from "../objects/SoundManager";
 
 const sceneConfig: Phaser.Types.Scenes.SettingsConfig = {
     active: false,
@@ -18,6 +19,7 @@ export class QuestFinish extends Phaser.Scene {
     discoveredPotions: number[];
     potionDescriptionText: Phaser.GameObjects.Text;
     potionsContainer: Phaser.GameObjects.Container;
+    soundManager: SoundManager;
     private potionManager: PotionManager;
     private storyText: Phaser.GameObjects.Text;
     private potionText: Phaser.GameObjects.Text;
@@ -27,8 +29,13 @@ export class QuestFinish extends Phaser.Scene {
     }
 
     preload() {
-        //load quest rating object from local storage
+        // load quest rating object from local storage
         this.result = SaveManager.loadQuestProgress();
+
+        // load sound manager
+        this.soundManager = new SoundManager(this);
+        this.soundManager.preload();
+
         //getting the last object of the quest rating array
         this.lastResult = this.result[this.result.length - 1];
 
@@ -57,6 +64,11 @@ export class QuestFinish extends Phaser.Scene {
 
     create() {
         SceneUtils.addNavigation(this);
+
+        //failed quest sound
+        if (this.lastResult.rating === 1) {
+            this.soundManager.playSoftSFX('failedQuest');
+        }
 
         this.add.image(240, 350, "scroll").setScale(.8, .8).setDepth(-1);
         this.add.image(400, 150, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(.7, .7);
