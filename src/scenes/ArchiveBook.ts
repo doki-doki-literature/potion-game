@@ -35,8 +35,5 @@ export class ArchiveScene extends Phaser.Scene {
         questButton.on("pointerdown", () => {
             this.scene.start("QuestArchiveView");
         })
-
-        const potionButton = this.add.bitmapText(500, 300, "handwritten", "Potions").setFontSize(30);
-        const ingredientButton = this.add.bitmapText(500, 400, "handwritten", "Ingredients").setFontSize(30);
     }
 }

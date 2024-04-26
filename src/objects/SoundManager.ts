@@ -12,7 +12,7 @@ export class SoundManager {
         this.scene.load.audio('backgroundMusic', 'assets/sound/backgroundMusic.mp3');
         this.scene.load.audio('crystalBall', 'assets/sound/crystalBall.mp3');
         this.scene.load.audio('dragIngredient', 'assets/sound/dragIngredientToCauldron.mp3');
-        this.scene.load.audio('dragPotion', 'assets/sound/dragPotionToInventory.mp3');
+        this.scene.load.audio('dragPotion', 'assets/sound/dragPotionInInventory.mp3');
         this.scene.load.audio('failedQuest', 'assets/sound/failedQuest.mp3');
         this.scene.load.audio('potionCreation', 'assets/sound/potionCreation.mp3');
         this.scene.load.audio('purchaseIngredient', 'assets/sound/purchaseIngredient.mp3');

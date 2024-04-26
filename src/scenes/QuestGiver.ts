@@ -349,7 +349,7 @@ export class QuestGiver extends Phaser.Scene {
                     const potion = this.potionManager.potions.find(potion => potion.potionId == potionId);
                     if (potion && this.discoveredPotions.includes(potionId)) {
                         // Set text position to match cursor
-                        this.potionDescriptionText.setPosition(pointer.x - 150, pointer.y + 30);
+                        this.potionDescriptionText.setPosition(pointer.x - 20, pointer.y + 30);
                         // Set text content to ingredient description
                         this.potionDescriptionText.setText(potion.name + ": " + potion.description);
                         // Show the text

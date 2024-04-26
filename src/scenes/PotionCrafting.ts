@@ -61,6 +61,8 @@ export class CraftScene extends Phaser.Scene {
         SceneUtils.addItemSelectContainer(this);
         SceneUtils.addBeanCounter(this);
 
+        this.selectedIngredients = [];
+
         this.add.text(190, 150, "Drag Ingredients");
         this.add.text(560, 150, "Selected Ingredients");
 
@@ -333,7 +335,7 @@ export class CraftScene extends Phaser.Scene {
                         overlay.setDepth(4);
 
                         const itemPurchaseContainer = this.add.image(this.cameras.main.width / 2, 200, 'inventoryTile').setDepth(4).setScale(.7, .7);
-                        const itemPurchaseImage = this.add.image(this.cameras.main.width / 2, 200, `ingredient${ingredient.ingredientId}`).setScale(.05, .05).setDepth(5);
+                        const itemPurchaseImage = this.add.image(this.cameras.main.width / 2, 200, 'locked').setDepth(5);
                         const itemPurchaseText = this.add.text(this.cameras.main.width / 2, 300, "Purchase ingredient for 100 beans?").setDepth(5).setFontSize(20).setOrigin(.5, 0);
                         const confirmPurchaseButton = this.add.image(this.cameras.main.width * 2 / 5, 350, 'confirmButton').setScale(.45, .5).setInteractive().setDepth(4);
                         const confirmPurchaseText = this.add.text(this.cameras.main.width * 2 / 5, 350, 'Purchase').setDepth(5).setOrigin(.5, .5);
@@ -357,6 +359,7 @@ export class CraftScene extends Phaser.Scene {
                                     SaveManager.unlockIngredient(ingredient.ingredientId);
                                     this.soundManager.playLoudSFX('purchaseIngredient');
                                 }
+                                this.selectedIngredients = [];
                                 this.scene.restart();
                             });
                         }
