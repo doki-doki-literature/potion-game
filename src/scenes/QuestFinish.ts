@@ -43,17 +43,51 @@ export class QuestFinish extends Phaser.Scene {
 
         this.load.image("scroll", "assets/image/ui-assets/inventory_item_display.png");
 
-        //load potion images
+        // load potion images
         for (let i = 1; i < 21; i++) {
             this.load.image(`potion${i}`, `assets/image/drawings/potions/item_${i}.png`)
         }
+
+        // load reward images
+        this.load.image('boot', 'assets/image/drawings/rewards/boot.png');
+        this.load.image('deerHead', 'assets/image/drawings/rewards/deer-head.png');
+        this.load.image('dragonScale', 'assets/image/drawings/rewards/dragon-scale.png');
+        this.load.image('rose', 'assets/image/drawings/rewards/rose.png');
     }
 
     create() {
         SceneUtils.addNavigation(this);
-        
+
         this.add.image(240, 350, "scroll").setScale(.8, .8).setDepth(-1);
         this.add.image(400, 150, 'selectedIngredients').setDepth(-1).setOrigin(0, 0).setScale(.7, .7);
+
+        // adding an overlay for if the player receives a reward item
+        if (this.lastResult.reward) {
+            const rewardText = this.add.text(this.cameras.main.width / 2, 350, this.lastResult.rewardText, { color: '#ffffff' });
+
+            rewardText.setOrigin(0.5);
+            rewardText.setInteractive();
+            rewardText.setDepth(4);
+            rewardText.setWordWrapWidth(500);
+
+            const rewardImage = this.add.image(this.cameras.main.width / 2, 225, this.lastResult.rewardItem);
+            rewardImage.setOrigin(0.5);
+            rewardImage.setDepth(4);
+            rewardImage.setScale(.1);
+
+            console.log(this.lastResult.rewardText);
+            console.log(this.lastResult.rewardItem);
+            console.log(rewardImage);
+            const overlay = this.add.rectangle(0, 0, this.cameras.main.width, this.cameras.main.height, 0x000000, 0.7);
+            overlay.setOrigin(0);
+            overlay.setInteractive();
+            overlay.setDepth(3);
+            overlay.on("pointerdown", () => {
+                overlay.destroy();
+                rewardText.destroy();
+                rewardImage.destroy();
+            });
+        }
 
         // creating an object to display the story text
         this.add.text(180, 190, "Quest Report:").setColor('#000000')
@@ -65,7 +99,7 @@ export class QuestFinish extends Phaser.Scene {
 
         // text for new potion discovered
         if (this.lastResult.newPotion){
-            this.add.text(480, 130, "New Potion Discovered!")
+            this.add.text(480, 130, "New Potion Discovered!").setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
         }
 
         // potion section
@@ -111,7 +145,7 @@ export class QuestFinish extends Phaser.Scene {
         const potionText = this.potionManager.potions.find((p) => p.potionId==this.lastResult.potionId).name;
 
         this.potionText = this.add.text(550, 240, '', { color: '#ffffff' });
-        this.potionText.setDepth(3);
+        this.potionText.setDepth(2);
         this.potionText.setWordWrapWidth(160);
         if (this.discoveredPotions.includes(this.lastResult.potionId)) {
             this.potionText.setText(potionText)
@@ -136,8 +170,9 @@ export class QuestFinish extends Phaser.Scene {
         //     this.add.text(540, 410, "Success!")
         // }
 
+        // displaying bean
         this.add.text(460, 400, 'Earned:');
-        this.add.image(580, 410, 'bean').setScale(.06, .06);
+        this.add.image(580, 410, 'bean').setScale(.03, .03);
         this.add.text(610, 400, `x${this.lastResult.rating * 10}`);
 
         // displaying reveal text

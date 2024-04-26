@@ -4,9 +4,11 @@ export class QuestRating {
     rating: number;
     date: Date;
     story: string;
-    reward: string;
     revealText: string;
     newPotion: boolean;
+    reward: boolean;
+    rewardItem: string;
+    rewardText: string;
 
     constructor(data: any) {
         this.questId = data.questId;
@@ -14,8 +16,10 @@ export class QuestRating {
         this.rating = data.rating;
         this.date = data.date;
         this.story = data.story;
-        this.reward = data.reward;
         this.revealText = data.revealText;
         this.newPotion = data.newPotion;
+        this.reward = data.reward;
+        this.rewardItem = data.rewardItem;
+        this.rewardText = data.rewardText;
     }
 }
